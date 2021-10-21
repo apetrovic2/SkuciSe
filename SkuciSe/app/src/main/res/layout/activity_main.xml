@@ -10,18 +10,20 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="550dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/background"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"></LinearLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="40dp"
         android:text="Prijavi se"
         android:textColor="#353535"
+        android:fontFamily="@font/josefinsans_bold"
         app:backgroundTint="#E1AEE9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,9 +33,10 @@
     <Button
         android:id="@+id/button3"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginEnd="40dp"
         android:text="Registruj se"
+        android:fontFamily="@font/josefinsans_bold"
         android:textColor="#353535"
         app:backgroundTint="#b5efbd"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,3 +45,6 @@
         app:layout_constraintVertical_bias="0.234" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
