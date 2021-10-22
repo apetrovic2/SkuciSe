@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Login">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/tbUsernameLogin"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="232dp"
@@ -14,11 +15,12 @@
         android:ems="10"
         android:hint="Korisničko ime"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/tbPasswordLogin"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -26,8 +28,9 @@
         android:ems="10"
         android:hint="Lozinka"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/tbUsernameLogin" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -35,7 +38,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="232dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/tbUsernameLogin"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/person" />
 
@@ -45,7 +48,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toStartOf="@+id/tbPasswordLogin"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
         app:srcCompat="@drawable/lock" />
 
@@ -58,12 +61,12 @@
         android:fontFamily="@font/josefinsans_bold"
         android:text="Prijava"
         android:textColor="#353535"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnLoginFinal"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="60dp"
@@ -73,7 +76,7 @@
         android:textColor="#353535"
         app:backgroundTint="#E1AEE9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tbPasswordLogin" />
 
     <TextView
         android:id="@+id/textView2"
@@ -84,12 +87,12 @@
         android:fontFamily="@font/josefinregular"
         android:text="Nemate nalog?"
         android:textColor="#353535"
-        android:textSize="17dp"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        android:textSize="17sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegistrationLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginFinal" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnRegistrationLogin"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="104dp"
@@ -99,7 +102,7 @@
         android:textColor="#69926f"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginFinal" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
