@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Registration">
 
     <EditText
         android:id="@+id/tbUsernameRegistration"
@@ -148,6 +149,5 @@
         app:layout_constraintEnd_toStartOf="@+id/tbPasswordRegistration"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/lock_green" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
