@@ -15,5 +15,20 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, Registration::class.java)
             startActivity(intent)
         }
+
+        val buttonLogin = findViewById<Button>(R.id.btnLoginFinal)
+        buttonLogin.setOnClickListener {
+            val intent = Intent(this, firstPage::class.java)
+            startActivity(intent)
+        }
+
+        val actionbar = supportActionBar
+        actionbar!!.title = ""
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
