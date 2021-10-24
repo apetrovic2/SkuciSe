@@ -1,0 +1,126 @@
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.exe
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.deps.json
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.runtimeconfig.json
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.runtimeconfig.dev.json
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.pdb
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csprojAssemblyReference.cache
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.AssemblyInfoInputs.cache
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.AssemblyInfo.cs
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.RazorTargetAssemblyInfo.cache
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\staticwebassets\SkuciSeCode.StaticWebAssets.Manifest.cache
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\staticwebassets\SkuciSeCode.StaticWebAssets.xml
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.pdb
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.genruntimeconfig.cache
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csproj.CopyComplete
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csproj.CoreCompileInputs.cache
+C:\Users\PetarBojović\source\repos\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.exe
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.deps.json
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.runtimeconfig.json
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.runtimeconfig.dev.json
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\SkuciSeCode.pdb
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csprojAssemblyReference.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.AssemblyInfoInputs.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.AssemblyInfo.cs
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csproj.CoreCompileInputs.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.RazorTargetAssemblyInfo.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csproj.CopyComplete
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\staticwebassets\SkuciSeCode.StaticWebAssets.Manifest.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\staticwebassets\SkuciSeCode.StaticWebAssets.xml
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.pdb
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.genruntimeconfig.cache
