@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface IUsersApi
 {
-    @GET("registration")
+    @GET("api/registration")
     Call<List<User>> getUsers();
 }

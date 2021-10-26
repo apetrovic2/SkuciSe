@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj": {}
+    "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj": {
+    "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
+        "projectUniqueName": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
         "projectName": "SkuciSeCode",
-        "projectPath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
+        "projectPath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
         "packagesPath": "C:\\Users\\PetarBojović\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\obj\\",
+        "outputPath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PetarBojović\\AppData\\Roaming\\NuGet\\NuGet.Config",
