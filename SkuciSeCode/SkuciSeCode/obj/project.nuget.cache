@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZZWZMJgpivIflfGQsc2Yvh2Nn4HyclCz74XGE44KBoIydtIWNqMDMhxMt0iwgjYZSrwka4do3WQXD6aUbvnqcQ==",
+  "dgSpecHash": "BQy0O03pxfgsVWLVWfXTXecvz9TlDMSluAqMKVexuTy/lSLsSU71MfswlzNH1mBtAeVU1r8R0Z4JyA8oBRVKQg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
+  "projectFilePath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PetarBojović\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\PetarBojović\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

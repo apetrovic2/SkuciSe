@@ -18,5 +18,27 @@ namespace SkuciSeCode.BL.Interfaces
         {
             return _iUserDAL.GetAllUsers();
         }
+
+        public int Login(string username, string password)
+        {
+            int ind = -2;
+            if(username != "" && password != "")
+            {
+                ind = _iUserDAL.Login(username, password);
+            }
+            return ind;
+        }
+
+        public int Registration(string username, string password, string name, string email)
+        {
+            int ind = -2;
+            if (username != "" && password != "" && name != "" && email != "")
+            {
+                User user = new User(username, password, name, email);
+                ind = _iUserDAL.Registration(user);
+            }
+            return ind;
+
+        }
     }
 }
