@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
-
+/*
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:5000/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onFailure(call: Call<Int>, t: Throwable) {}
             })
-
+*/
 
         }
         val buttonRegistration = findViewById<Button>(R.id.btnRegistration)
