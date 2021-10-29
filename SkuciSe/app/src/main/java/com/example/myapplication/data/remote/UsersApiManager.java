@@ -12,28 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UsersApiManager
 {
-//    private static IUsersApi service;
-//    private static UsersApiManager apiManager;
-//
-//    private UsersApiManager()
-//    {
-//        service = RetrofitService.Create();
-//    }
-//
-//    public static UsersApiManager getInstance()
-//    {
-//        if(apiManager == null)
-//        {
-//            apiManager = new UsersApiManager();
-//        }
-//        return apiManager;
-//    }
-//
-////    public void getUsers(Callback<List<User>> callback)
-////    {
-////        //Call<List<User>> usersCall = service.getUsers();
-////        //usersCall.enqueue(callback);
-////    }
 
     public static IUsersApi getClient()
     {

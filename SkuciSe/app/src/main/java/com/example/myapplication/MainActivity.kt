@@ -53,6 +53,30 @@ class MainActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<List<UsersResponse>>, t: Throwable) {}
             })
 
+            val call1 = api.checkLogin("petar", "petar1")
+            call1.enqueue(object: Callback<Int> {
+                override fun onResponse(
+                    call: Call<Int>,
+                    response: Response<Int>
+                ) {
+                    if (!response.isSuccessful) {
+                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                        return
+                    }
+                    else
+                    {
+                        Log.i("CONNECTION1 ", "SUCCESSFUL")
+                        val ind = response.body()
+
+                        Log.i("LOGIN STATUS ", "" + ind!!)
+                    }
+
+                }
+
+                override fun onFailure(call: Call<Int>, t: Throwable) {}
+            })
+
+
         }
         val buttonRegistration = findViewById<Button>(R.id.btnRegistration)
         buttonRegistration.setOnClickListener {
