@@ -115,8 +115,6 @@ C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\S
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csprojAssemblyReference.cache
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.AssemblyInfoInputs.cache
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.AssemblyInfo.cs
-C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csproj.CoreCompileInputs.cache
-C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.RazorTargetAssemblyInfo.cache
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csproj.CopyComplete
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\staticwebassets\SkuciSeCode.StaticWebAssets.Manifest.cache
@@ -124,3 +122,8 @@ C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\S
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.dll
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.pdb
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.genruntimeconfig.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csproj.CoreCompileInputs.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\Microsoft.Threading.Tasks.dll

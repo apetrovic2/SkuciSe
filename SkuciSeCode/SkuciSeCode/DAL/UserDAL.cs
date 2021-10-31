@@ -25,8 +25,8 @@ namespace SkuciSeCode.DAL
         {
             int ind = -1;
             var users = _context.Users.ToList().Where(u => u.username.Equals(username));
- 
-            foreach(User user in users)
+            var user = users.FirstOrDefault();
+            if(user != null)
             {
                 if (!user.password.Equals(password))
                 {
@@ -34,22 +34,23 @@ namespace SkuciSeCode.DAL
                 }
                 else
                 {
-                    ind = 1;
+                    ind = user.id;
                 }
-            }
+            }  
             return ind;
             
         }
 
-        public int Registration(User user)
+        public async Task<int> RegistrationAsync(User user)
         {
             int ind = -1;
-            if (!_context.Users.Any(u => u.username.Equals(user.username)))
+            if(!_context.Users.Any(u => u.username.Equals(user.username)))
             {
-                _context.Users.Add(user);
+                await _context.Users.AddAsync(user);
                 ind = _context.SaveChanges();
             }
             return ind;
         }
+
     }
 }

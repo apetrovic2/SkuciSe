@@ -35,7 +35,9 @@ namespace SkuciSeCode.BL.Interfaces
             if (username != "" && password != "" && name != "" && email != "")
             {
                 User user = new User(username, password, name, email);
-                ind = _iUserDAL.Registration(user);
+                Task<int> ind1;
+                ind1 = _iUserDAL.RegistrationAsync(user);
+                ind = ind1.Result;
             }
             return ind;
 

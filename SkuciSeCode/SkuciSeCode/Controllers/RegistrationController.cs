@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SkuciSeCode.Entities;
 using SkuciSeCode.Helpers;
 using SkuciSeCode.UI.Interfaces;
 
@@ -29,8 +30,8 @@ namespace SkuciSeCode.Controllers
         }
 
         [HttpPost]
-        [Route("Register/{username}/{password}/{name}/{email}")]
-        public int Register(String username, String password, String name, String email)
+        [Route("Register")]
+        public int Register([FromForm] String username, [FromForm] String password,[FromForm] String name,[FromForm] String email)
         {
             //1+ - uspesno registrovan korisnik
             //0 - neuspesno registrovan korisnik
@@ -42,12 +43,13 @@ namespace SkuciSeCode.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public int Login(String username, String password)
+        public int Login([FromForm] String username, [FromForm] String password)
         {
             //1 - uspesno prijavljen korisnik
             //-3 - pogresan password
             //-1 - ne postoji korisnik sa datim username-om
             //-2 - prazan string
+            //Console.WriteLine(user.username + " " + user.password);
             int ind = _iUserUI.Login(username, password);
             return ind;
         }

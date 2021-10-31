@@ -10,7 +10,7 @@ namespace SkuciSeCode.DAL.Interfaces
     public interface IUserDAL
     {
         List<User> GetAllUsers();
-        int Registration(User user);
+        Task<int> RegistrationAsync(User user);
         int Login(String username, String password);
     }
 }
