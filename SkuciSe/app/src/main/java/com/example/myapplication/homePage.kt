@@ -16,7 +16,7 @@ class HomePage : AppCompatActivity() {
     private lateinit var binding: ActivityHomePageBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var photoAdapter: PhotoAdapter
-   private var dataList= mutableListOf<DataModel>()
+    private var dataList= mutableListOf<DataModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
