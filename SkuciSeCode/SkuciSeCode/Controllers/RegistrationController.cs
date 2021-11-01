@@ -53,5 +53,13 @@ namespace SkuciSeCode.Controllers
             int ind = _iUserUI.Login(username, password);
             return ind;
         }
+
+        [HttpPost]
+        [Route("GetUserById")]
+        public async Task<IActionResult> GetUserById([FromForm] int id)
+        {
+            User user = _iUserUI.GetUserById(id);
+            return Ok(user);
+        }
     }
 }

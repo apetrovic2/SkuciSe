@@ -11,5 +11,6 @@ namespace SkuciSeCode.UI.Interfaces
         List<User> GetAllUsers();
         int Registration(String username, String password, String name, String email);
         int Login(String username, String password);
+        User GetUserById(int id);
     }
 }

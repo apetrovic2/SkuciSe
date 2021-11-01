@@ -19,6 +19,11 @@ namespace SkuciSeCode.BL.Interfaces
             return _iUserDAL.GetAllUsers();
         }
 
+        public User GetUserById(int id)
+        {
+            return _iUserDAL.GetUserById(id);
+        }
+
         public int Login(string username, string password)
         {
             int ind = -2;

@@ -21,6 +21,13 @@ namespace SkuciSeCode.DAL
             return list;
         }
 
+        public User GetUserById(int id)
+        {
+            var users = _context.Users.ToList().Where(u => u.id == id);
+            User user = users.FirstOrDefault();
+            return user;
+        }
+
         public int Login(string username, string password)
         {
             int ind = -1;

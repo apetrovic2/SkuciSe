@@ -20,6 +20,11 @@ namespace SkuciSeCode.UI
             return _iUserBL.GetAllUsers();
         }
 
+        public User GetUserById(int id)
+        {
+            return _iUserBL.GetUserById(id);
+        }
+
         public int Login(string username, string password)
         {
             int ind = _iUserBL.Login(username, password);

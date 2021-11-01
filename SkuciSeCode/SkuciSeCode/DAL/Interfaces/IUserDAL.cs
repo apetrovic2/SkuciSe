@@ -12,5 +12,6 @@ namespace SkuciSeCode.DAL.Interfaces
         List<User> GetAllUsers();
         Task<int> RegistrationAsync(User user);
         int Login(String username, String password);
+        User GetUserById(int id);
     }
 }
