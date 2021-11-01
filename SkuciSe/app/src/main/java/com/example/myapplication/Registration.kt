@@ -27,6 +27,7 @@ class Registration : AppCompatActivity() {
 
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
+            lblRegistrationMes.setText("")
         }
 
 

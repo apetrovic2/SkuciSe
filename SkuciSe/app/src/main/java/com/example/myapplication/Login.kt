@@ -58,6 +58,7 @@ class Login : AppCompatActivity() {
                             if (ind > 0) {
                                 lblLoginMes.setText("Uspešna prijava!")
                                 startActivity(intent)
+                                lblLoginMes.setText("")
                             } else if (ind == -1) {
                                 lblLoginMes.setText("Korisničko ime ne postoji!")
                             } else {
