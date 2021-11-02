@@ -35,7 +35,7 @@ class DashboardFragment : Fragment() {
 //        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
 //            textView.text = it
 //        })
-        return root
+       return root
     }
 
     override fun onDestroyView() {
