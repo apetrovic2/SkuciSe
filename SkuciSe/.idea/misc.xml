@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/New folder (10)/SkuciSe/app/src/main/res/layout/activity_home_page.xml" value="0.1" />
-        <entry key="..\:/New folder (10)/SkuciSe/app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
-        <entry key="..\:/New folder (10)/SkuciSe/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/New folder (10)/SkuciSe/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="..\:/DodajOglas/SkuciSe/app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
+        <entry key="..\:/DodajOglas/SkuciSe/app/src/main/res/layout/activity_home_page.xml" value="0.2833333333333333" />
+        <entry key="..\:/DodajOglas/SkuciSe/app/src/main/res/layout/fragment_dashboard.xml" value="0.15885416666666666" />
+        <entry key="..\:/DodajOglas/SkuciSe/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/DodajOglas/SkuciSe/app/src/main/res/layout/fragment_notifications.xml" value="0.2" />
         <entry key="..\:/New folder (5)/SkuciSe/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/New folder (5)/SkuciSe/app/src/main/res/layout/activity_registration.xml" value="0.16983695652173914" />
         <entry key="..\:/New folder (5)/SkuciSe/app/src/main/res/layout/login.xml" value="0.25" />
@@ -14,11 +15,16 @@
         <entry key="..\:/SkuciSe/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.20052083333333334" />
         <entry key="..\:/SkuciSe/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.20052083333333334" />
         <entry key="..\:/SkuciSe/app/src/main/res/drawable/ic_baseline_filter_list_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/SkuciSe/app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.16927083333333334" />
+        <entry key="..\:/SkuciSe/app/src/main/res/drawable/ic_baseline_photo_camera_24_purple.xml" value="0.20416666666666666" />
         <entry key="..\:/SkuciSe/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.20052083333333334" />
         <entry key="..\:/SkuciSe/app/src/main/res/layout/activity_first_page.xml" value="0.11666666666666667" />
-        <entry key="..\:/SkuciSe/app/src/main/res/layout/activity_home_page.xml" value="0.25" />
+        <entry key="..\:/SkuciSe/app/src/main/res/layout/activity_home_page.xml" value="0.18888888888888888" />
         <entry key="..\:/SkuciSe/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/SkuciSe/app/src/main/res/layout/activity_registration.xml" value="0.11666666666666667" />
+        <entry key="..\:/SkuciSe/app/src/main/res/layout/activity_registration.xml" value="0.25" />
+        <entry key="..\:/SkuciSe/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
+        <entry key="..\:/SkuciSe/app/src/main/res/layout/fragment_home.xml" value="0.14427083333333332" />
+        <entry key="..\:/SkuciSe/app/src/main/res/layout/fragment_notifications.xml" value="0.5" />
         <entry key="..\:/SkuciSe/app/src/main/res/layout/photo_layout.xml" value="0.16302083333333334" />
         <entry key="..\:/SkuciSe/app/src/main/res/menu/bottom_nav_menu.xml" value="0.184375" />
         <entry key="..\:/Users/Ana/Desktop/Projekat/Tim9/SkuciSe/app/src/main/res/layout/activity_login.xml" value="0.1" />
@@ -30,7 +36,6 @@
         <entry key="..\:/Users/Ana/Desktop/SkuciSe/app/src/main/res/layout/activity_registration.xml" value="0.121875" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_login.xml" value="0.21145833333333333" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_registration.xml" value="0.26902173913043476" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/login.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/registration.xml" value="0.264" />
         <entry key="..\:/pmu/drugi/app/src/main/res/layout/activity_main.xml" value="0.25" />

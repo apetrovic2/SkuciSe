@@ -1,8 +1,13 @@
 package com.example.myapplication
 
+import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -14,13 +19,13 @@ import com.example.myapplication.databinding.ActivityHomePageBinding
 class HomePage : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomePageBinding
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var photoAdapter: PhotoAdapter
     private var dataList= mutableListOf<DataModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -38,6 +43,7 @@ class HomePage : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(applicationContext,2)
         photoAdapter = PhotoAdapter(applicationContext)
@@ -53,5 +59,14 @@ class HomePage : AppCompatActivity() {
         dataList.add(DataModel("Title","Desc",R.drawable.photo8))
 
         photoAdapter.setDataList(dataList)
+
+//        val buttonEditProfile = findViewById<Button>(R.id.button3)
+//        buttonEditProfile.setOnClickListener {
+//            val intent = Intent(this, EditProfile::class.java)
+//            startActivity(intent)
+//        }
+
+
     }
+
 }
