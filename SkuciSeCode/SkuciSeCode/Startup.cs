@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SkuciSeCode.BL;
 using SkuciSeCode.BL.Interfaces;
 using SkuciSeCode.DAL;
 using SkuciSeCode.DAL.Interfaces;
@@ -34,7 +35,11 @@ namespace SkuciSeCode
             services.AddScoped<IUserUI, UserUI>();
             services.AddScoped<IUserBL, UserBL>();
             services.AddScoped<IUserDAL, UserDAL>();
+            services.AddScoped<IAdUI, AdUI>();
+            services.AddScoped<IAdBL, AdBL>();
+            services.AddScoped<IAdDAL, AdDAL>();
             services.AddDbContext<UserDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SkuciSeDbConnectionString")));
+            services.AddDbContext<AdDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SkuciSeDbConnectionString")));
             services.AddControllers();
         }
 
