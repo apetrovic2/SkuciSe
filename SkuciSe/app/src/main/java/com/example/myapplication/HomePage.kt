@@ -23,9 +23,15 @@ class HomePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page2)
 
-        val buttonRegistration = findViewById<ImageButton>(R.id.imageBtnNewAd)
-        buttonRegistration.setOnClickListener {
+        val buttonNewAd = findViewById<ImageButton>(R.id.imageBtnNewAd)
+        buttonNewAd.setOnClickListener {
             val intent = Intent(this, NewAd::class.java)
+            startActivity(intent)
+        }
+
+        val buttonProfile = findViewById<ImageButton>(R.id.imageBtnProfile)
+        buttonProfile.setOnClickListener {
+            val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
 

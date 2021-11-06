@@ -17,31 +17,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextFirstLastName"
+    <TextView
+        android:id="@+id/lblName"
         android:layout_width="282dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
-        android:hint="Ime i prezime"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:text="Ime Prezime"
+        android:fontFamily="@font/josefinsans_semibold"
         android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
 
-    <EditText
-        android:id="@+id/editTextUsername"
+    <TextView
+        android:id="@+id/lblUsername"
         android:layout_width="282dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Korisničko ime"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:text="\@Korisničko_ime"
+        android:fontFamily="@font/josefinregular"
         android:textAlignment="center"
+        android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 

@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.remote.UsersApiManager
 import retrofit2.Call
 import retrofit2.Callback
@@ -56,6 +57,7 @@ class Login : AppCompatActivity() {
                             Log.i("LOGIN STATUS ", "" + ind)
 
                             if (ind > 0) {
+                                AppData.setUserID(ind)
                                 lblLoginMes.setText("Uspešna prijava!")
                                 startActivity(intent)
                                 lblLoginMes.setText("")
@@ -78,10 +80,6 @@ class Login : AppCompatActivity() {
             {
                 lblLoginMes.setText("Unesite sve podatke!")
             }
-
-
-
-
         }
 
         val actionbar = supportActionBar
