@@ -12,6 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.util.*
 
 class NewAd : AppCompatActivity() {
@@ -49,8 +50,8 @@ class NewAd : AppCompatActivity() {
             {
                 sellRentNum = 1
             }
-            val dateFormat = SimpleDateFormat("yyyy-mm-dd:hh:mm:ss")
-            val currentDate = Date()
+            val dateFormat = SimpleDateFormat("dd-mm-yyyy")
+            val currentDate = dateFormat.format(Date())
 
             val tbTitle = findViewById(R.id.tbTitle) as EditText
             val tbLocation = findViewById(R.id.tbLocation) as EditText
@@ -65,6 +66,8 @@ class NewAd : AppCompatActivity() {
             var descriptionText = tbDescription.text.toString()
 
 
+            Log.i("ADD AD", "$titleText $priceText $sizeText $currentDate")
+
             val api = AdApiManager.getAdApi()
             val call = api.addNewAd(titleText, houseFlatNum, sellRentNum, descriptionText, sizeText, currentDate, priceText, locationText)
             call.enqueue(object : Callback<Int> {
@@ -74,7 +77,7 @@ class NewAd : AppCompatActivity() {
                 )
                 {
                     if (!response.isSuccessful) {
-                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
                         lblAddNewAdMessage.setText("Neuspešno!")
                         return
                     } else {

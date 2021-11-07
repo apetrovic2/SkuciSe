@@ -20,7 +20,7 @@ namespace SkuciSeCode.Controllers
 
         [HttpPost]
         [Route("AddNewAd")]
-        public int AddNewAd([FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] String description, [FromForm] double size, [FromForm] DateTime date_start, [FromForm] double price, [FromForm] String location)
+        public int AddNewAd([FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] String description, [FromForm] double size, [FromForm] String date_start, [FromForm] double price, [FromForm] String location)
         {
             //1+ - uspesno dodat oglas
             //0 - neuspesno registrovan korisnik

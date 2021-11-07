@@ -14,8 +14,8 @@ namespace SkuciSeCode.Entities
         public int number_of_rooms { get; set; }
         public String description { get; set; }
         public double size { get; set; }
-        public DateTime date_start { get; set; }
-        public DateTime? date_end { get; set; }
+        public String date_start { get; set; }
+        public String? date_end { get; set; }
         public double price { get; set; }
         public String location { get; set; }
         public Ad()
@@ -23,7 +23,7 @@ namespace SkuciSeCode.Entities
 
         }
 
-        public Ad(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, double size, DateTime date_start, DateTime? date_end, double price, String location)
+        public Ad(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, double size, String date_start, String? date_end, double price, String location)
         {
             this.id = id;
             this.title = title;
@@ -38,7 +38,7 @@ namespace SkuciSeCode.Entities
             this.location = location;
         }
 
-        public Ad(string title, int flat_house, int sell_rent, int number_of_rooms, string description, double size, DateTime date_start, DateTime? date_end, double price, String location)
+        public Ad(string title, int flat_house, int sell_rent, int number_of_rooms, string description, double size, String date_start, String? date_end, double price, String location)
         {
             
             this.title = title;

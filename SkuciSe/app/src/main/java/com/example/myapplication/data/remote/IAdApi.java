@@ -11,5 +11,5 @@ public interface IAdApi
 {
     @POST("api/ad/AddNewAd")
     @FormUrlEncoded
-    Call<Integer> addNewAd(@Field("title") String title, @Field("flat_house") Integer flat_house, @Field("sell_rent") Integer sell_rent, @Field("description") String description, @Field("size") Double size, @Field("date_start") Date date_start, @Field("price") Double price, @Field("location") String location);
+    Call<Integer> addNewAd(@Field("title") String title, @Field("flat_house") Integer flat_house, @Field("sell_rent") Integer sell_rent, @Field("description") String description, @Field("size") Double size, @Field("date_start") String date_start, @Field("price") Double price, @Field("location") String location);
 }
