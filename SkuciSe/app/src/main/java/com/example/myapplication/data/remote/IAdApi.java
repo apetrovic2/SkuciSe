@@ -1,5 +1,7 @@
 package com.example.myapplication.data.remote;
 
+import java.util.Date;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -9,5 +11,5 @@ public interface IAdApi
 {
     @POST("api/ad/AddNewAd")
     @FormUrlEncoded
-    Call<Integer> Registration(@Field("username") String username, @Field("password") String password, @Field("name") String name, @Field("email") String email);
+    Call<Integer> addNewAd(@Field("title") String title, @Field("flat_house") Integer flat_house, @Field("sell_rent") Integer sell_rent, @Field("description") String description, @Field("size") Double size, @Field("date_start") Date date_start, @Field("price") Double price, @Field("location") String location);
 }
