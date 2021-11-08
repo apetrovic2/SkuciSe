@@ -1,0 +1,18 @@
+com/example/myapplication/databinding/ActivityEditProfileBinding.java
+ com.example.myapplication.databinding.ActivityEditProfileBinding
+com/example/myapplication/databinding/PhotoLayoutBinding.java
+ com.example.myapplication.databinding.PhotoLayoutBinding
+com/example/myapplication/databinding/ActivityRegistrationBinding.java
+ com.example.myapplication.databinding.ActivityRegistrationBinding
+com/example/myapplication/databinding/ActivityNewAdBinding.java
+ com.example.myapplication.databinding.ActivityNewAdBinding
+com/example/myapplication/databinding/ActivityProfileBinding.java
+ com.example.myapplication.databinding.ActivityProfileBinding
+com/example/myapplication/BuildConfig.java
+ com.example.myapplication.BuildConfig
+com/example/myapplication/databinding/ActivityMainBinding.java
+ com.example.myapplication.databinding.ActivityMainBinding
+com/example/myapplication/databinding/ActivityHomePage2Binding.java
+ com.example.myapplication.databinding.ActivityHomePage2Binding
+com/example/myapplication/databinding/ActivityLoginBinding.java
+ com.example.myapplication.databinding.ActivityLoginBinding

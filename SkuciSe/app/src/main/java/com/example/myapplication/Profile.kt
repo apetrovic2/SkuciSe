@@ -1,8 +1,10 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.TextView
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.remote.UsersApiManager
@@ -15,6 +17,18 @@ class Profile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        val buttonNewAd = findViewById<ImageButton>(R.id.imageBtnNewAd)
+        buttonNewAd.setOnClickListener {
+            val intent = Intent(this, NewAd::class.java)
+            startActivity(intent)
+        }
+
+        val buttonHome = findViewById<ImageButton>(R.id.imageBtnHome)
+        buttonHome.setOnClickListener {
+            val intent = Intent(this, HomePage::class.java)
+            startActivity(intent)
+        }
 
         var lblUsername = findViewById(R.id.lblUsername) as TextView
         var lblName = findViewById(R.id.lblName) as TextView
@@ -43,5 +57,13 @@ class Profile : AppCompatActivity() {
                 return
             }
         })
+        val actionbar = supportActionBar
+        actionbar!!.title = ""
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

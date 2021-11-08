@@ -51,5 +51,13 @@ class HomePage : AppCompatActivity() {
 
         photoAdapter.setDataList(dataList)
 
+        val actionbar = supportActionBar
+        actionbar!!.title = ""
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
