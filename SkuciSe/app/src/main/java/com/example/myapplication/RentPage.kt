@@ -3,10 +3,16 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.data.model.Ad
+import com.example.myapplication.data.remote.AdApiManager
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RentPage : AppCompatActivity() {
 
@@ -44,18 +50,57 @@ class RentPage : AppCompatActivity() {
         photoAdapter = PhotoAdapter(applicationContext)
         recyclerView.adapter = photoAdapter
 
-        dataList.add(DataModel("Title","Desc",R.drawable.photo6))
-        dataList.add(DataModel("Title","Desc",R.drawable.photo8))
-        dataList.add(DataModel("Title","Desc",R.drawable.photo2))
-        dataList.add(DataModel("Title","Desc",R.drawable.photo4))
 
-        photoAdapter.setDataList(dataList)
+
+//        dataList.add(DataModel("Title","Desc",R.drawable.photo6))
+//        dataList.add(DataModel("Title","Desc",R.drawable.photo8))
+//        dataList.add(DataModel("Title","Desc",R.drawable.photo2))
+//        dataList.add(DataModel("Title","Desc",R.drawable.photo4))
+
+//        photoAdapter.setDataList(dataList)
 
         val actionbar = supportActionBar
         actionbar!!.title = ""
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        val api = AdApiManager.getAdApi()
+        val call = api.getAllAds(
+            1
+        )
+        call.enqueue(object : Callback<List<Ad>> {
+            override fun onResponse(
+                call: Call<List<Ad>>,
+                response: Response<List<Ad>>
+            ) {
+                if (!response.isSuccessful) {
+                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
+                    return
+                } else {
+                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+                    val ads = response.body()!!
+
+                    for(ad in ads)
+                    {
+                        dataList.add(DataModel("${ad.title}","${ad.description}",R.drawable.photo1))
+                    }
+                    photoAdapter.setDataList(dataList)
+                    Log.i("HOME PAGE", "" + 1)
+
+                }
+            }
+
+            override fun onFailure(call: Call<List<Ad>>, t: Throwable) {
+                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                return
+            }
+        })
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true

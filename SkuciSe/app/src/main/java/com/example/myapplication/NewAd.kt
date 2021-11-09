@@ -46,25 +46,6 @@ class NewAd : AppCompatActivity() {
             var selectedSellRent = rgSellRent.checkedRadioButtonId
             val rbSellRent = findViewById(selectedSellRent) as RadioButton
 
-            //0 - house
-            //1 - flat
-            var houseFlatNum = 0
-
-            //0 - buy
-            //1 - sell
-            var sellRentNum = 0
-
-            if(rbHouseFlat.text == "Stan")
-            {
-                houseFlatNum = 1
-            }
-            if(rbSellRent.text == "Izdavanje")
-            {
-                sellRentNum = 1
-            }
-            val dateFormat = SimpleDateFormat("dd-mm-yyyy")
-            val currentDate = dateFormat.format(Date())
-
             val tbTitle = findViewById(R.id.tbTitle) as EditText
             val tbLocation = findViewById(R.id.tbLocation) as EditText
             val tbPrice = findViewById(R.id.tbPrice) as EditText
@@ -77,35 +58,72 @@ class NewAd : AppCompatActivity() {
             var sizeText = tbSize.text.toString().toDouble()
             var descriptionText = tbDescription.text.toString()
 
+            if(titleText != "" && locationText != "" && priceText != 0.0 && sizeText != 0.0 && descriptionText != "") {
+                //0 - house
+                //1 - flat
+                var houseFlatNum = 0
 
-            Log.i("ADD AD", "$titleText $priceText $sizeText $currentDate")
+                //0 - buy
+                //1 - sell
+                var sellRentNum = 0
 
-            val api = AdApiManager.getAdApi()
-            val call = api.addNewAd(titleText, houseFlatNum, sellRentNum, descriptionText, sizeText, currentDate, priceText, locationText)
-            call.enqueue(object : Callback<Int> {
-                override fun onResponse(
-                    call: Call<Int>,
-                    response: Response<Int>
-                )
+                if(rbHouseFlat.text == "Stan")
                 {
-                    if (!response.isSuccessful) {
-                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
-                        lblAddNewAdMessage.setText("Neuspešno!")
-                        return
-                    } else {
-                        Log.i("CONNECTION1 ", "SUCCESSFUL")
-                        val ind = response.body()!!
-                        Log.i("NEW AD STATUS", "" + ind)
-                        lblAddNewAdMessage.setText("Uspešno dodat oglas!")
+                    houseFlatNum = 1
+                }
+                if(rbSellRent.text == "Izdavanje")
+                {
+                    sellRentNum = 1
+                }
+                val dateFormat = SimpleDateFormat("dd-MM-yyyy")
+                val currentDate = dateFormat.format(Date())
 
+
+
+
+                Log.i("ADD AD", "$titleText $priceText $sizeText $currentDate")
+
+
+                val api = AdApiManager.getAdApi()
+                val call = api.addNewAd(
+                    titleText,
+                    houseFlatNum,
+                    sellRentNum,
+                    descriptionText,
+                    sizeText,
+                    currentDate,
+                    priceText,
+                    locationText
+                )
+                call.enqueue(object : Callback<Int> {
+                    override fun onResponse(
+                        call: Call<Int>,
+                        response: Response<Int>
+                    ) {
+                        if (!response.isSuccessful) {
+                            Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
+                            lblAddNewAdMessage.setText("Neuspešno!")
+                            return
+                        } else {
+                            Log.i("CONNECTION1 ", "SUCCESSFUL")
+                            val ind = response.body()!!
+                            Log.i("NEW AD STATUS", "" + ind)
+                            lblAddNewAdMessage.setText("Uspešno dodat oglas!")
+
+                        }
                     }
-                }
-                override fun onFailure(call: Call<Int>, t: Throwable) {
-                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-                    lblAddNewAdMessage.setText("Greška pri konekciji!")
-                    return
-                }
-            })
+
+                    override fun onFailure(call: Call<Int>, t: Throwable) {
+                        Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                        lblAddNewAdMessage.setText("Greška pri konekciji!")
+                        return
+                    }
+                })
+            }
+            else
+            {
+                lblAddNewAdMessage.setText("Unesite sve podatke!")
+            }
         }
 
 

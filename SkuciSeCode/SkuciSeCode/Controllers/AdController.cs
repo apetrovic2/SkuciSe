@@ -32,7 +32,7 @@ namespace SkuciSeCode.Controllers
 
         [HttpGet]
         [Route("GetAllAds")]
-        public async Task<IActionResult> GetAllAds([FromForm] int category)
+        public async Task<IActionResult> GetAllAds([FromQuery] int category)
         {
             var ads = _iAdUI.GetAllAds(category);
             var adModels = AdHelper.ConvertUsers(ads);

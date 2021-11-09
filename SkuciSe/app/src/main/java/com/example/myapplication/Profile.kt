@@ -43,34 +43,6 @@ class Profile : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        var lblUsername = findViewById(R.id.lblUsername) as TextView
-        var lblName = findViewById(R.id.lblName) as TextView
-
-
-        val api = UsersApiManager.getUserApi()
-        val call = api.getUserById(AppData.getUserID())
-        call.enqueue(object : Callback<UsersResponse> {
-            override fun onResponse(
-                call: Call<UsersResponse>,
-                response: Response<UsersResponse>)
-                {
-                    if (!response.isSuccessful) {
-                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
-                        return
-                    } else {
-                        Log.i("CONNECTION1 ", "SUCCESSFUL")
-                        val user = response.body()!!
-                        lblUsername.setText("@" + user.username)
-                        lblName.setText(user.name)
-                        Log.i("LOGIN STATUS ", "" + user.username)
-                    }
-                }
-            override fun onFailure(call: Call<UsersResponse>, t: Throwable) {
-                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-                return
-            }
-        })
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(applicationContext,1)
         photoAdapter = PhotoAdapter(applicationContext)
@@ -88,6 +60,38 @@ class Profile : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
     }
+
+    override fun onStart() {
+        super.onStart()
+        var lblUsername = findViewById(R.id.lblUsername) as TextView
+        var lblName = findViewById(R.id.lblName) as TextView
+
+
+        val api = UsersApiManager.getUserApi()
+        val call = api.getUserById(AppData.getUserID())
+        call.enqueue(object : Callback<UsersResponse> {
+            override fun onResponse(
+                call: Call<UsersResponse>,
+                response: Response<UsersResponse>)
+            {
+                if (!response.isSuccessful) {
+                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                    return
+                } else {
+                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+                    val user = response.body()!!
+                    lblUsername.setText("@" + user.username)
+                    lblName.setText(user.name)
+                    Log.i("LOGIN STATUS ", "" + user.username)
+                }
+            }
+            override fun onFailure(call: Call<UsersResponse>, t: Throwable) {
+                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                return
+            }
+        })
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true

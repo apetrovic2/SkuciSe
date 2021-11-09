@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.PopupMenu
@@ -49,44 +50,50 @@ class Registration : AppCompatActivity() {
             val api = UsersApiManager.getUserApi()
 
             if (usernameText != "" && passwordText != "" && nametext != "" && emailText != "") {
-                val call = api.Registration("" + usernameText, "" + passwordText, "" + nametext, "" + emailText)
-                call.enqueue(object : Callback<Int> {
-                    override fun onResponse(
-                        call: Call<Int>,
-                        response: Response<Int>
-                    ) {
-                        if (!response.isSuccessful) {
-                            Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
-                            return
-                        } else {
+                if(Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
+                    val call = api.Registration(
+                        "" + usernameText,
+                        "" + passwordText,
+                        "" + nametext,
+                        "" + emailText
+                    )
+                    call.enqueue(object : Callback<Int> {
+                        override fun onResponse(
+                            call: Call<Int>,
+                            response: Response<Int>
+                        ) {
+                            if (!response.isSuccessful) {
+                                Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                                return
+                            } else {
 
-                            Log.i("CONNECTION1 ", "SUCCESSFUL")
-                            val ind = response.body()!!
+                                Log.i("CONNECTION1 ", "SUCCESSFUL")
+                                val ind = response.body()!!
 
-                            if(ind > 0)
-                            {
-                                lblRegistrationMes.setText("Uspešna registracija")
-                            }
-                            else if(ind == 0)
-                            {
-                                lblRegistrationMes.setText("Greška, pokušajte opet!")
-                            }
-                            else
-                            {
-                                lblRegistrationMes.setText("Korisničko ime je zauzeto!")
+                                if (ind > 0) {
+                                    lblRegistrationMes.setText("Uspešna registracija")
+                                } else if (ind == 0) {
+                                    lblRegistrationMes.setText("Greška, pokušajte opet!")
+                                } else {
+                                    lblRegistrationMes.setText("Korisničko ime je zauzeto!")
+                                }
+
+                                Log.i("REGISTRATION STATUS ", "" + ind!!)
                             }
 
-                            Log.i("REGISTRATION STATUS ", "" + ind!!)
                         }
 
-                    }
-
-                    override fun onFailure(call: Call<Int>, t: Throwable) {
-                        Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-                        lblRegistrationMes.setText("Greška sa konekcijom!")
-                        return
-                    }
-                })
+                        override fun onFailure(call: Call<Int>, t: Throwable) {
+                            Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                            lblRegistrationMes.setText("Greška sa konekcijom!")
+                            return
+                        }
+                    })
+                }
+                else
+                {
+                    lblRegistrationMes.setText("Neispravan e-mail!")
+                }
             }
             else
             {

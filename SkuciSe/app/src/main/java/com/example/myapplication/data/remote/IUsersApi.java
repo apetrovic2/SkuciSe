@@ -9,6 +9,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface IUsersApi
 {
@@ -26,4 +27,8 @@ public interface IUsersApi
     @POST("api/registration/Register")
     @FormUrlEncoded
     Call<Integer> Registration(@Field("username") String username, @Field("password") String password, @Field("name") String name, @Field("email") String email);
+
+    @PUT("api/registration/EditUser")
+    @FormUrlEncoded
+    Call<Integer> EditUser(@Field("id") Integer id, @Field("username") String username, @Field("password") String password, @Field("name") String name, @Field("email") String email);
 }

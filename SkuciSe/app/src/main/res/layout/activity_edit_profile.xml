@@ -19,16 +19,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnEditFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="176dp"
         android:text="Izmeni"
         android:textColor="@color/white"
         app:backgroundTint="#ae76c1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tbEditPassword" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilePicture"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextFirstLastName"
+        android:id="@+id/tbEditName"
         android:layout_width="282dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -52,10 +52,10 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/tbEditUsername" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/tbEditPassword"
         android:layout_width="282dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -66,10 +66,10 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/tbEditEmail" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/tbEditUsername"
         android:layout_width="282dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/tbEditEmail"
         android:layout_width="282dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
@@ -94,7 +94,7 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextFirstLastName" />
+        app:layout_constraintTop_toBottomOf="@+id/tbEditName" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageButton10"
@@ -102,9 +102,20 @@
         android:layout_height="39dp"
         android:layout_marginEnd="132dp"
         android:src="@drawable/ic_baseline_photo_camera_24"
-        app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
+        app:layout_constraintBottom_toTopOf="@+id/tbEditUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profilePicture"
         app:layout_constraintVertical_bias="0.841" />
+
+    <TextView
+        android:id="@+id/lblEditUser"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/btnEditFinal"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
