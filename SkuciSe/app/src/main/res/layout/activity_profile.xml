@@ -101,7 +101,7 @@
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+        app:srcCompat="@drawable/ic_baseline_account_circle_green_24" />
 
     <TextView
         android:id="@+id/textView6"
@@ -132,7 +132,7 @@
         android:layout_marginStart="81dp"
         android:layout_marginBottom="16dp"
         android:text="Profil"
-        android:textColor="@color/green"
+        android:textColor="@color/dark_green"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.187"
