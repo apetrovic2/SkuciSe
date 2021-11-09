@@ -4,8 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.remote.UsersApiManager
 import com.example.myapplication.data.repository.UsersResponse
@@ -14,6 +17,11 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Profile : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var photoAdapter: PhotoAdapter
+    private var dataList= mutableListOf<DataModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -29,6 +37,12 @@ class Profile : AppCompatActivity() {
             val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
+        val buttonEditProfile = findViewById<Button>(R.id.btnEditProfile)
+        buttonEditProfile.setOnClickListener {
+            val intent = Intent(this, EditProfile::class.java)
+            startActivity(intent)
+        }
+
 
         var lblUsername = findViewById(R.id.lblUsername) as TextView
         var lblName = findViewById(R.id.lblName) as TextView
@@ -57,6 +71,18 @@ class Profile : AppCompatActivity() {
                 return
             }
         })
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = GridLayoutManager(applicationContext,1)
+        photoAdapter = PhotoAdapter(applicationContext)
+        recyclerView.adapter = photoAdapter
+
+        dataList.add(DataModel("Title","Desc",R.drawable.photo1))
+        dataList.add(DataModel("Title","Desc",R.drawable.photo2))
+        dataList.add(DataModel("Title","Desc",R.drawable.photo3))
+
+
+        photoAdapter.setDataList(dataList)
+
         val actionbar = supportActionBar
         actionbar!!.title = ""
         actionbar.setDisplayHomeAsUpEnabled(true)
