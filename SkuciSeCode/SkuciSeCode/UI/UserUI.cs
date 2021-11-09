@@ -36,5 +36,14 @@ namespace SkuciSeCode.UI
             int ind = _iUserBL.Registration(username, password, name, email);
             return ind;
         }
+
+        public int EditUser(int id, String username, String password, String name, String email)
+        {
+            return _iUserBL.EditUser(id, username, password, name, email);
+        }
+        public int DeleteUser(int id)
+        {
+            return _iUserBL.DeleteUser(id);
+        }
     }
 }

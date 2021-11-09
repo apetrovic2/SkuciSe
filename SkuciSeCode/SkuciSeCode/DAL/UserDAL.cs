@@ -50,12 +50,51 @@ namespace SkuciSeCode.DAL
 
         public async Task<int> RegistrationAsync(User user)
         {
-            int ind = -1;
-            if(!_context.Users.Any(u => u.username.Equals(user.username)))
+            int ind = -3;
+            if(!_context.Users.Any(u => u.email.Equals(user.email)))
             {
-                await _context.Users.AddAsync(user);
+                if (!_context.Users.Any(u => u.username.Equals(user.username)))
+                {
+                    await _context.Users.AddAsync(user);
+                    ind = _context.SaveChanges();
+                }
+                else
+                {
+                    ind = -1;
+                }
+            }
+            
+            return ind;
+        }
+
+        public int EditUser(int id, String username, String password, String name, String email)
+        {
+            int ind = -1;
+            var users = _context.Users.ToList().Where(user => user.id == id);
+            User user = users.FirstOrDefault();
+            if (user != null)
+            {
+                user.username = username;
+                user.password = password;
+                user.name = name;
+                user.email = email;
                 ind = _context.SaveChanges();
             }
+            return ind;
+        }
+
+        public int DeleteUser(int id)
+        {
+            int ind = -1;
+            var users = _context.Users.ToList().Where(user => user.id == id);
+            User user = users.FirstOrDefault();
+
+            if (user != null)
+            {
+                _context.Users.Remove(user);
+                ind = _context.SaveChanges();
+            }
+
             return ind;
         }
 
