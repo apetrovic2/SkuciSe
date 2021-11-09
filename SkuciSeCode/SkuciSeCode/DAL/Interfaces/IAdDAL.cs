@@ -8,6 +8,10 @@ namespace SkuciSeCode.DAL.Interfaces
 {
     public interface IAdDAL
     {
+        List<Ad> GetAllAds(int category);
+        Ad GetAdById(int id);
+        int CloseAd(int id, String date_end);
+        int DeleteAd(int id);
         Task<int> AddNewAd(Ad ad);
     }
 }

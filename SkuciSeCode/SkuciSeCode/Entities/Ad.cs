@@ -13,17 +13,17 @@ namespace SkuciSeCode.Entities
         public int sell_rent { get; set; }
         public int number_of_rooms { get; set; }
         public String description { get; set; }
-        public double size { get; set; }
+        public float size { get; set; }
         public String date_start { get; set; }
         public String? date_end { get; set; }
-        public double price { get; set; }
+        public float price { get; set; }
         public String location { get; set; }
         public Ad()
         {
 
         }
 
-        public Ad(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, double size, String date_start, String? date_end, double price, String location)
+        public Ad(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, String date_start, String? date_end, float price, String location)
         {
             this.id = id;
             this.title = title;
@@ -38,7 +38,7 @@ namespace SkuciSeCode.Entities
             this.location = location;
         }
 
-        public Ad(string title, int flat_house, int sell_rent, int number_of_rooms, string description, double size, String date_start, String? date_end, double price, String location)
+        public Ad(string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, String date_start, String? date_end, float price, String location)
         {
             
             this.title = title;
