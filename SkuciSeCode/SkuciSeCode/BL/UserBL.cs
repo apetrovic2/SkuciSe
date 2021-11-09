@@ -47,5 +47,15 @@ namespace SkuciSeCode.BL.Interfaces
             return ind;
 
         }
+
+        public int EditUser(int id, String username, String password, String name, String email)
+        {
+            return _iUserDAL.EditUser(id, username, password, name, email);
+        }
+
+        public int DeleteUser(int id)
+        {
+            return _iUserDAL.DeleteUser(id);
+        }
     }
 }

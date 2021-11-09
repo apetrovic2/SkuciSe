@@ -37,6 +37,7 @@ namespace SkuciSeCode.Controllers
             //0 - neuspesno registrovan korisnik
             //-1 - korisnik sa datim username-om vec postoji
             //-2 - prazan string
+            //-3 - korisnik sa datim email-om vec postoji
             int ind = _iUserUI.Registration(username, password, name, email);
             return ind;
         }
@@ -60,6 +61,28 @@ namespace SkuciSeCode.Controllers
         {
             User user = _iUserUI.GetUserById(id);
             return Ok(user);
+        }
+
+        [HttpPut]
+        [Route("EditUser")]
+        public int EditUser([FromForm] int id, [FromForm] String username, [FromForm] String password, [FromForm] String name, [FromForm] String email)
+        {
+            //-1 ne postoji korisnik koji ima ovaj id
+            //0 neuspesno
+            //1 uspesno
+            int ind = _iUserUI.EditUser(id, username, password, name, email);
+            return ind;
+        }
+
+        [HttpDelete]
+        [Route("DeleteUser")]
+        public int DeleteUser([FromForm] int id)
+        {
+            //-1 ne postoji oglas koji ima ovaj id
+            //0 neuspesno
+            //1 uspesno
+            int ind = _iUserUI.DeleteUser(id);
+            return ind;
         }
     }
 }
