@@ -57,7 +57,9 @@ class Login : AppCompatActivity() {
                             Log.i("LOGIN STATUS ", "" + ind)
 
                             if (ind > 0) {
-                                AppData.setUserID(ind)
+                                //AppData.setUserID(ind)
+                                AppData(applicationContext)
+                                AppData.setToken(ind)
                                 lblLoginMes.setText("Uspešna prijava!")
                                 startActivity(intent)
                                 lblLoginMes.setText("")

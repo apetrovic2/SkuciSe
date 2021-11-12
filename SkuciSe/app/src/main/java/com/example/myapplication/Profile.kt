@@ -68,7 +68,7 @@ class Profile : AppCompatActivity() {
 
 
         val api = UsersApiManager.getUserApi()
-        val call = api.getUserById(AppData.getUserID())
+        val call = api.getUserById(AppData.getToken())
         call.enqueue(object : Callback<UsersResponse> {
             override fun onResponse(
                 call: Call<UsersResponse>,

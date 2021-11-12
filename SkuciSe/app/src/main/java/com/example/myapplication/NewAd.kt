@@ -93,7 +93,17 @@ class NewAd : AppCompatActivity() {
                     sizeText,
                     currentDate,
                     priceText,
-                    locationText
+                    locationText,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
                 )
                 call.enqueue(object : Callback<Int> {
                     override fun onResponse(

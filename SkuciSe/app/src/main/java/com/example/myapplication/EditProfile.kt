@@ -34,7 +34,7 @@ class EditProfile : AppCompatActivity() {
         var tbEditPassword = findViewById(R.id.tbEditPassword) as EditText
 
         val api = UsersApiManager.getUserApi()
-        val call = api.getUserById(AppData.getUserID())
+        val call = api.getUserById(AppData.getToken())
         call.enqueue(object : Callback<UsersResponse> {
             override fun onResponse(
                 call: Call<UsersResponse>,
@@ -70,7 +70,7 @@ class EditProfile : AppCompatActivity() {
 
             if(usernameText != "" && passwordText != "" && nameText != "" && emailText != "") {
                 val call1 = api.EditUser(
-                    AppData.getUserID(),
+                    AppData.getToken(),
                     usernameText,
                     passwordText,
                     nameText,

@@ -13,22 +13,22 @@ import retrofit2.http.PUT;
 
 public interface IUsersApi
 {
-    @GET("api/registration/GetAllUsers")
+    @GET("GetAllUsers")
     Call<List<UsersResponse>> getUsers();
     
-    @POST("api/registration/Login")
+    @POST("Login")
     @FormUrlEncoded
     Call<Integer> checkLogin(@Field("username") String username, @Field("password") String password);
 
-    @POST("api/registration/GetUserById")
+    @POST("GetUserById")
     @FormUrlEncoded
     Call<UsersResponse> getUserById(@Field("id") Integer id);
 
-    @POST("api/registration/Register")
+    @POST("Register")
     @FormUrlEncoded
     Call<Integer> Registration(@Field("username") String username, @Field("password") String password, @Field("name") String name, @Field("email") String email);
 
-    @PUT("api/registration/EditUser")
+    @PUT("EditUser")
     @FormUrlEncoded
     Call<Integer> EditUser(@Field("id") Integer id, @Field("username") String username, @Field("password") String password, @Field("name") String name, @Field("email") String email);
 }

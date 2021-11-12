@@ -13,7 +13,7 @@ public class UsersApiManager
         if(retrofit == null)
         {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:5000/")
+                    .baseUrl("http://10.0.2.2:5000/api/registration/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             api = retrofit.create(IUsersApi.class);
