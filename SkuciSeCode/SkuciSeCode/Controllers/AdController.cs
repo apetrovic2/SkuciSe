@@ -22,11 +22,11 @@ namespace SkuciSeCode.Controllers
 
         [HttpPost]
         [Route("AddNewAd")]
-        public int AddNewAd([FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] String description, [FromForm] float size, [FromForm] String date_start, [FromForm] float price, [FromForm] String location)
+        public int AddNewAd([FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] int number_of_rooms, [FromForm] String description, [FromForm] float size, [FromForm] String date_start, [FromForm] float price, [FromForm] String location, [FromForm] int floor, [FromForm] int internet, [FromForm] int ac, [FromForm] int intercom, [FromForm] int garage, [FromForm] int elevator, [FromForm] int balcony, [FromForm] int yard, [FromForm] int heating, [FromForm] int tv)
         {
             //1+ - uspesno dodat oglas
             //0 - neuspesno registrovan korisnik
-            int ind = _iAdUI.AddNewAd(title, flat_house, sell_rent, description, size, date_start, price, location);
+            int ind = _iAdUI.AddNewAd(title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
             return ind;
         }
 

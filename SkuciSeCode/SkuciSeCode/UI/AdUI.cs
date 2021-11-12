@@ -26,9 +26,9 @@ namespace SkuciSeCode.UI
             return _iAdBL.GetAllAds(category);
         }
 
-        public int AddNewAd(string title, int flat_house, int sell_rent, string description, float size, String date_start, float price, string location)
+        public int AddNewAd(string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv)
         {
-            return _iAdBL.AddNewAd(title, flat_house, sell_rent, description, size, date_start, price, location);
+            return _iAdBL.AddNewAd(title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
         }
 
         public int CloseAd(int id, String date_end)

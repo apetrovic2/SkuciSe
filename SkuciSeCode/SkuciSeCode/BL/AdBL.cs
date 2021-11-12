@@ -26,9 +26,9 @@ namespace SkuciSeCode.BL
             return _iAdDAL.GetAdById(id);
         }
 
-        public int AddNewAd(string title, int flat_house, int sell_rent, string description, float size, String date_start, float price, string location)
+        public int AddNewAd(string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv)
         {
-            Ad ad = new Ad(title, flat_house, sell_rent, 0, description, size, date_start, null, price, location);
+            Ad ad = new Ad(title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
             Task<int> ind =  _iAdDAL.AddNewAd(ad);
             int ind1 = ind.Result;
             return ind1;

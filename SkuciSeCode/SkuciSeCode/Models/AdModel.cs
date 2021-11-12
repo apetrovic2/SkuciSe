@@ -18,5 +18,15 @@ namespace SkuciSeCode.Models
         public String? date_end { get; set; }
         public float price { get; set; }
         public String location { get; set; }
+        public int floor { get; set; }
+        public int internet { get; set; }
+        public int ac { get; set; }
+        public int intercom { get; set; }
+        public int garage { get; set; }
+        public int elevator { get; set; }
+        public int balcony { get; set; }
+        public int yard { get; set; }
+        public int heating { get; set; }
+        public int tv { get; set; }
     }
 }

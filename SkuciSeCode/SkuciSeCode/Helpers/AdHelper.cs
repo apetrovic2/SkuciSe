@@ -24,9 +24,19 @@ namespace SkuciSeCode.Helpers
                 date_start = ad.date_start,
                 date_end = ad.date_end,
                 price = ad.price,
-                location = ad.location
-                
-            });
+                location = ad.location,
+                floor = ad.floor,
+                internet = ad.internet,
+                ac = ad.ac,
+                intercom = ad.intercom,
+                garage = ad.garage,
+                elevator = ad.elevator,
+                balcony = ad.balcony,
+                yard = ad.yard,
+                heating = ad.heating,
+                tv = ad.tv,
+
+        });
             return adModels;
         }
     }
