@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace SkuciSeCode.DAL
 {
@@ -35,13 +36,24 @@ namespace SkuciSeCode.DAL
             var user = users.FirstOrDefault();
             if(user != null)
             {
-                if (!user.password.Equals(password))
+                /*if (!user.password.Equals(password))
                 {
                     ind = -3;
                 }
                 else
                 {
                     ind = user.id;
+                }*/
+                var saltBytes = Convert.FromBase64String(user.salt);
+                var rfc = new Rfc2898DeriveBytes(password, saltBytes, 10000);
+                String passwordHash = Convert.ToBase64String(rfc.GetBytes(256));
+                if(user.hash == passwordHash)
+                {
+                    ind = user.id;
+                }
+                else
+                {
+                    ind = -3;
                 }
             }  
             return ind;
@@ -75,7 +87,7 @@ namespace SkuciSeCode.DAL
             if (user != null)
             {
                 user.username = username;
-                user.password = password;
+                //user.password = password;
                 user.name = name;
                 user.email = email;
                 ind = _context.SaveChanges();

@@ -9,7 +9,8 @@ namespace SkuciSeCode.Entities
     {
         public int id { get; set; }
         public String username { get; set; }
-        public String password { get; set; }
+        public String hash { get; set; }
+        public String salt { get; set; }
         public String name { get; set; }
         public String email { get; set; }
 
@@ -18,19 +19,21 @@ namespace SkuciSeCode.Entities
 
         }
 
-        public User(String username, String password, String name, String email)
+        public User(String username, String hash, String salt, String name, String email)
         {
             this.username = username;
-            this.password = password;
+            this.hash = hash;
+            this.salt = salt;
             this.name = name;
             this.email = email;
         }
 
-        public User(int id, String username, String password, String name, String email)
+        public User(int id, String username, String hash, String salt, String name, String email)
         {
             this.id = id;
             this.username = username;
-            this.password = password;
+            this.hash = hash;
+            this.salt = salt;
             this.name = name;
             this.email = email;
         }

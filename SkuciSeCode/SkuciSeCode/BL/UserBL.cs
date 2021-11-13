@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace SkuciSeCode.BL.Interfaces
 {
@@ -34,12 +35,24 @@ namespace SkuciSeCode.BL.Interfaces
             return ind;
         }
 
-        public int Registration(string username, string password, string name, string email)
+        public int Registration(string username, String password, string name, string email)
         {
             int ind = -2;
             if (username != "" && password != "" && name != "" && email != "")
             {
-                User user = new User(username, password, name, email);
+
+                var saltBytes = new byte[64];
+                var provider = new RNGCryptoServiceProvider();
+                provider.GetNonZeroBytes(saltBytes);
+
+                var salt = Convert.ToBase64String(saltBytes);
+
+                var rfc = new Rfc2898DeriveBytes(password, saltBytes, 10000);
+
+                var hash = Convert.ToBase64String(rfc.GetBytes(256));
+
+                User user = new User(username, hash, salt, name, email);
+
                 Task<int> ind1;
                 ind1 = _iUserDAL.RegistrationAsync(user);
                 ind = ind1.Result;

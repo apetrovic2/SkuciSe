@@ -31,7 +31,7 @@ namespace SkuciSeCode.Controllers
 
         [HttpPost]
         [Route("Register")]
-        public int Register([FromForm] String username, [FromForm] String password,[FromForm] String name,[FromForm] String email)
+        public int Register([FromForm] String username, [FromForm] String password, [FromForm] String name,[FromForm] String email)
         {
             //1+ - uspesno registrovan korisnik
             //0 - neuspesno registrovan korisnik

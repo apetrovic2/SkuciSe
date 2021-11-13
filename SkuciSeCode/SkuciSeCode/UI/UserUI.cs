@@ -31,7 +31,7 @@ namespace SkuciSeCode.UI
             return ind;
         }
 
-        public int Registration(string username, string password, string name, string email)
+        public int Registration(String username, String password, String name, String email)
         {
             int ind = _iUserBL.Registration(username, password, name, email);
             return ind;

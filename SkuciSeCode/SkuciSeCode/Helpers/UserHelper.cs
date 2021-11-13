@@ -15,7 +15,8 @@ namespace SkuciSeCode.Helpers
             {
                 id = user.id,
                 username = user.username,
-                password = user.password,
+                hash = user.hash,
+                salt = user.salt,
                 name = user.name,
                 email = user.email
             });
