@@ -7,7 +7,6 @@ import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
-import android.widget.PopupMenu
 import android.widget.TextView
 import com.example.myapplication.data.remote.UsersApiManager
 import retrofit2.Call
@@ -51,6 +50,7 @@ class Registration : AppCompatActivity() {
 
             if (usernameText != "" && passwordText != "" && nametext != "" && emailText != "") {
                 if(Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
+
                     val call = api.Registration(
                         "" + usernameText,
                         "" + passwordText,

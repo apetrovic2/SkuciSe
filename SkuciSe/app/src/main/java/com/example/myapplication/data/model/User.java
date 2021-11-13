@@ -5,13 +5,15 @@ public class User
     private final int id;
     private final String name;
     private final String username;
-    private final String password;
+    private final String hash;
+    private final String salt;
     private final String email;
-    public User(int id, String username, String password, String name, String email)
+    public User(int id, String username, String hash, String salt, String name, String email)
     {
         this.id = id;
         this.username = username;
-        this.password = password;
+        this.hash = hash;
+        this.salt = salt;
         this.name = name;
         this.email = email;
     }
@@ -28,9 +30,9 @@ public class User
         return username;
     }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getHash() { return hash; }
+
+    public String getSalt() { return salt; }
 
     public String getEmail() {
         return email;
