@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj": {}
+    "F:\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj": {
+    "F:\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
+        "projectUniqueName": "F:\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
         "projectName": "SkuciSeCode",
-        "projectPath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
-        "packagesPath": "C:\\Users\\PetarBojović\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\obj\\",
+        "projectPath": "F:\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
+        "packagesPath": "C:\\Users\\Ana\\.nuget\\packages\\",
+        "outputPath": "F:\\Projekat\\Tim9\\SkuciSeCode\\SkuciSeCode\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PetarBojović\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ana\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.Bcl.Async": {
               "target": "Package",
@@ -75,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.415\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
