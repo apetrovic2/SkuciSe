@@ -89,11 +89,21 @@ class EditProfile : AppCompatActivity() {
                             Log.i("CONNECTION1 ", "SUCCESSFUL")
                             val status = response.body()!!
                             Log.i("LOGIN STATUS ", "" + status)
-                            finish()
-                            overridePendingTransition(0, 0)
-                            startActivity(intent)
-                            overridePendingTransition(0, 0)
-                            lblEditUser.setText("Uspešna izmena!")
+                            if(status > 0) {
+                                finish()
+                                overridePendingTransition(0, 0)
+                                startActivity(intent)
+                                overridePendingTransition(0, 0)
+                                lblEditUser.setText("Uspešna izmena!")
+                            }
+                            if(status == 0)
+                            {
+                                lblEditUser.setText("Nijedan podatak nije izmenjen!")
+                            }
+                            if(status == -2)
+                            {
+                                lblEditUser.setText("Neispravna lozinka!")
+                            }
                         }
                     }
 

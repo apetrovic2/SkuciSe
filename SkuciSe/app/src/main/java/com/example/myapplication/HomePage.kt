@@ -97,6 +97,7 @@ class HomePage : AppCompatActivity() {
 
                     for(ad in ads)
                     {
+                        Log.i("AD:", "" + ad.garage)
                         dataList.add(DataModel("${ad.title}","${ad.description}",R.drawable.photo1))
                     }
                     photoAdapter.setDataList(dataList)

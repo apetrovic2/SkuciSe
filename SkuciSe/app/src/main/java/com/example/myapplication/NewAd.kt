@@ -51,12 +51,39 @@ class NewAd : AppCompatActivity() {
             val tbPrice = findViewById(R.id.tbPrice) as EditText
             val tbSize = findViewById(R.id.tbSize) as EditText
             val tbDescription = findViewById(R.id.tbDescription) as EditText
+            val tbFloor = findViewById(R.id.tbFloor) as EditText
+
+            val cbHeating = findViewById(R.id.cbHeating) as CheckBox
+            val cbInternet = findViewById(R.id.cbInternet) as CheckBox
+            val cbCableTv = findViewById(R.id.cbCableTv) as CheckBox
+            val cbSatelliteTv = findViewById(R.id.cbSatelliteTv) as CheckBox
+            val cbIntercom = findViewById(R.id.cbIntercom) as CheckBox
+            val cbAc = findViewById(R.id.cbAc) as CheckBox
+
+            val cbGarage = findViewById(R.id.cbGarage) as CheckBox
+            val cbElevator = findViewById(R.id.cbElevator) as CheckBox
+            val cbBalcony = findViewById(R.id.cbBalcony) as CheckBox
+            val cbYard = findViewById(R.id.cbYard) as CheckBox
+
+            var priceText = 0.0
+            var sizeText = 0.0
+            var floorText = 0
 
             var titleText = tbTitle.text.toString()
             var locationText = tbLocation.text.toString()
-            var priceText = tbPrice.text.toString().toDouble()
-            var sizeText = tbSize.text.toString().toDouble()
+            if(tbPrice.text.toString() != "")
+            {
+                priceText = tbPrice.text.toString().toDouble()
+            }
+            if(tbSize.text.toString() != "")
+            {
+                sizeText = tbSize.text.toString().toDouble()
+            }
             var descriptionText = tbDescription.text.toString()
+            if(tbFloor.text.toString() != "")
+            {
+                floorText = tbFloor.text.toString().toInt()
+            }
 
             if(titleText != "" && locationText != "" && priceText != 0.0 && sizeText != 0.0 && descriptionText != "") {
                 //0 - house
@@ -78,7 +105,26 @@ class NewAd : AppCompatActivity() {
                 val dateFormat = SimpleDateFormat("dd-MM-yyyy")
                 val currentDate = dateFormat.format(Date())
 
+                var heating = 0
+                var internet = 0
+                var tv = 0
+                var intercom = 0
+                var ac = 0
+                var garage = 0
+                var elevator = 0
+                var balcony = 0
+                var yard = 0
 
+                if(cbHeating.isChecked){heating = 1}
+                if(cbInternet.isChecked){internet = 1}
+                if(cbCableTv.isChecked){tv = 1}
+                if(cbSatelliteTv.isChecked){tv = 2}
+                if(cbIntercom.isChecked){intercom = 1}
+                if(cbAc.isChecked){ac = 1}
+                if(cbGarage.isChecked){garage = 1}
+                if(cbElevator.isChecked){elevator = 1}
+                if(cbBalcony.isChecked){balcony = 1}
+                if(cbYard.isChecked){yard = 1}
 
 
                 Log.i("ADD AD", "$titleText $priceText $sizeText $currentDate")
@@ -94,16 +140,16 @@ class NewAd : AppCompatActivity() {
                     currentDate,
                     priceText,
                     locationText,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1
+                    floorText,
+                    internet,
+                    ac,
+                    intercom,
+                    garage,
+                    elevator,
+                    balcony,
+                    yard,
+                    heating,
+                    tv
                 )
                 call.enqueue(object : Callback<Int> {
                     override fun onResponse(
