@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,14 +18,15 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        var image: ImageView
-        var title: TextView
-        var desc : TextView
+        var image: ImageView = itemView.findViewById(R.id.image)
+        var title: TextView = itemView.findViewById(R.id.title)
+        var desc : TextView = itemView.findViewById(R.id.desc)
 
-        init{
-            image = itemView.findViewById(R.id.image)
-            title = itemView.findViewById(R.id.title)
-            desc = itemView.findViewById(R.id.desc)
+        init {
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, AdInfo::class.java)
+                itemView.context.startActivity(intent)
+            }
         }
 
     }
