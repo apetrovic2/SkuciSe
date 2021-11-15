@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using SkuciSeCode.Helpers;
 
 namespace SkuciSeCode.BL.Interfaces
 {
@@ -40,16 +41,10 @@ namespace SkuciSeCode.BL.Interfaces
             int ind = -2;
             if (username != "" && password != "" && name != "" && email != "")
             {
-
                 var saltBytes = new byte[64];
-                var provider = new RNGCryptoServiceProvider();
-                provider.GetNonZeroBytes(saltBytes);
+                var salt = PasswordHelper.getNewSalt(ref saltBytes);
 
-                var salt = Convert.ToBase64String(saltBytes);
-
-                var rfc = new Rfc2898DeriveBytes(password, saltBytes, 10000);
-
-                var hash = Convert.ToBase64String(rfc.GetBytes(256));
+                var hash = PasswordHelper.getPasswordHash(password, saltBytes);
 
                 User user = new User(username, hash, salt, name, email);
 
