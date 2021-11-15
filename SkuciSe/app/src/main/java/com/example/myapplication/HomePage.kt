@@ -68,7 +68,7 @@ class HomePage : AppCompatActivity() {
 //        dataList.add(DataModel("Title","Desc",R.drawable.photo6))
 //        dataList.add(DataModel("Title","Desc",R.drawable.photo7))
 //        dataList.add(DataModel("Title","Desc",R.drawable.photo8))
-
+//
 //        photoAdapter.setDataList(dataList)
 
         val actionbar = supportActionBar
