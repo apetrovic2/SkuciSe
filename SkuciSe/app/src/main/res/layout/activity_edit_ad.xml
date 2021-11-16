@@ -92,17 +92,16 @@
         app:layout_constraintTop_toBottomOf="@+id/rgSellRent">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbHouse"
             android:layout_width="70dp"
             android:layout_height="30dp"
             android:layout_marginEnd="50dp"
-            android:checked="true"
             android:text="Kuća" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbFlat"
             android:layout_width="71dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Stan" />
     </RadioGroup>
 
@@ -118,15 +117,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tbSize">
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rbSell"
             android:layout_width="90dp"
             android:layout_height="30dp"
             android:layout_marginEnd="50dp"
-            android:checked="true"
             android:text="Prodaja" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rbRent"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="Izdavanje" />
@@ -298,7 +296,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/btnAddNewAd"
+        android:id="@+id/btnEditAdFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

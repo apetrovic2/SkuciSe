@@ -11,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface IAdApi
@@ -24,5 +25,10 @@ public interface IAdApi
 
     @GET("GetAdById")
     Call<AdResponse> getAdById(@Query("id") Integer id);
+
+    @PUT("EditAd")
+    @FormUrlEncoded
+    Call<Integer> editAd(@Field("id") Integer id, @Field("title") String title, @Field("flat_house") Integer flat_house, @Field("sell_rent") Integer sell_rent, @Field("description") String description, @Field("size") Double size, @Field("date_start") String date_start, @Field("price") Double price, @Field("location") String location, @Field("floor") Integer floor, @Field("internet") Integer internet, @Field("ac") Integer ac, @Field("intercom") Integer intercom, @Field("garage") Integer garage, @Field("elevator") Integer elevator, @Field("balcony") Integer balcony, @Field("yard") Integer yard, @Field("heating") Integer heating, @Field("tv") Integer tv);
+
 
 }

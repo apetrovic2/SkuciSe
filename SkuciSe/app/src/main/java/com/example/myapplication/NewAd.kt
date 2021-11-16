@@ -97,15 +97,15 @@ class NewAd : AppCompatActivity() {
             }
 
             if(titleText != "" && locationText != "" && priceText != 0.0 && sizeText != 0.0 && descriptionText != "") {
-                //0 - house
-                //1 - flat
+                //0 - flat
+                //1 - house
                 var houseFlatNum = 0
 
-                //0 - buy
-                //1 - sell
+                //0 - sell
+                //1 - rent
                 var sellRentNum = 0
 
-                if(rbHouseFlat.text == "Stan")
+                if(rbHouseFlat.text == "Kuća")
                 {
                     houseFlatNum = 1
                 }

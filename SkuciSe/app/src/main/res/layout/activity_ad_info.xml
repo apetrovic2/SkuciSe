@@ -45,13 +45,13 @@
 
     <TextView
         android:id="@+id/tbOther"
-        android:layout_width="371dp"
-        android:layout_height="37dp"
+        android:layout_width="370dp"
+        android:layout_height="41dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
-        android:gravity="center"
-        android:text="Ostalo"
+        android:gravity="left|center_vertical"
+        android:text="Ostalo:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbEquipment" />
 
@@ -62,7 +62,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="center"
-        android:text="Sprat"
+        android:text="Sprat:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.784"
         app:layout_constraintStart_toEndOf="@+id/tbSize"
@@ -74,8 +74,10 @@
         android:layout_height="37dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="120dp"
+        android:textSize="18sp"
         android:ems="10"
         android:gravity="center"
+        android:fontFamily="@font/josefinsans_bold"
         android:text="Naslov oglasa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
@@ -88,7 +90,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="center"
-        android:text="Kvadratura"
+        android:text="Kvadratura:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbLocation" />
 
@@ -109,11 +111,11 @@
         android:id="@+id/tbEquipment"
         android:layout_width="371dp"
         android:layout_height="37dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
-        android:gravity="center"
-        android:text="Oprema"
+        android:gravity="left|center_vertical"
+        android:text="Oprema:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbDescription" />
 
@@ -136,8 +138,8 @@
         android:layout_height="63dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:gravity="center"
-        android:text="Opis"
+        android:gravity="left|center_vertical"
+        android:text="Opis:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.725"
         app:layout_constraintStart_toStartOf="parent"
