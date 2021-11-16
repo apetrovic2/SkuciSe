@@ -43,6 +43,11 @@ class AdInfo : AppCompatActivity() {
         var tbPrice = findViewById(R.id.tbPrice) as TextView
         var tbSize = findViewById(R.id.tbSize) as TextView
 
+        val buttonEditAd = findViewById<Button>(R.id.btnEditAd)
+        buttonEditAd.setOnClickListener {
+            val intent = Intent(this, EditAd::class.java)
+            startActivity(intent)
+        }
 
 //        val api = AdApiManager.getAdApi()
 //        val call = api.getAdById(id)
