@@ -19,50 +19,153 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="206dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/photo1" />
+
+    <TextView
+        android:id="@+id/tbTitle"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="120dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Naslov oglasa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/tbOther"
+        android:layout_width="371dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Ostalo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbEquipment" />
+
+    <TextView
+        android:id="@+id/tbPrice"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Cena"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintStart_toEndOf="@+id/tbLocation"
+        app:layout_constraintTop_toBottomOf="@+id/tbTitle" />
+
     <TextView
         android:id="@+id/tbLocation"
-        android:layout_width="200sp"
-        android:layout_height="40sp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="42dp"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="center"
         android:text="Lokacija"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/tbTitle" />
 
     <TextView
-        android:id="@+id/tbPrice"
-        android:layout_width="200sp"
-        android:layout_height="40sp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/tbSize"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="center"
-        android:text="Cena"
+        android:text="Kvadratura"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbLocation" />
 
     <TextView
-        android:id="@+id/tbSize"
-        android:layout_width="200sp"
-        android:layout_height="40sp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/tbDescription"
+        android:layout_width="371dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
-        android:text="Kvadratura"
         android:gravity="center"
+        android:text="Opis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbFloor" />
+
+    <TextView
+        android:id="@+id/tbEquipment"
+        android:layout_width="371dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Oprema"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbDescription" />
+
+    <Button
+        android:id="@+id/btnEditAd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="132dp"
+        android:text="Izmeni oglas"
+        android:textColor="@color/white"
+        app:backgroundTint="#ae76c1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbOther"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <TextView
+        android:id="@+id/tbFloor"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Sprat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintStart_toEndOf="@+id/tbSize"
         app:layout_constraintTop_toBottomOf="@+id/tbPrice" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="248dp"
-        android:layout_height="204dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="80dp"
+    <TextView
+        android:id="@+id/tbFlatHouse"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Stan/Kuca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/tbSellRent"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Izdavanje/Prodaja"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:srcCompat="@drawable/photo1" />
+        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintStart_toEndOf="@+id/tbFlatHouse"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
