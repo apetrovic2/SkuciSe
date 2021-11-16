@@ -1,6 +1,7 @@
 package com.example.myapplication.data.remote;
 
 import com.example.myapplication.data.model.Ad;
+import com.example.myapplication.data.repository.AdResponse;
 
 import java.util.Date;
 import java.util.List;
@@ -22,6 +23,6 @@ public interface IAdApi
     Call<List<Ad>> getAllAds(@Query("category") Integer category);
 
     @GET("GetAdById")
-    Call<Ad> getAdById(@Query("id") Integer id);
+    Call<AdResponse> getAdById(@Query("id") Integer id);
 
 }

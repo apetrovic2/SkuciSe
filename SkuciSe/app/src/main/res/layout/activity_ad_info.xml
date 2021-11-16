@@ -18,53 +18,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="349dp"
-        android:layout_height="252dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="32dp"
-        android:nestedScrollingEnabled="false"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:itemCount="1"
-        tools:listitem="@layout/photo_layout" />
 
-    <EditText
+    <TextView
         android:id="@+id/tbLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="200sp"
+        android:layout_height="40sp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="42dp"
         android:ems="10"
-        android:hint="Lokacija"
-        android:inputType="textPersonName"
+        android:gravity="center"
+        android:text="Lokacija"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <EditText
+    <TextView
         android:id="@+id/tbPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="200sp"
+        android:layout_height="40sp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Cena"
-        android:inputType="numberDecimal"
+        android:gravity="center"
+        android:text="Cena"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbLocation" />
 
-    <EditText
+    <TextView
         android:id="@+id/tbSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="200sp"
+        android:layout_height="40sp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Kvadratura"
-        android:inputType="numberDecimal"
+        android:text="Kvadratura"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbPrice" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="248dp"
+        android:layout_height="204dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/photo1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
