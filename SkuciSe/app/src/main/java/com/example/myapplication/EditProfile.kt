@@ -44,6 +44,12 @@ class EditProfile : AppCompatActivity() {
         var tbEditEmail = findViewById(R.id.tbEditEmail) as EditText
         var tbEditPassword = findViewById(R.id.tbEditPassword) as EditText
 
+        val buttonPassword = findViewById<ImageButton>(R.id.imgBtnPassword)
+        buttonPassword.setOnClickListener {
+            val intent = Intent(this, Password::class.java)
+            startActivity(intent)
+        }
+
         val api = UsersApiManager.getUserApi()
         val call = api.getUserById(AppData.getToken())
         call.enqueue(object : Callback<UsersResponse> {

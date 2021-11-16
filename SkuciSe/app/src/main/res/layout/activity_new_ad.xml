@@ -248,12 +248,14 @@
         android:id="@+id/btnAddNewAd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
+        android:layout_marginStart="132dp"
         android:text="Dodaj oglas"
         android:textColor="@color/white"
         app:backgroundTint="#83ad89"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblAddNewAdMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/lblAddNewAdMessage"
+        app:layout_constraintVertical_bias="0.132" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
