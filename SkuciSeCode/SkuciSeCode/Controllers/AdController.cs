@@ -25,8 +25,18 @@ namespace SkuciSeCode.Controllers
         public int AddNewAd([FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] int number_of_rooms, [FromForm] String description, [FromForm] float size, [FromForm] String date_start, [FromForm] float price, [FromForm] String location, [FromForm] int floor, [FromForm] int internet, [FromForm] int ac, [FromForm] int intercom, [FromForm] int garage, [FromForm] int elevator, [FromForm] int balcony, [FromForm] int yard, [FromForm] int heating, [FromForm] int tv)
         {
             //1+ - uspesno dodat oglas
-            //0 - neuspesno registrovan korisnik
+            //0 - neuspesno dodat oglas
             int ind = _iAdUI.AddNewAd(title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
+            return ind;
+        }
+
+        [HttpPut]
+        [Route("EditAd")]
+        public int EditAd([FromForm] int id, [FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] int number_of_rooms, [FromForm] String description, [FromForm] float size, [FromForm] String date_start, [FromForm] float price, [FromForm] String location, [FromForm] int floor, [FromForm] int internet, [FromForm] int ac, [FromForm] int intercom, [FromForm] int garage, [FromForm] int elevator, [FromForm] int balcony, [FromForm] int yard, [FromForm] int heating, [FromForm] int tv)
+        {
+            //1+ - uspesno editovan oglas
+            //0 - nijedna vrednost nije promenjena
+            int ind = _iAdUI.EditAd(id, title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
             return ind;
         }
 
@@ -41,7 +51,7 @@ namespace SkuciSeCode.Controllers
 
         [HttpGet]
         [Route("GetAdById")]
-        public async Task<IActionResult> GetAdById([FromForm] int id)
+        public async Task<IActionResult> GetAdById([FromQuery] int id)
         {
             Ad ad = _iAdUI.GetAdById(id);
             return Ok(ad);

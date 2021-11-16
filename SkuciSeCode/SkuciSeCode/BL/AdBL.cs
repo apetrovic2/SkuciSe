@@ -43,5 +43,11 @@ namespace SkuciSeCode.BL
         {
             return _iAdDAL.DeleteAd(id);
         }
+
+        public int EditAd(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv)
+        {
+            Ad ad = new Ad(id, title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
+            return _iAdDAL.EditAd(ad);
+        }
     }
 }

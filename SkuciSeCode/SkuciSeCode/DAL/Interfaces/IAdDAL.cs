@@ -13,5 +13,6 @@ namespace SkuciSeCode.DAL.Interfaces
         int CloseAd(int id, String date_end);
         int DeleteAd(int id);
         Task<int> AddNewAd(Ad ad);
+        int EditAd(Ad ad);
     }
 }

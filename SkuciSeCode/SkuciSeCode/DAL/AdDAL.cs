@@ -52,7 +52,7 @@ namespace SkuciSeCode.DAL
             int ind = -1;
             var ads = _context.Ads.ToList().Where(ad => ad.id == id);
             Ad ad = ads.FirstOrDefault();
-            if(ad != null)
+            if (ad != null)
             {
                 ad.date_end = date_end;
                 ind = _context.SaveChanges();
@@ -71,7 +71,38 @@ namespace SkuciSeCode.DAL
                 _context.Ads.Remove(ad);
                 ind = _context.SaveChanges();
             }
-            
+
+            return ind;
+        }
+
+        public int EditAd(Ad ad)
+        {
+            int ind = -1;
+            var ads = _context.Ads.ToList().Where(a => a.id == ad.id);
+            Ad existingAd = ads.FirstOrDefault();
+            if (existingAd != null)
+            {
+                existingAd.title = ad.title;
+                existingAd.location = ad.location;
+                existingAd.price = ad.price;
+                existingAd.size = ad.size;
+                existingAd.floor = ad.floor;
+                existingAd.description = ad.description;
+                existingAd.elevator = ad.elevator;
+                existingAd.flat_house = ad.flat_house;
+                existingAd.sell_rent = ad.sell_rent;
+                existingAd.yard = ad.yard;
+                existingAd.tv = ad.tv;
+                existingAd.garage = ad.garage;
+                existingAd.ac = ad.ac;
+                existingAd.balcony = ad.balcony;
+                existingAd.heating = ad.heating;
+                existingAd.internet = ad.internet;
+                existingAd.intercom = ad.intercom;
+
+                ind = _context.SaveChanges();
+
+            }
             return ind;
         }
     }
