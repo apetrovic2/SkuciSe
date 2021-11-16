@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.model.Ad
 import com.example.myapplication.data.remote.AdApiManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -54,7 +55,7 @@ class HomePage : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(applicationContext,2)
-        photoAdapter = PhotoAdapter(applicationContext)
+        photoAdapter = PhotoAdapter(this)
         recyclerView.adapter = photoAdapter
 
 
@@ -79,6 +80,15 @@ class HomePage : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        if(AppData.getToken() == 0)
+        {
+//            val intent = Intent(this, Login::class.java)
+//            startActivity(intent)
+            return
+        }
+
+
         val api = AdApiManager.getAdApi()
         val call = api.getAllAds(
             -1
@@ -94,14 +104,13 @@ class HomePage : AppCompatActivity() {
                 } else {
                     Log.i("CONNECTION1 ", "SUCCESSFUL")
                     val ads = response.body()!!
+                    dataList= mutableListOf<DataModel>()
 
                     for(ad in ads)
                     {
-                        Log.i("AD:", "" + ad.garage)
-                        dataList.add(DataModel("${ad.title}","${ad.description}",R.drawable.photo1))
+                        dataList.add(DataModel("${ad.title}","${ad.description}",R.drawable.photo1, ad.id))
                     }
                     photoAdapter.setDataList(dataList)
-                    Log.i("HOME PAGE", "" + 1)
 
                 }
             }

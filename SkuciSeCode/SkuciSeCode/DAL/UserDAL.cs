@@ -76,13 +76,41 @@ namespace SkuciSeCode.DAL
             User user = users.FirstOrDefault();
             if (user != null)
             {
+                String userUsername = user.username;
+                String userEmail = user.email;
+
                 if (PasswordHelper.isValidPassword(user, password))
                 {
 
-                    user.username = username;
-                    user.name = name;
-                    user.email = email;
-                    ind = _context.SaveChanges();
+                    var usersByUsername = _context.Users.ToList().Where(user => user.username == username);
+                    var userByUsername = usersByUsername.FirstOrDefault();
+
+                    if(userByUsername == null || (userByUsername != null && userByUsername.username == userUsername))
+                    {
+
+                        var usersByEmail = _context.Users.ToList().Where(user => user.email == email);
+                        var userByEmail = usersByEmail.FirstOrDefault();
+
+                        if(userByEmail == null || (userByEmail != null && userByEmail.email == userEmail))
+                        {
+                            user.username = username;
+                            user.name = name;
+                            user.email = email;
+                            ind = _context.SaveChanges();
+                        }
+                        else
+                        {
+                            ind = -4;
+                        }
+                        
+
+                    }
+                    else
+                    {
+                        ind = -3;
+                    }
+
+                    
                 }
                 else
                 {

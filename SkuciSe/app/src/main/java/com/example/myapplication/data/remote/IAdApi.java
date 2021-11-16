@@ -21,4 +21,7 @@ public interface IAdApi
     @GET("GetAllAds")
     Call<List<Ad>> getAllAds(@Query("category") Integer category);
 
+    @GET("GetAdById")
+    Call<Ad> getAdById(@Query("id") Integer id);
+
 }

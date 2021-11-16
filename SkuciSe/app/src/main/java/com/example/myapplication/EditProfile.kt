@@ -17,6 +17,16 @@ import retrofit2.Response
 
 class EditProfile : AppCompatActivity() {
 
+    override fun onStart() {
+        super.onStart()
+        if(AppData.getToken() == 0)
+        {
+//            val intent = Intent(this, Login::class.java)
+//            startActivity(intent)
+            return
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
@@ -24,6 +34,7 @@ class EditProfile : AppCompatActivity() {
         actionbar!!.title = ""
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
+
 
         var lblEditUser = findViewById(R.id.lblEditUser) as TextView
         lblEditUser.setText("")
@@ -47,10 +58,10 @@ class EditProfile : AppCompatActivity() {
                 } else {
                     Log.i("CONNECTION1 ", "SUCCESSFUL")
                     val user = response.body()!!
-                    tbEditUsername.setText(user.username);
-                    tbEditName.setText(user.name);
-                    tbEditEmail.setText(user.email);
-                    tbEditPassword.setText(user.password);
+                    tbEditUsername.setText(user.username)
+                    tbEditName.setText(user.name)
+                    tbEditEmail.setText(user.email)
+                    tbEditPassword.setText("")
                     Log.i("LOGIN STATUS ", "" + user.username)
                 }
             }
@@ -88,7 +99,7 @@ class EditProfile : AppCompatActivity() {
                         } else {
                             Log.i("CONNECTION1 ", "SUCCESSFUL")
                             val status = response.body()!!
-                            Log.i("LOGIN STATUS ", "" + status)
+                            Log.i("EDIT STATUS ", "" + status)
                             if(status > 0) {
                                 finish()
                                 overridePendingTransition(0, 0)
@@ -103,6 +114,14 @@ class EditProfile : AppCompatActivity() {
                             if(status == -2)
                             {
                                 lblEditUser.setText("Neispravna lozinka!")
+                            }
+                            if(status == -3)
+                            {
+                                lblEditUser.setText("Korisničko ime je zauzeto!")
+                            }
+                            if(status == -4)
+                            {
+                                lblEditUser.setText("Email je zauzet!")
                             }
                         }
                     }

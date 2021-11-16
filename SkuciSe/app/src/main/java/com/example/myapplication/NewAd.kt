@@ -17,6 +17,17 @@ import java.time.LocalDate
 import java.util.*
 
 class NewAd : AppCompatActivity() {
+
+    override fun onStart() {
+        super.onStart()
+        if(AppData.getToken() == 0)
+        {
+//            val intent = Intent(this, Login::class.java)
+//            startActivity(intent)
+            return
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_ad)

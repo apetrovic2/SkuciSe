@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.model.Ad
 import com.example.myapplication.data.remote.AdApiManager
 import retrofit2.Call
@@ -68,6 +69,13 @@ class RentPage : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        if(AppData.getToken() == 0)
+        {
+//            val intent = Intent(this, Login::class.java)
+//            startActivity(intent)
+            return
+        }
+
         val api = AdApiManager.getAdApi()
         val call = api.getAllAds(
             1
@@ -86,7 +94,7 @@ class RentPage : AppCompatActivity() {
 
                     for(ad in ads)
                     {
-                        dataList.add(DataModel("${ad.title}","${ad.description}",R.drawable.photo1))
+                        dataList.add(DataModel("${ad.title}","${ad.description}",R.drawable.photo1, ad.id))
                     }
                     photoAdapter.setDataList(dataList)
                     Log.i("HOME PAGE", "" + 1)

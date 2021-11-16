@@ -69,6 +69,8 @@ namespace SkuciSeCode.Controllers
         {
             //-1 ne postoji korisnik koji ima ovaj id
             //-2 netacan password
+            //-3 zauzet username
+            //-4 zauzet email
             //0 neuspesno
             //1 uspesno
             int ind = _iUserUI.EditUser(id, username, password, name, email);

@@ -2,11 +2,13 @@ package com.example.myapplication
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
@@ -22,12 +24,12 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
         var title: TextView = itemView.findViewById(R.id.title)
         var desc : TextView = itemView.findViewById(R.id.desc)
 
-        init {
-            itemView.setOnClickListener {
-                val intent = Intent(itemView.context, AdInfo::class.java)
-                itemView.context.startActivity(intent)
-            }
-        }
+//        init {
+//            itemView.setOnClickListener {
+//                val intent = Intent(itemView.context, AdInfo::class.java)
+//                itemView.context.startActivity(intent)
+//            }
+//        }
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoAdapter.ViewHolder {
@@ -40,6 +42,13 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
         holder.title.text = data.title
         holder.desc.text = data.desc
         holder.image.setImageResource(data.image)
+        holder.image.setOnClickListener(){
+            Log.i("AD ID2", "" + data.id)
+            //val adInfoClass = AdInfo(data.id)
+            val intent = Intent(context, AdInfo::class.java)
+            intent.putExtra("id", data.id)
+            context.startActivity(intent)
+        }
     }
 
 }

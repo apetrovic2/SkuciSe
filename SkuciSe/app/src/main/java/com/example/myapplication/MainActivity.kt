@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        AppData(applicationContext)
         if(AppData.getToken() > 0)
         {
             val intent = Intent(this, HomePage::class.java)

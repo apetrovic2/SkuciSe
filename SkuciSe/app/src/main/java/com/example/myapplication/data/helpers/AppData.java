@@ -13,9 +13,12 @@ public class AppData
 
     public AppData(Context _context)
     {
-        this._context = _context;
-        pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
-        editor = pref.edit();
+        if(_context == null || pref == null || editor == null)
+        {
+            this._context = _context;
+            pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
+            editor = pref.edit();
+        }
     }
     public AppData()
     {
@@ -29,6 +32,10 @@ public class AppData
 
     public static Integer getToken()
     {
-        return pref.getInt("Token", 0);
+        if(pref != null)
+        {
+            return pref.getInt("Token", 0);
+        }
+        return 0;
     }
 }

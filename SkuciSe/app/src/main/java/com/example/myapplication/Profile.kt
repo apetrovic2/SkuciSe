@@ -26,6 +26,14 @@ class Profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        var btnLogout = findViewById(R.id.btnLogout) as Button
+        btnLogout.setOnClickListener()
+        {
+            AppData.setToken(0);
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
+
         val buttonNewAd = findViewById<ImageButton>(R.id.imageBtnNewAd)
         buttonNewAd.setOnClickListener {
             val intent = Intent(this, NewAd::class.java)
@@ -48,9 +56,9 @@ class Profile : AppCompatActivity() {
         photoAdapter = PhotoAdapter(applicationContext)
         recyclerView.adapter = photoAdapter
 
-        dataList.add(DataModel("Title","Desc",R.drawable.photo1))
-        dataList.add(DataModel("Title","Desc",R.drawable.photo2))
-        dataList.add(DataModel("Title","Desc",R.drawable.photo3))
+        dataList.add(DataModel("Title","Desc",R.drawable.photo1, 1))
+        dataList.add(DataModel("Title","Desc",R.drawable.photo2, 2))
+        dataList.add(DataModel("Title","Desc",R.drawable.photo3, 3))
 
 
         photoAdapter.setDataList(dataList)
@@ -63,6 +71,15 @@ class Profile : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        if(AppData.getToken() == 0)
+        {
+            finish()
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            return
+        }
+
         var lblUsername = findViewById(R.id.lblUsername) as TextView
         var lblName = findViewById(R.id.lblName) as TextView
 
