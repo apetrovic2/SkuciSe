@@ -99,11 +99,19 @@ namespace SkuciSeCode.DAL
                 existingAd.heating = ad.heating;
                 existingAd.internet = ad.internet;
                 existingAd.intercom = ad.intercom;
+                existingAd.user_id = ad.user_id;
 
                 ind = _context.SaveChanges();
 
             }
             return ind;
+        }
+
+        public List<Ad> GetAdsByUserId(int user_id)
+        {
+            var allUserAds = _context.Ads.ToList().Where(ad => ad.date_end == null && ad.user_id == user_id);
+            var userAds = allUserAds.ToList();
+            return userAds;
         }
     }
 }

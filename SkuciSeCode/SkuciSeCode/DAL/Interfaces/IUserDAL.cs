@@ -15,5 +15,6 @@ namespace SkuciSeCode.DAL.Interfaces
         int EditUser(int id, String username, String password, String name, String email);
         int DeleteUser(int id);
         User GetUserById(int id);
+        int ChangePassword(int id, String hash, String salt);
     }
 }

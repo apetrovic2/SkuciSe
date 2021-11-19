@@ -14,5 +14,6 @@ namespace SkuciSeCode.UI.Interfaces
         int Login(String username, String password);
         int DeleteUser(int id);
         User GetUserById(int id);
+        int ChangePassword(int id, String password);
     }
 }

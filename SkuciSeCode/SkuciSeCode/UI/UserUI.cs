@@ -45,5 +45,10 @@ namespace SkuciSeCode.UI
         {
             return _iUserBL.DeleteUser(id);
         }
+
+        public int ChangePassword(int id, string password)
+        {
+            return _iUserBL.ChangePassword(id, password);
+        }
     }
 }

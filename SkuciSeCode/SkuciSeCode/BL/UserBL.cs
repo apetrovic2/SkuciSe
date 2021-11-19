@@ -65,5 +65,15 @@ namespace SkuciSeCode.BL.Interfaces
         {
             return _iUserDAL.DeleteUser(id);
         }
+
+        public int ChangePassword(int id, string password)
+        {
+            var saltBytes = new byte[64];
+            var salt = PasswordHelper.getNewSalt(ref saltBytes);
+
+            var hash = PasswordHelper.getPasswordHash(password, saltBytes);
+
+            return _iUserDAL.ChangePassword(id, hash, salt);
+        }
     }
 }

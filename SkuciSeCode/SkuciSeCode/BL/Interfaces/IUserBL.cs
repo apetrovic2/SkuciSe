@@ -14,5 +14,6 @@ namespace SkuciSeCode.BL.Interfaces
         int EditUser(int id, String username, String password, String name, String email);
         int DeleteUser(int id);
         User GetUserById(int id);
+        int ChangePassword(int id, String password);
     }
 }

@@ -35,6 +35,7 @@ namespace SkuciSeCode.Helpers
                 yard = ad.yard,
                 heating = ad.heating,
                 tv = ad.tv,
+                user_id = ad.user_id,
 
         });
             return adModels;

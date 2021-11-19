@@ -22,21 +22,21 @@ namespace SkuciSeCode.Controllers
 
         [HttpPost]
         [Route("AddNewAd")]
-        public int AddNewAd([FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] int number_of_rooms, [FromForm] String description, [FromForm] float size, [FromForm] String date_start, [FromForm] float price, [FromForm] String location, [FromForm] int floor, [FromForm] int internet, [FromForm] int ac, [FromForm] int intercom, [FromForm] int garage, [FromForm] int elevator, [FromForm] int balcony, [FromForm] int yard, [FromForm] int heating, [FromForm] int tv)
+        public int AddNewAd([FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] int number_of_rooms, [FromForm] String description, [FromForm] float size, [FromForm] String date_start, [FromForm] float price, [FromForm] String location, [FromForm] int floor, [FromForm] int internet, [FromForm] int ac, [FromForm] int intercom, [FromForm] int garage, [FromForm] int elevator, [FromForm] int balcony, [FromForm] int yard, [FromForm] int heating, [FromForm] int tv, [FromForm] int user_id)
         {
             //1+ - uspesno dodat oglas
             //0 - neuspesno dodat oglas
-            int ind = _iAdUI.AddNewAd(title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
+            int ind = _iAdUI.AddNewAd(title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv, user_id);
             return ind;
         }
 
         [HttpPut]
         [Route("EditAd")]
-        public int EditAd([FromForm] int id, [FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] int number_of_rooms, [FromForm] String description, [FromForm] float size, [FromForm] String date_start, [FromForm] float price, [FromForm] String location, [FromForm] int floor, [FromForm] int internet, [FromForm] int ac, [FromForm] int intercom, [FromForm] int garage, [FromForm] int elevator, [FromForm] int balcony, [FromForm] int yard, [FromForm] int heating, [FromForm] int tv)
+        public int EditAd([FromForm] int id, [FromForm] String title, [FromForm] int flat_house, [FromForm] int sell_rent, [FromForm] int number_of_rooms, [FromForm] String description, [FromForm] float size, [FromForm] String date_start, [FromForm] float price, [FromForm] String location, [FromForm] int floor, [FromForm] int internet, [FromForm] int ac, [FromForm] int intercom, [FromForm] int garage, [FromForm] int elevator, [FromForm] int balcony, [FromForm] int yard, [FromForm] int heating, [FromForm] int tv, [FromForm] int user_id)
         {
             //1+ - uspesno editovan oglas
             //0 - nijedna vrednost nije promenjena
-            int ind = _iAdUI.EditAd(id, title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
+            int ind = _iAdUI.EditAd(id, title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv, user_id);
             return ind;
         }
 
@@ -79,5 +79,13 @@ namespace SkuciSeCode.Controllers
             return ind;
         }
 
+        [HttpGet]
+        [Route("GetAdsByUserId")]
+        public async Task<IActionResult> GetAdsByUserId([FromQuery] int user_id)
+        {
+            var ads = _iAdUI.GetAdsByUserId(user_id);
+            var adModels = AdHelper.ConvertUsers(ads);
+            return Ok(adModels);
+        }
     }
 }

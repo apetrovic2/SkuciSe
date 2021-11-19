@@ -28,5 +28,6 @@ namespace SkuciSeCode.Models
         public int yard { get; set; }
         public int heating { get; set; }
         public int tv { get; set; }
+        public int user_id { get; set; }
     }
 }

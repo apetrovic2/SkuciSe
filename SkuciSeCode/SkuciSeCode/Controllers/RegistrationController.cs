@@ -77,6 +77,14 @@ namespace SkuciSeCode.Controllers
             return ind;
         }
 
+        [HttpPut]
+        [Route("ChangePassword")]
+        public int ChangePassword([FromForm] int id, [FromForm] String password)
+        {
+            int ind = _iUserUI.ChangePassword(id, password);
+            return ind;
+        }
+
         [HttpDelete]
         [Route("DeleteUser")]
         public int DeleteUser([FromForm] int id)

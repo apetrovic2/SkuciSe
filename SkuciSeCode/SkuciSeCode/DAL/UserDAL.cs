@@ -135,5 +135,18 @@ namespace SkuciSeCode.DAL
             return ind;
         }
 
+        public int ChangePassword(int id, string hash, string salt)
+        {
+            int ind = -1;
+            var users = _context.Users.ToList().Where(user => user.id == id);
+            User user = users.FirstOrDefault();
+            if(user != null)
+            {
+                user.hash = hash;
+                user.salt = salt;
+                ind = _context.SaveChanges();
+            }
+            return ind;
+        }
     }
 }

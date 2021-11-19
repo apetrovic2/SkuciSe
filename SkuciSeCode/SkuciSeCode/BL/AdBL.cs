@@ -26,9 +26,9 @@ namespace SkuciSeCode.BL
             return _iAdDAL.GetAdById(id);
         }
 
-        public int AddNewAd(string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv)
+        public int AddNewAd(string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv, int user_id)
         {
-            Ad ad = new Ad(title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
+            Ad ad = new Ad(title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv, user_id);
             Task<int> ind =  _iAdDAL.AddNewAd(ad);
             int ind1 = ind.Result;
             return ind1;
@@ -44,10 +44,15 @@ namespace SkuciSeCode.BL
             return _iAdDAL.DeleteAd(id);
         }
 
-        public int EditAd(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv)
+        public int EditAd(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv, int user_id)
         {
-            Ad ad = new Ad(id, title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv);
+            Ad ad = new Ad(id, title, flat_house, sell_rent, number_of_rooms, description, size, date_start, null, price, location, floor, internet, ac, intercom, garage, elevator, balcony, yard, heating, tv, user_id);
             return _iAdDAL.EditAd(ad);
+        }
+
+        public List<Ad> GetAdsByUserId(int user_id)
+        {
+            return _iAdDAL.GetAdsByUserId(user_id);
         }
     }
 }

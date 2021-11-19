@@ -28,12 +28,13 @@ namespace SkuciSeCode.Entities
         public int yard { get; set; }
         public int heating { get; set; }
         public int tv { get; set; }
+        public int user_id { get; set; }
         public Ad()
         {
 
         }
 
-        public Ad(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv)
+        public Ad(int id, string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv, int user_id)
         {
             this.id = id;
             this.title = title;
@@ -56,9 +57,10 @@ namespace SkuciSeCode.Entities
             this.yard = yard;
             this.heating = heating;
             this.tv = tv;
+            this.user_id = user_id;
         }
 
-        public Ad(string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv)
+        public Ad(string title, int flat_house, int sell_rent, int number_of_rooms, string description, float size, string date_start, string date_end, float price, string location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv, int user_id)
         {
             this.title = title;
             this.flat_house = flat_house;
@@ -80,6 +82,7 @@ namespace SkuciSeCode.Entities
             this.yard = yard;
             this.heating = heating;
             this.tv = tv;
+            this.user_id = user_id;
         }
     }
 }
