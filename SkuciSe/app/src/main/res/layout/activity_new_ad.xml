@@ -41,7 +41,7 @@
         android:id="@+id/cbCableTv"
         android:layout_width="112dp"
         android:layout_height="37dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:text="Kablovska"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
@@ -53,7 +53,7 @@
         android:layout_width="96dp"
         android:layout_height="36dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="64dp"
         android:text="Internet"
         app:layout_constraintStart_toEndOf="@+id/cbHeating"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
@@ -74,12 +74,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/josefinsans_bold"
         android:text="Oprema"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbDescription" />
 
@@ -236,8 +236,8 @@
     <TextView
         android:id="@+id/lblAddNewAdMessage"
         android:layout_width="250dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="80dp"
         android:gravity="center"
         android:text=""
@@ -246,8 +246,8 @@
 
     <Button
         android:id="@+id/btnAddNewAd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="141dp"
+        android:layout_height="39dp"
         android:layout_marginStart="132dp"
         android:text="Dodaj oglas"
         android:textColor="@color/white"
@@ -255,7 +255,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblAddNewAdMessage"
-        app:layout_constraintVertical_bias="0.132" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

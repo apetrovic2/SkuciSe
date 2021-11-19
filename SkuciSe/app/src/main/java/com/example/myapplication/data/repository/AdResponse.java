@@ -23,6 +23,7 @@ public class AdResponse
     private int yard;
     private int heating;
     private int tv;
+    private int user_id;
 
     public int getId() {
         return id;
@@ -190,5 +191,13 @@ public class AdResponse
 
     public void setTv(int tv) {
         this.tv = tv;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }

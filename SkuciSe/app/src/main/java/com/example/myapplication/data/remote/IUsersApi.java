@@ -31,4 +31,8 @@ public interface IUsersApi
     @PUT("EditUser")
     @FormUrlEncoded
     Call<Integer> EditUser(@Field("id") Integer id, @Field("username") String username, @Field("password") String password, @Field("name") String name, @Field("email") String email);
+
+    @PUT("ChangePassword")
+    @FormUrlEncoded
+    Call<Integer> changePassword(@Field("id") Integer id, @Field("password") String password);
 }

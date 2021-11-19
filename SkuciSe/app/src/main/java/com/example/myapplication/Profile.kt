@@ -10,7 +10,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.data.helpers.AppData
+import com.example.myapplication.data.remote.AdApiManager
 import com.example.myapplication.data.remote.UsersApiManager
+import com.example.myapplication.data.repository.AdResponse
 import com.example.myapplication.data.repository.UsersResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,7 +22,7 @@ class Profile : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var photoAdapter: PhotoAdapter
-    private var dataList= mutableListOf<DataModel>()
+    private var dataList = mutableListOf<DataModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,15 +55,8 @@ class Profile : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(applicationContext,1)
-        photoAdapter = PhotoAdapter(applicationContext)
+        photoAdapter = PhotoAdapter(this)
         recyclerView.adapter = photoAdapter
-
-        dataList.add(DataModel("Title","Desc",R.drawable.photo1, 1))
-        dataList.add(DataModel("Title","Desc",R.drawable.photo2, 2))
-        dataList.add(DataModel("Title","Desc",R.drawable.photo3, 3))
-
-
-        photoAdapter.setDataList(dataList)
 
         val actionbar = supportActionBar
         actionbar!!.title = ""
@@ -82,10 +77,11 @@ class Profile : AppCompatActivity() {
 
         var lblUsername = findViewById(R.id.lblUsername) as TextView
         var lblName = findViewById(R.id.lblName) as TextView
+        var lblUserNoAdsMessage = findViewById(R.id.lblUserNoAdsMessage) as TextView
+        lblUserNoAdsMessage.setText("")
 
-
-        val api = UsersApiManager.getUserApi()
-        val call = api.getUserById(AppData.getToken())
+        val apiUser = UsersApiManager.getUserApi()
+        val call = apiUser.getUserById(AppData.getToken())
         call.enqueue(object : Callback<UsersResponse> {
             override fun onResponse(
                 call: Call<UsersResponse>,
@@ -107,6 +103,43 @@ class Profile : AppCompatActivity() {
                 return
             }
         })
+        val apiAds = AdApiManager.getAdApi()
+        val callAds = apiAds.getAdsByUserId(AppData.getToken())
+        callAds.enqueue(object : Callback<List<AdResponse>> {
+            override fun onResponse(
+                call: Call<List<AdResponse>>,
+                response: Response<List<AdResponse>>)
+            {
+                if (!response.isSuccessful) {
+                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                    return
+                } else {
+                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+                    val ads = response.body()!!
+                    dataList = mutableListOf<DataModel>()
+                    if(ads.size == 0)
+                    {
+                        lblUserNoAdsMessage.setText("Nemate nijedan oglas!")
+                    }
+                    else
+                    {
+                        lblUserNoAdsMessage.setText("")
+
+                        for(ad in ads)
+                        {
+                            dataList.add(DataModel("${ad.title}","${ad.price}$",R.drawable.photo1, ad.id))
+                        }
+                        photoAdapter.setDataList(dataList)
+                    }
+                }
+            }
+            override fun onFailure(call: Call<List<AdResponse>>, t: Throwable) {
+                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                return
+            }
+        })
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -211,7 +211,8 @@ class EditAd : AppCompatActivity() {
                     balcony,
                     yard,
                     heating,
-                    tv
+                    tv,
+                    AppData.getToken()
                 )
                 call.enqueue(object : Callback<Int> {
                     override fun onResponse(

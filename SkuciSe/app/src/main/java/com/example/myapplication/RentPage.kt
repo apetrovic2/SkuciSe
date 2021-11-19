@@ -94,7 +94,7 @@ class RentPage : AppCompatActivity() {
 
                     for(ad in ads)
                     {
-                        dataList.add(DataModel("${ad.title}","${ad.description}",R.drawable.photo1, ad.id))
+                        dataList.add(DataModel("${ad.title}","${ad.price.toString()}",R.drawable.photo1, ad.id))
                     }
                     photoAdapter.setDataList(dataList)
                     Log.i("HOME PAGE", "" + 1)

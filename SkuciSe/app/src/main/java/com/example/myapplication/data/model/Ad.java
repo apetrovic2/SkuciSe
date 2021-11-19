@@ -23,8 +23,9 @@ public class Ad
     private final int yard;
     private final int heating;
     private final int tv;
+    private final int user_id;
 
-    public Ad(int id, String title, int flat_house, int sell_rent, int number_of_rooms, String description, float size, String date_start, String date_end, float price, String location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv) {
+    public Ad(int id, String title, int flat_house, int sell_rent, int number_of_rooms, String description, float size, String date_start, String date_end, float price, String location, int floor, int internet, int ac, int intercom, int garage, int elevator, int balcony, int yard, int heating, int tv, int user_id) {
         this.id = id;
         this.title = title;
         this.flat_house = flat_house;
@@ -46,6 +47,7 @@ public class Ad
         this.yard = yard;
         this.heating = heating;
         this.tv = tv;
+        this.user_id = user_id;
     }
 
     public int getId() {
@@ -130,5 +132,9 @@ public class Ad
 
     public int getTv() {
         return tv;
+    }
+
+    public int getUser_id() {
+        return user_id;
     }
 }
