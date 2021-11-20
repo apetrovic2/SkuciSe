@@ -96,11 +96,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbEditName" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageButton10"
+    <ImageButton
+        android:id="@+id/btnChoosePhoto"
         android:layout_width="38dp"
         android:layout_height="39dp"
         android:layout_marginEnd="132dp"
+        android:backgroundTint="@color/white"
         android:src="@drawable/ic_baseline_photo_camera_24"
         app:layout_constraintBottom_toTopOf="@+id/tbEditUsername"
         app:layout_constraintEnd_toEndOf="parent"

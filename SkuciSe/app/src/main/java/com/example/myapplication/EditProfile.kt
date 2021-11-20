@@ -1,13 +1,14 @@
 package com.example.myapplication
 
+import android.Manifest
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.remote.UsersApiManager
 import com.example.myapplication.data.repository.UsersResponse
@@ -145,6 +146,57 @@ class EditProfile : AppCompatActivity() {
             }
 
         }
+
+/////////////////////////////////////////////////// kod za slike iz galerije
+
+        val IMAGE_CHOOSE = 1000;
+        val PERMISSION_CODE = 1001;
+        val REQUEST_CODE = 13
+
+        fun chooseImageGallery() {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, IMAGE_CHOOSE)
+        }
+
+
+        val btnChoosePhoto = findViewById<ImageButton>(R.id.btnChoosePhoto)
+        btnChoosePhoto.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    requestPermissions(permissions, PERMISSION_CODE)
+                } else {
+                    chooseImageGallery();
+                }
+            } else {
+                chooseImageGallery();
+            }
+        }
+        fun onRequestPermissionsResult(
+            requestCode: Int,
+            permissions: Array<out String>,
+            grantResults: IntArray
+        ) {
+            when (requestCode) {
+                PERMISSION_CODE -> {
+                    if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        chooseImageGallery()
+                    } else {
+                        Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+
+
+        fun onActivityResult(resultCode: Int, requestCode: Int, data: Intent?) {
+            if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+                val viewImage = findViewById<ImageView>(R.id.profilePicture)
+                viewImage.setImageURI(data?.data)
+            }
+        }
+////////////////////////////////////////////////////////////////////////////////////
 
     }
     override fun onSupportNavigateUp(): Boolean {
