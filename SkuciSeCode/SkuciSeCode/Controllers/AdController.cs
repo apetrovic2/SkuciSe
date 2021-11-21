@@ -87,5 +87,14 @@ namespace SkuciSeCode.Controllers
             var adModels = AdHelper.ConvertUsers(ads);
             return Ok(adModels);
         }
+
+        [HttpGet]
+        [Route("FilterAds")]
+        public async Task<IActionResult> FilterAds([FromQuery] int sell_rent, [FromQuery] int flat_house, [FromQuery] int from_number_of_rooms, [FromQuery] int to_number_of_rooms, [FromQuery] float from_size, [FromQuery] float to_size, [FromQuery] float from_price, [FromQuery] float to_price, [FromQuery] String location, [FromQuery] int internet, [FromQuery] int ac, [FromQuery] int heating, [FromQuery] int tv)
+        {
+            var ads = _iAdUI.FilterAds(sell_rent, flat_house, from_number_of_rooms, to_number_of_rooms, from_size, to_size, from_price, to_price, location, internet, ac, heating, tv);
+            var adModels = AdHelper.ConvertUsers(ads);
+            return Ok(adModels);
+        }
     }
 }

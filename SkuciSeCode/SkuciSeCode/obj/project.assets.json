@@ -498,6 +498,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
+      "PredicateExtensions/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/PredicateExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/PredicateExtensions.dll": {}
+        }
+      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2476,6 +2485,20 @@
         "newtonsoft.json.10.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "PredicateExtensions/1.0.0": {
+      "sha512": "+1F01u3KIVP/8ufEK/qzkjhu6UHQYuNwBm35yIIEc3DhMjt0MQL97+eSyFIVARJLxar90Sw3/icT6DrIB6SkOw==",
+      "type": "package",
+      "path": "predicateextensions/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/LICENSE.md",
+        "content/readme.md",
+        "lib/PredicateExtensions.dll",
+        "predicateextensions.1.0.0.nupkg.sha512",
+        "predicateextensions.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -6004,7 +6027,8 @@
       "Microsoft.Bcl.Async >= 1.0.168",
       "Microsoft.EntityFrameworkCore >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.11"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.11",
+      "PredicateExtensions >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6061,6 +6085,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.11, )"
+          },
+          "PredicateExtensions": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [
@@ -6102,6 +6130,16 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.Bcl.Async 1.0.168' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Bcl.Async",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PredicateExtensions 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "PredicateExtensions",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]

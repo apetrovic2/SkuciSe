@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7/3KRNgpqagtT91+oaDbPMpI1g2azYlv4g9fblX5g2mJa4H9imq/SKtNEnasNM7DaktmFGFVUHMavsYKVBpUgg==",
+  "dgSpecHash": "H2+do6cziLnm551aYgSydBNrZQKSAon8REaQmXqHGLg/RwsUkp/uBlMAeU0vKQnVg5cdARY3IUp6d8oQh7ZQfg==",
   "success": true,
   "projectFilePath": "C:\\Users\\PetarBojović\\Desktop\\-_-\\Programiranje mobilnih uredjaja\\SkuciSeCode\\SkuciSeCode\\SkuciSeCode.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\PetarBojović\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\PetarBojović\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\PetarBojović\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\PetarBojović\\.nuget\\packages\\predicateextensions\\1.0.0\\predicateextensions.1.0.0.nupkg.sha512",
     "C:\\Users\\PetarBojović\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\PetarBojović\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\PetarBojović\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
@@ -122,6 +123,16 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.Bcl.Async 1.0.168' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Bcl.Async",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PredicateExtensions 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "PredicateExtensions",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]

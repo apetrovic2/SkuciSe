@@ -1,4 +1,5 @@
-﻿using SkuciSeCode.DAL.Interfaces;
+﻿using PredicateExtensions;
+using SkuciSeCode.DAL.Interfaces;
 using SkuciSeCode.Entities;
 using System;
 using System.Collections.Generic;
@@ -112,6 +113,54 @@ namespace SkuciSeCode.DAL
             var allUserAds = _context.Ads.ToList().Where(ad => ad.date_end == null && ad.user_id == user_id);
             var userAds = allUserAds.ToList();
             return userAds;
+        }
+
+        public List<Ad> FilterAds(int sell_rent, int flat_house, int from_number_of_rooms, int to_number_of_rooms, float from_size, float to_size, float from_price, float to_price, String location, int internet, int ac, int heating, int tv)
+        {
+            var pr = PredicateExtensions.PredicateExtensions.Begin<Ad>();
+
+            pr = pr.And(ad => ad.sell_rent == sell_rent);
+
+            if (flat_house >= 0)
+            {
+                pr = pr.And(ad => ad.flat_house == flat_house);
+            }
+            if (to_number_of_rooms > 0)
+            {
+                pr = pr.And(ad => ad.number_of_rooms >= from_number_of_rooms && ad.number_of_rooms <= to_number_of_rooms);
+            }
+            if (to_size > 0)
+            {
+                pr = pr.And(ad => ad.size >= from_size && ad.size <= to_size);
+            }
+            if (to_price > 0)
+            {
+                pr = pr.And(ad => ad.price >= from_price && ad.price <= to_price);
+            }
+            if (location != null)
+            {
+                pr = pr.And(ad => ad.location.Contains(location));
+            }
+            if (internet != 0)
+            {
+                pr = pr.And(ad => ad.internet == internet);
+            }
+            if (ac != 0)
+            {
+                pr = pr.And(ad => ad.ac == ac);
+            }
+            if (heating != 0)
+            {
+                pr = pr.And(ad => ad.heating == heating);
+            }
+            if (tv != 0)
+            {
+                pr = pr.And(ad => ad.tv == tv);
+            }
+
+            var ads = _context.Ads.Where(pr);
+            var filteredAds = ads.ToList();
+            return filteredAds;
         }
     }
 }

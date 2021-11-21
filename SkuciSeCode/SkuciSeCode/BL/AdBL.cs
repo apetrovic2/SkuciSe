@@ -1,4 +1,5 @@
-﻿using SkuciSeCode.BL.Interfaces;
+﻿using PredicateExtensions;
+using SkuciSeCode.BL.Interfaces;
 using SkuciSeCode.DAL.Interfaces;
 using SkuciSeCode.Entities;
 using System;
@@ -53,6 +54,11 @@ namespace SkuciSeCode.BL
         public List<Ad> GetAdsByUserId(int user_id)
         {
             return _iAdDAL.GetAdsByUserId(user_id);
+        }
+
+        public List<Ad> FilterAds(int sell_rent, int flat_house, int from_number_of_rooms, int to_number_of_rooms, float from_size, float to_size, float from_price, float to_price, string location, int internet, int ac, int heating, int tv)
+        {
+            return _iAdDAL.FilterAds(sell_rent, flat_house, from_number_of_rooms, to_number_of_rooms, from_size, to_size, from_price, to_price, location, internet, ac, heating, tv);
         }
     }
 }
