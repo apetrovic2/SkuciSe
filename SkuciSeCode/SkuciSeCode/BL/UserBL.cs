@@ -56,9 +56,9 @@ namespace SkuciSeCode.BL.Interfaces
 
         }
 
-        public int EditUser(int id, String username, String password, String name, String email)
+        public int EditUser(int id, String username, String password, String name, String email, String image)
         {
-            return _iUserDAL.EditUser(id, username, password, name, email);
+            return _iUserDAL.EditUser(id, username, password, name, email, image);
         }
 
         public int DeleteUser(int id)
@@ -74,6 +74,11 @@ namespace SkuciSeCode.BL.Interfaces
             var hash = PasswordHelper.getPasswordHash(password, saltBytes);
 
             return _iUserDAL.ChangePassword(id, hash, salt);
+        }
+
+        public UserImage GetUserImage(int id)
+        {
+            return _iUserDAL.GetUserImage(id);
         }
     }
 }

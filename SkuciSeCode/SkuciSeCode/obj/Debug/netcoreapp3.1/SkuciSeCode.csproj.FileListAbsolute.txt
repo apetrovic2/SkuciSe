@@ -112,7 +112,6 @@ C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\S
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csprojAssemblyReference.cache
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.AssemblyInfoInputs.cache
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.AssemblyInfo.cs
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.RazorTargetAssemblyInfo.cache
@@ -128,3 +127,4 @@ C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\S
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\bin\Debug\netcoreapp3.1\PredicateExtensions.dll
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csproj.CoreCompileInputs.cache
 C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PetarBojović\Desktop\-_-\Programiranje mobilnih uredjaja\SkuciSeCode\SkuciSeCode\obj\Debug\netcoreapp3.1\SkuciSeCode.csprojAssemblyReference.cache

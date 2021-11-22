@@ -31,7 +31,7 @@ namespace SkuciSeCode.Controllers
 
         [HttpPost]
         [Route("Register")]
-        public int Register([FromForm] String username, [FromForm] String password, [FromForm] String name,[FromForm] String email)
+        public int Register([FromForm] String username, [FromForm] String password, [FromForm] String name, [FromForm] String email)
         {
             //1+ - uspesno registrovan korisnik
             //0 - neuspesno registrovan korisnik
@@ -63,9 +63,17 @@ namespace SkuciSeCode.Controllers
             return Ok(user);
         }
 
+        [HttpGet]
+        [Route("GetUserImage")]
+        public async Task<IActionResult> GetUserImage([FromForm] int id)
+        {
+            UserImage userImage = _iUserUI.GetUserImage(id);
+            return Ok(userImage);
+        }
+
         [HttpPut]
         [Route("EditUser")]
-        public int EditUser([FromForm] int id, [FromForm] String username, [FromForm] String password, [FromForm] String name, [FromForm] String email)
+        public int EditUser([FromForm] int id, [FromForm] String username, [FromForm] String password, [FromForm] String name, [FromForm] String email, [FromForm] String image)
         {
             //-1 ne postoji korisnik koji ima ovaj id
             //-2 netacan password
@@ -73,7 +81,7 @@ namespace SkuciSeCode.Controllers
             //-4 zauzet email
             //0 neuspesno
             //1 uspesno
-            int ind = _iUserUI.EditUser(id, username, password, name, email);
+            int ind = _iUserUI.EditUser(id, username, password, name, email, image);
             return ind;
         }
 

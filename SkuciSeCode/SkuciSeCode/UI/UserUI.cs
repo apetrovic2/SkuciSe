@@ -37,9 +37,9 @@ namespace SkuciSeCode.UI
             return ind;
         }
 
-        public int EditUser(int id, String username, String password, String name, String email)
+        public int EditUser(int id, String username, String password, String name, String email, String image)
         {
-            return _iUserBL.EditUser(id, username, password, name, email);
+            return _iUserBL.EditUser(id, username, password, name, email, image);
         }
         public int DeleteUser(int id)
         {
@@ -49,6 +49,11 @@ namespace SkuciSeCode.UI
         public int ChangePassword(int id, string password)
         {
             return _iUserBL.ChangePassword(id, password);
+        }
+
+        public UserImage GetUserImage(int id)
+        {
+            return _iUserBL.GetUserImage(id);
         }
     }
 }

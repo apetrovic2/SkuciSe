@@ -69,7 +69,7 @@ namespace SkuciSeCode.DAL
             return ind;
         }
 
-        public int EditUser(int id, String username, String password, String name, String email)
+        public int EditUser(int id, String username, String password, String name, String email, String image)
         {
             int ind = -1;
             var users = _context.Users.ToList().Where(user => user.id == id);
@@ -97,6 +97,10 @@ namespace SkuciSeCode.DAL
                             user.name = name;
                             user.email = email;
                             ind = _context.SaveChanges();
+
+                            UserImage userImage = new UserImage(user.id, image);
+                            _context.UserImages.Add(userImage);
+                            _context.SaveChanges();
                         }
                         else
                         {
@@ -147,6 +151,13 @@ namespace SkuciSeCode.DAL
                 ind = _context.SaveChanges();
             }
             return ind;
+        }
+
+        public UserImage GetUserImage(int id)
+        {
+            var userImages = _context.UserImages.ToList().Where(u => u.id == id);
+            UserImage userImage = userImages.FirstOrDefault();
+            return userImage;
         }
     }
 }
