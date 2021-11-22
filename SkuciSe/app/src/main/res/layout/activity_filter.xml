@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Filter">
+
+    <Button
+        android:id="@+id/btnRent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#5b2f6a"
+        android:text="Izdavanje"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <Button
+        android:id="@+id/btnSell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#ae76c1"
+        android:text="Prodaja"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/josefinsans_bold"
+        android:text="Oprema"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sliderRooms" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/josefinsans_bold"
+        android:text="Ostalo"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbSatelliteTv" />
+
+    <CheckBox
+        android:id="@+id/cbHeating"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:text="Grejanje"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <CheckBox
+        android:id="@+id/cbSatelliteTv"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="20dp"
+        android:text="Satelit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbHeating" />
+
+    <CheckBox
+        android:id="@+id/cbIntercom"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:text="Interfon"
+        app:layout_constraintStart_toEndOf="@+id/cbSatelliteTv"
+        app:layout_constraintTop_toBottomOf="@+id/cbInternet" />
+
+    <CheckBox
+        android:id="@+id/cbGarage"
+        android:layout_width="85dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:text="Garaza"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbSatelliteTv" />
+
+    <CheckBox
+        android:id="@+id/cbElevator"
+        android:layout_width="85dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="45dp"
+        android:text="Lift"
+        app:layout_constraintStart_toEndOf="@+id/cbGarage"
+        app:layout_constraintTop_toBottomOf="@+id/cbIntercom" />
+
+    <CheckBox
+        android:id="@+id/cbYard"
+        android:layout_width="85dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="43dp"
+        android:text="Dvoriste"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/cbBalcony"
+        app:layout_constraintTop_toBottomOf="@+id/cbAc" />
+
+    <CheckBox
+        android:id="@+id/cbBalcony"
+        android:layout_width="85dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="43dp"
+        android:text="Terasa"
+        app:layout_constraintStart_toEndOf="@+id/cbElevator"
+        app:layout_constraintTop_toBottomOf="@+id/cbAc" />
+
+
+    <CheckBox
+        android:id="@+id/cbAc"
+        android:layout_width="114dp"
+        android:layout_height="36dp"
+        android:text="Klima"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toEndOf="@+id/cbIntercom"
+        app:layout_constraintTop_toBottomOf="@+id/cbCableTv" />
+
+
+    <CheckBox
+        android:id="@+id/cbCableTv"
+        android:layout_width="112dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="51dp"
+        android:text="Kablovska"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toEndOf="@+id/cbInternet"
+        app:layout_constraintTop_toBottomOf="@+id/sliderRooms" />
+
+    <CheckBox
+        android:id="@+id/cbInternet"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="51dp"
+        android:text="Internet"
+        app:layout_constraintStart_toEndOf="@+id/cbHeating"
+        app:layout_constraintTop_toBottomOf="@+id/sliderRooms" />
+
+    <RadioGroup
+        android:id="@+id/rgHouseFlat"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="52dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="50dp"
+            android:checked="true"
+            android:text="Kuća" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:text="Stan" />
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/btnFilter"
+        android:layout_width="44dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_filter_list_24"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="250dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgHouseFlat" />
+
+    <TextView
+        android:id="@+id/txtViewSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="Kvadratura"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+    <TextView
+        android:id="@+id/txtViewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:text="Cena"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewLocation" />
+
+    <TextView
+        android:id="@+id/txtViewLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="Lokacija:"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgHouseFlat" />
+
+    <TextView
+        android:id="@+id/txtViewRooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="Broj soba"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sliderSize" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="238dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:background="#f9eafb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
+        android:layout_width="341dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="52dp"
+        android:value="20.0"
+        android:valueFrom="0.0"
+        android:valueTo="100.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderSize"
+        android:layout_width="341dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:value="50"
+        android:valueFrom="0"
+        android:valueTo="200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderRooms"
+        android:layout_width="341dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:value="20.0"
+        android:valueFrom="0.0"
+        android:valueTo="100.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sliderSize" />
+</androidx.constraintlayout.widget.ConstraintLayout>

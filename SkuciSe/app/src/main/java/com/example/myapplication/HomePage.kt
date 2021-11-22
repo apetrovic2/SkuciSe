@@ -52,6 +52,11 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this, SellPage::class.java)
             startActivity(intent)
         }
+        val buttonFilter = findViewById<ImageButton>(R.id.btnFilter)
+        buttonFilter.setOnClickListener {
+            val intent = Intent(this, Filter::class.java)
+            startActivity(intent)
+        }
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(applicationContext,2)
