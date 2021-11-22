@@ -2,19 +2,29 @@ package com.example.myapplication
 
 import android.Manifest
 import android.app.Activity
+import android.content.ContentResolver
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.net.toFile
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.remote.UsersApiManager
 import com.example.myapplication.data.repository.UsersResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.InputStream
 
 class EditProfile : AppCompatActivity() {
 
@@ -26,6 +36,21 @@ class EditProfile : AppCompatActivity() {
 //            startActivity(intent)
             return
         }
+    }
+    var data = ""
+
+    val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri ->
+        val viewImage = findViewById<ImageView>(R.id.profilePicture)
+        viewImage.setImageURI(uri)
+
+        var cr = baseContext.contentResolver as ContentResolver
+        var inputStream = cr.openInputStream(uri) as InputStream
+        var bitmap = BitmapFactory.decodeStream(inputStream) as Bitmap
+        var baos = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+
+        var dataByte = baos.toByteArray()
+        data = Base64.encodeToString(dataByte, 0)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -92,7 +117,8 @@ class EditProfile : AppCompatActivity() {
                     usernameText,
                     passwordText,
                     nameText,
-                    emailText
+                    emailText,
+                    data
                 )
                 call1.enqueue(object : Callback<Int> {
                     override fun onResponse(
@@ -108,10 +134,10 @@ class EditProfile : AppCompatActivity() {
                             val status = response.body()!!
                             Log.i("EDIT STATUS ", "" + status)
                             if(status > 0) {
-                                finish()
-                                overridePendingTransition(0, 0)
-                                startActivity(intent)
-                                overridePendingTransition(0, 0)
+                                //finish()
+                                //overridePendingTransition(0, 0)
+                                //startActivity(intent)
+                                //overridePendingTransition(0, 0)
                                 lblEditUser.setText("Uspešna izmena!")
                             }
                             if(status == 0)
@@ -156,7 +182,8 @@ class EditProfile : AppCompatActivity() {
         fun chooseImageGallery() {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
-            startActivityForResult(intent, IMAGE_CHOOSE)
+            //startActivityForResult(intent, IMAGE_CHOOSE)
+            getContent.launch("image/*")
         }
 
 
@@ -190,12 +217,13 @@ class EditProfile : AppCompatActivity() {
         }
 
 
-        fun onActivityResult(resultCode: Int, requestCode: Int, data: Intent?) {
-            if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-                val viewImage = findViewById<ImageView>(R.id.profilePicture)
-                viewImage.setImageURI(data?.data)
-            }
-        }
+//        fun onActivityResult(resultCode: Int, requestCode: Int, data: Intent?) {
+//            if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+//                val viewImage = findViewById<ImageView>(R.id.profilePicture)
+//                viewImage.setImageURI(data?.data)
+//                Log.i("IMAGE:", "" + data?.data.toString())
+//            }
+//        }
 ////////////////////////////////////////////////////////////////////////////////////
 
     }
