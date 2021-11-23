@@ -55,5 +55,10 @@ namespace SkuciSeCode.UI
         {
             return _iUserBL.GetUserImage(id);
         }
+
+        public int SetProfilePicture(int user_id, string image)
+        {
+            return _iUserBL.SetProfilePicture(user_id, image);
+        }
     }
 }

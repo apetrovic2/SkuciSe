@@ -43,6 +43,15 @@ namespace SkuciSeCode.Controllers
         }
 
         [HttpPost]
+        [Route("SetProfilePicture")]
+        public int SetProfilePicture([FromForm] int user_id, [FromForm] String image)
+        {
+            int ind = _iUserUI.SetProfilePicture(user_id, image);
+            return ind;
+        }
+
+
+        [HttpPost]
         [Route("Login")]
         public int Login([FromForm] String username, [FromForm] String password)
         {

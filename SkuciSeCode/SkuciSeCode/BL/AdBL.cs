@@ -60,5 +60,12 @@ namespace SkuciSeCode.BL
         {
             return _iAdDAL.FilterAds(sell_rent, flat_house, from_number_of_rooms, to_number_of_rooms, from_size, to_size, from_price, to_price, location, internet, ac, heating, tv);
         }
+
+        public int SetAdPicture(int ad_id, string image)
+        {
+            Task<int> ind1 = _iAdDAL.SetAdPicture(ad_id, image);
+            int ind = ind1.Result;
+            return ind;
+        }
     }
 }

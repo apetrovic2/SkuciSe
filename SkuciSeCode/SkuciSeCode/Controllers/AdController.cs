@@ -96,5 +96,13 @@ namespace SkuciSeCode.Controllers
             var adModels = AdHelper.ConvertUsers(ads);
             return Ok(adModels);
         }
+
+        [HttpPost]
+        [Route("SetAdPicture")]
+        public int SetAdPicture([FromForm] int ad_id, [FromForm] String image)
+        {
+            int ind = _iAdUI.SetAdPicture(ad_id, image);
+            return ind;
+        }
     }
 }

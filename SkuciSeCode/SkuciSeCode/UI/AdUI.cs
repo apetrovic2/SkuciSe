@@ -55,5 +55,10 @@ namespace SkuciSeCode.UI
         {
             return _iAdBL.FilterAds(sell_rent, flat_house, from_number_of_rooms, to_number_of_rooms, from_size, to_size, from_price, to_price, location, internet, ac, heating, tv);
         }
+
+        public int SetAdPicture(int ad_id, string image)
+        {
+            return _iAdBL.SetAdPicture(ad_id, image);
+        }
     }
 }

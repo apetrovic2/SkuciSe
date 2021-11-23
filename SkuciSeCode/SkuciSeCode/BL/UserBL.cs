@@ -80,5 +80,12 @@ namespace SkuciSeCode.BL.Interfaces
         {
             return _iUserDAL.GetUserImage(id);
         }
+
+        public int SetProfilePicture(int user_id, string image)
+        {
+            Task<int> ind1 =  _iUserDAL.SetProfilePicture(user_id, image);
+            int ind = ind1.Result;
+            return ind;
+        }
     }
 }

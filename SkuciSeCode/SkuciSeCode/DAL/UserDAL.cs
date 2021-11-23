@@ -58,7 +58,15 @@ namespace SkuciSeCode.DAL
                 if (!_context.Users.Any(u => u.username.Equals(user.username)))
                 {
                     await _context.Users.AddAsync(user);
-                    ind = _context.SaveChanges();
+                    int ind1 = _context.SaveChanges();
+                    if(ind1 > 0)
+                    {
+                        ind = user.id;
+                    }
+                    else
+                    {
+                        ind = ind1;
+                    }
                 }
                 else
                 {
@@ -165,6 +173,14 @@ namespace SkuciSeCode.DAL
             var userImages = _context.UserImages.ToList().Where(u => u.user_id == id);
             UserImage userImage = userImages.FirstOrDefault();
             return userImage;
+        }
+
+        public async Task<int> SetProfilePicture(int user_id, string image)
+        {
+            UserImage userImage = new UserImage(user_id, image);
+            await _context.UserImages.AddAsync(userImage);
+            int ind = _context.SaveChanges();
+            return ind;
         }
     }
 }

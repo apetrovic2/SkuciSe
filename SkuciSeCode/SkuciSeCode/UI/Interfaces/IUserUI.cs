@@ -16,5 +16,6 @@ namespace SkuciSeCode.UI.Interfaces
         User GetUserById(int id);
         int ChangePassword(int id, String password);
         UserImage GetUserImage(int id);
+        int SetProfilePicture(int user_id, String image);
     }
 }

@@ -17,5 +17,6 @@ namespace SkuciSeCode.DAL.Interfaces
         User GetUserById(int id);
         int ChangePassword(int id, String hash, String salt);
         UserImage GetUserImage(int id);
+        Task<int> SetProfilePicture(int user_id, String image);
     }
 }

@@ -44,7 +44,15 @@ namespace SkuciSeCode.DAL
         {
             int ind;
             await _context.Ads.AddAsync(ad);
-            ind = _context.SaveChanges();
+            int ind1 = _context.SaveChanges();
+            if( ind1 > 0 )
+            {
+                ind = ad.id;
+            }
+            else
+            {
+                ind = ind1;
+            }
             return ind;
         }
 
@@ -163,6 +171,14 @@ namespace SkuciSeCode.DAL
             var ads = _context.Ads.Where(pr);
             var filteredAds = ads.ToList();
             return filteredAds;
+        }
+
+        public async Task<int> SetAdPicture(int ad_id, string image)
+        {
+            AdImage adImage = new AdImage(ad_id, image);
+            await _context.AdImages.AddAsync(adImage);
+            int ind = _context.SaveChanges();
+            return ind;
         }
     }
 }

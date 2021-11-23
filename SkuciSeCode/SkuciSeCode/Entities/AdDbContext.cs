@@ -9,6 +9,7 @@ namespace SkuciSeCode.Entities
     public class AdDbContext : DbContext
     {
         public DbSet<Ad> Ads { get; set; }
+        public DbSet<AdImage> AdImages { get; set; }
         public AdDbContext(DbContextOptions<AdDbContext> options) : base(options)
         {
 
@@ -16,6 +17,7 @@ namespace SkuciSeCode.Entities
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Ad>().ToTable("Ad");
+            modelBuilder.Entity<AdImage>().ToTable("AdImage");
         }
     }
 }
