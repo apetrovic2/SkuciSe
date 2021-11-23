@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".RegistrationPicture"
+            android:exported="false" />
+        <activity
+            android:name=".NewAdPicture"
+            android:exported="false" />
+        <activity
             android:name=".FilterSell"
             android:exported="false" />
         <activity

@@ -41,12 +41,12 @@
         android:id="@+id/cbCableTv"
         android:layout_width="112dp"
         android:layout_height="37dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="64dp"
         android:text="Kablovska"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toEndOf="@+id/cbInternet"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddPicture" />
+        app:layout_constraintTop_toBottomOf="@+id/tbRooms" />
 
     <CheckBox
         android:id="@+id/cbInternet"
@@ -56,7 +56,7 @@
         android:layout_marginTop="64dp"
         android:text="Internet"
         app:layout_constraintStart_toEndOf="@+id/cbHeating"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/tbRooms" />
 
     <EditText
         android:id="@+id/tbPrice"
@@ -198,30 +198,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rgSellRent" />
 
-    <Button
-        android:id="@+id/btnAddPicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Dodaj slike"
-        android:textColor="@color/white"
-        app:backgroundTint="#ae76c1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbFloor" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="37dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/ic_baseline_photo_camera_24_purple"
-        app:layout_constraintEnd_toStartOf="@+id/btnAddPicture"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toEndOf="@+id/tbDescription"
-        app:layout_constraintTop_toBottomOf="@+id/tbFloor" />
-
     <EditText
         android:id="@+id/tbLocation"
         android:layout_width="wrap_content"
@@ -250,7 +226,7 @@
         android:layout_width="141dp"
         android:layout_height="39dp"
         android:layout_marginStart="132dp"
-        android:text="Dodaj oglas"
+        android:text="Dalje"
         android:textColor="@color/white"
         app:backgroundTint="#83ad89"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
@@ -292,6 +268,18 @@
         app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toEndOf="@+id/imageBtnHome"
         app:srcCompat="@drawable/ic_baseline_add_circle_green_24" />
+
+    <EditText
+        android:id="@+id/tbRooms"
+        android:layout_width="150dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Broj soba"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbFloor" />
 
     <ImageButton
         android:id="@+id/imageBtnProfile"
