@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.model.Ad
 import com.example.myapplication.data.remote.AdApiManager
+import com.example.myapplication.data.remote.UsersApiManager
+import com.example.myapplication.data.repository.AdResponse
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,9 +28,32 @@ class HomePage : AppCompatActivity() {
     private lateinit var photoAdapter: PhotoAdapter
     private var dataList = mutableListOf<DataModel>()
 
+    var sell_rent = -1
+    var flat_house = 0
+    var to_number_of_rooms = 0
+    var to_size = 0.0
+    var to_price = 0.0
+    var location = ""
+    var internet = 0
+    var ac = 0
+    var heating = 0
+    var tv = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page2)
+
+        sell_rent = intent.getIntExtra("sell_rent", -1)
+        flat_house = intent.getIntExtra("flat_house", 0)
+        to_number_of_rooms = intent.getIntExtra("to_number_of_rooms", 0)
+        to_size = intent.getDoubleExtra("to_size", 0.0)
+        to_price = intent.getDoubleExtra("to_price", 0.0)
+        location = intent.getStringExtra("location").toString()
+        internet = intent.getIntExtra("internet", 0)
+        ac = intent.getIntExtra("ac", 0)
+        heating = intent.getIntExtra("heating", 0)
+        tv = intent.getIntExtra("tv", 0)
+
 
         val buttonNewAd = findViewById<ImageButton>(R.id.imageBtnNewAd)
         buttonNewAd.setOnClickListener {
@@ -93,38 +118,85 @@ class HomePage : AppCompatActivity() {
             return
         }
 
+        if(sell_rent == -1) {
+            val api = AdApiManager.getAdApi()
+            val call = api.getAllAds(
+                -1
+            )
+            call.enqueue(object : Callback<List<AdResponse>> {
+                override fun onResponse(
+                    call: Call<List<AdResponse>>,
+                    response: Response<List<AdResponse>>
+                ) {
+                    if (!response.isSuccessful) {
+                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
+                        return
+                    } else {
+                        Log.i("CONNECTION1 ", "SUCCESSFUL")
+                        val ads = response.body()!!
+                        dataList = mutableListOf<DataModel>()
 
-        val api = AdApiManager.getAdApi()
-        val call = api.getAllAds(
-            -1
-        )
-        call.enqueue(object : Callback<List<Ad>> {
-            override fun onResponse(
-                call: Call<List<Ad>>,
-                response: Response<List<Ad>>
-            ) {
-                if (!response.isSuccessful) {
-                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
-                    return
-                } else {
-                    Log.i("CONNECTION1 ", "SUCCESSFUL")
-                    val ads = response.body()!!
-                    dataList= mutableListOf<DataModel>()
+                        for (ad in ads) {
+                            dataList.add(
+                                DataModel(
+                                    "${ad.title}",
+                                    "${ad.price.toString()}$",
+                                    R.drawable.photo1,
+                                    ad.id
+                                )
+                            )
+                        }
+                        photoAdapter.setDataList(dataList)
 
-                    for(ad in ads)
-                    {
-                        dataList.add(DataModel("${ad.title}","${ad.price.toString()}$" ,R.drawable.photo1, ad.id))
                     }
-                    photoAdapter.setDataList(dataList)
-
                 }
-            }
 
-            override fun onFailure(call: Call<List<Ad>>, t: Throwable) {
-                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-                return
-            }
-        })
+                override fun onFailure(call: Call<List<AdResponse>>, t: Throwable) {
+                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                    return
+                }
+            })
+        }
+        else
+        {
+            val api = AdApiManager.getAdApi()
+            val call = api.filterAds(sell_rent, flat_house, 0, to_number_of_rooms, 0.0, to_size, 0.0, to_price,
+            location, internet, ac, heating, tv)
+            call.enqueue(object : Callback<List<AdResponse>> {
+                override fun onResponse(
+                    call: Call<List<AdResponse>>,
+                    response: Response<List<AdResponse>>
+                ) {
+                    if (!response.isSuccessful) {
+                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
+                        return
+                    } else {
+                        Log.i("CONNECTION1 ", "SUCCESSFUL")
+                        val ads = response.body()!!
+                        dataList = mutableListOf<DataModel>()
+
+                        for (ad in ads) {
+                            dataList.add(
+                                DataModel(
+                                    "${ad.title}",
+                                    "${ad.price.toString()}$",
+                                    R.drawable.photo1,
+                                    ad.id
+                                )
+                            )
+                        }
+                        photoAdapter.setDataList(dataList)
+
+                    }
+                }
+
+                override fun onFailure(call: Call<List<AdResponse>>, t: Throwable) {
+                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                    return
+                }
+            })
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

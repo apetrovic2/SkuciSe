@@ -18,6 +18,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toFile
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.remote.UsersApiManager
+import com.example.myapplication.data.repository.UserImageResponse
 import com.example.myapplication.data.repository.UsersResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -51,6 +52,34 @@ class EditProfile : AppCompatActivity() {
 
         var dataByte = baos.toByteArray()
         data = Base64.encodeToString(dataByte, 0)
+
+        val apiUserImage = UsersApiManager.getUserApi()
+        val callImage = apiUserImage.getUserImage(AppData.getToken())
+        callImage.enqueue(object : Callback<UserImageResponse> {
+            override fun onResponse(
+                call: Call<UserImageResponse>,
+                response: Response<UserImageResponse>) {
+                if (!response.isSuccessful) {
+                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                    return
+                } else {
+                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+                    val userImage = response.body()!!
+                    if (userImage != null) {
+                        var image = findViewById(R.id.profilePicture) as ImageView
+
+                        val imageBytes = Base64.decode(userImage.image, 0)
+                        val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+
+                        image.setImageBitmap(imageBitmap)
+                    }
+                }
+            }
+            override fun onFailure(call: Call<UserImageResponse>, t: Throwable) {
+                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                return
+            }
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

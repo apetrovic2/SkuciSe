@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.model.Ad
 import com.example.myapplication.data.remote.AdApiManager
+import com.example.myapplication.data.repository.AdResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -80,10 +81,10 @@ class RentPage : AppCompatActivity() {
         val call = api.getAllAds(
             1
         )
-        call.enqueue(object : Callback<List<Ad>> {
+        call.enqueue(object : Callback<List<AdResponse>> {
             override fun onResponse(
-                call: Call<List<Ad>>,
-                response: Response<List<Ad>>
+                call: Call<List<AdResponse>>,
+                response: Response<List<AdResponse>>
             ) {
                 if (!response.isSuccessful) {
                     Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
@@ -102,7 +103,7 @@ class RentPage : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<Ad>>, t: Throwable) {
+            override fun onFailure(call: Call<List<AdResponse>>, t: Throwable) {
                 Log.i("CONNECTION ", "NOT SUCCESSFUL2")
                 return
             }
