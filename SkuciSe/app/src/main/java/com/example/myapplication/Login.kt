@@ -14,12 +14,19 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Login : AppCompatActivity() {
+
+    var regMessage = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        regMessage = intent.getStringExtra("reg_message").toString()
 
         var lblLoginMes = findViewById(R.id.lblLoginMessage) as TextView
-        lblLoginMes.setText("")
+        if(regMessage != "null")
+            lblLoginMes.setText(regMessage)
+        else
+            lblLoginMes.setText("")
 
         val buttonRegistration = findViewById<Button>(R.id.btnRegistrationLogin)
         buttonRegistration.setOnClickListener {

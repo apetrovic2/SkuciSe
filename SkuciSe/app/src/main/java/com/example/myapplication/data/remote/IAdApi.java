@@ -1,7 +1,9 @@
 package com.example.myapplication.data.remote;
 
 import com.example.myapplication.data.model.Ad;
+import com.example.myapplication.data.repository.AdImageResponse;
 import com.example.myapplication.data.repository.AdResponse;
+import com.example.myapplication.data.repository.UserImageResponse;
 
 import java.util.Date;
 import java.util.List;
@@ -35,4 +37,11 @@ public interface IAdApi
 
     @GET("FilterAds")
     Call<List<AdResponse>> filterAds(@Query("sell_rent") Integer sell_rent, @Query("flat_house") Integer flat_house, @Query("from_number_of_rooms") Integer from_number_of_rooms, @Query("to_number_of_rooms") Integer to_number_of_rooms, @Query("from_size") Double from_size, @Query("to_size") Double to_size, @Query("from_price") Double from_price, @Query("to_price") Double to_price, @Query("location") String location, @Query("internet") Integer internet, @Query("ac") Integer ac, @Query("heating") Integer heating, @Query("tv)") Integer tv);
+
+    @POST("SetAdPicture")
+    @FormUrlEncoded
+    Call<Integer> setAdPicture(@Field("ad_id") Integer ad_id, @Field("image") String image);
+
+    @GET("GetAdImage")
+    Call<AdImageResponse> getAdImage(@Query("id") Integer id);
 }

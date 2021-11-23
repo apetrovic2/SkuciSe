@@ -80,7 +80,7 @@
         android:fontFamily="@font/josefinsans_bold"
         android:text="Naslov oglasa"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/adPicture" />
 
     <TextView
         android:id="@+id/tbSize"
@@ -130,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.745"
         app:layout_constraintStart_toEndOf="@+id/tbFlatHouse"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/adPicture" />
 
     <TextView
         android:id="@+id/tbDescription"
@@ -155,10 +155,10 @@
         android:gravity="center"
         android:text="Stan/Kuca"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/adPicture" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/adPicture"
         android:layout_width="206dp"
         android:layout_height="164dp"
         android:layout_marginTop="28dp"

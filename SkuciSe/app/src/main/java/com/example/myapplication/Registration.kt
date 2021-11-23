@@ -31,8 +31,8 @@ class Registration : AppCompatActivity() {
         }
 
 
-        val buttonRegistration = findViewById<Button>(R.id.btnRegistrationFinal)
-        buttonRegistration.setOnClickListener {
+        val btnRegistrationNext = findViewById<Button>(R.id.btnRegistrationNext)
+        btnRegistrationNext.setOnClickListener {
 
             lblRegistrationMes.setText("Molimo sačekajte!")
 
@@ -71,11 +71,18 @@ class Registration : AppCompatActivity() {
                                 val ind = response.body()!!
 
                                 if (ind > 0) {
-                                    lblRegistrationMes.setText("Uspešna registracija")
+                                    lblRegistrationMes.setText("Uspešno!")
+                                    val intent = Intent(this@Registration, RegistrationPicture::class.java)
+                                    intent.putExtra("user_id", ind)
+                                    startActivity(intent)
                                 } else if (ind == 0) {
                                     lblRegistrationMes.setText("Greška, pokušajte opet!")
-                                } else {
+                                } else if(ind == -2){
                                     lblRegistrationMes.setText("Korisničko ime je zauzeto!")
+                                }
+                                else if(ind == -3)
+                                {
+                                    lblRegistrationMes.setText("E-mail ime je zauzet!")
                                 }
 
                                 Log.i("REGISTRATION STATUS ", "" + ind!!)

@@ -16,6 +16,7 @@ import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.model.Ad
 import com.example.myapplication.data.remote.AdApiManager
 import com.example.myapplication.data.remote.UsersApiManager
+import com.example.myapplication.data.repository.AdImageResponse
 import com.example.myapplication.data.repository.AdResponse
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
@@ -136,15 +137,31 @@ class HomePage : AppCompatActivity() {
                         val ads = response.body()!!
                         dataList = mutableListOf<DataModel>()
 
-                        for (ad in ads) {
-                            dataList.add(
-                                DataModel(
-                                    "${ad.title}",
-                                    "${ad.price.toString()}$",
-                                    R.drawable.photo1,
-                                    ad.id
-                                )
-                            )
+                        val apiAdImage = AdApiManager.getAdApi()
+                        for(ad in ads) {
+//                            val callImage = apiAdImage.getAdImage(ad.id)
+//                            callImage.enqueue(object : Callback<AdImageResponse> {
+//                                override fun onResponse(
+//                                    call: Call<AdImageResponse>,
+//                                    response: Response<AdImageResponse>
+//                                ) {
+//                                    if (!response.isSuccessful) {
+//                                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+//                                        return
+//                                    } else {
+//                                        Log.i("CONNECTION1 ", "SUCCESSFUL")
+//                                        var adImage = response.body()!!
+//                                        dataList.add(DataModel("${ad.title}","${ad.price}$","${adImage.image}", ad.id))
+//                                    }
+//                                }
+//
+//                                override fun onFailure(call: Call<AdImageResponse>, t: Throwable) {
+//                                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+//                                    return
+//                                }
+//                            })
+                            dataList.add(DataModel("${ad.title}","${ad.price}$",R.drawable.photo4, ad.id))
+
                         }
                         photoAdapter.setDataList(dataList)
 
@@ -175,15 +192,33 @@ class HomePage : AppCompatActivity() {
                         val ads = response.body()!!
                         dataList = mutableListOf<DataModel>()
 
-                        for (ad in ads) {
-                            dataList.add(
-                                DataModel(
-                                    "${ad.title}",
-                                    "${ad.price.toString()}$",
-                                    R.drawable.photo1,
-                                    ad.id
-                                )
-                            )
+                        val apiAdImage = AdApiManager.getAdApi()
+                        for(ad in ads)
+                        {
+//                            var adImage = AdImageResponse()
+//                            val callImage = apiAdImage.getAdImage(ad.id)
+//                            callImage.enqueue(object : Callback<AdImageResponse> {
+//                                override fun onResponse(
+//                                    call: Call<AdImageResponse>,
+//                                    response: Response<AdImageResponse>) {
+//                                    if (!response.isSuccessful) {
+//                                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+//                                        return
+//                                    } else {
+//                                        Log.i("CONNECTION1 ", "SUCCESSFUL")
+//                                        var adImage = response.body()!!
+//
+//                                    }
+//                                }
+//                                override fun onFailure(call: Call<AdImageResponse>, t: Throwable) {
+//                                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+//                                    return
+//                                }
+//                            })
+
+
+
+                            dataList.add(DataModel("${ad.title}","${ad.price}$",R.drawable.photo4, ad.id))
                         }
                         photoAdapter.setDataList(dataList)
 

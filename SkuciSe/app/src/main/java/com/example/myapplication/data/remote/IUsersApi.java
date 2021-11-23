@@ -40,4 +40,8 @@ public interface IUsersApi
     @PUT("ChangePassword")
     @FormUrlEncoded
     Call<Integer> changePassword(@Field("id") Integer id, @Field("password") String password);
+
+    @POST("SetProfilePicture")
+    @FormUrlEncoded
+    Call<Integer> setProfilePicture(@Field("user_id") Integer user_id, @Field("image") String image);
 }

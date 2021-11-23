@@ -222,7 +222,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cbElevator" />
 
     <Button
-        android:id="@+id/btnAddNewAd"
+        android:id="@+id/btnAddNewAdNext"
         android:layout_width="141dp"
         android:layout_height="39dp"
         android:layout_marginStart="132dp"

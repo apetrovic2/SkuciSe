@@ -1,10 +1,13 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +15,7 @@ import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.model.Ad
 import com.example.myapplication.data.remote.AdApiManager
 import com.example.myapplication.data.remote.UsersApiManager
+import com.example.myapplication.data.repository.AdImageResponse
 import com.example.myapplication.data.repository.AdResponse
 import com.example.myapplication.data.repository.UsersResponse
 import retrofit2.Call
@@ -44,6 +48,8 @@ class AdInfo : AppCompatActivity() {
         var tbEquipment = findViewById(R.id.tbEquipment) as TextView
         var tbFloor = findViewById(R.id.tbFloor) as TextView
 
+        val viewImage = findViewById(R.id.adPicture) as ImageView
+
         val buttonEditAd = findViewById<Button>(R.id.btnEditAd)
         buttonEditAd.setOnClickListener {
             val intent = Intent(this, EditAd::class.java)
@@ -67,10 +73,39 @@ class AdInfo : AppCompatActivity() {
                     val ad = response.body()!!
                     if(ad != null)
                     {
+//                        val callImage = api.getAdImage(ad.id)
+//                        callImage.enqueue(object : Callback<AdImageResponse> {
+//                            override fun onResponse(
+//                                call: Call<AdImageResponse>,
+//                                response: Response<AdImageResponse>) {
+//                                if (!response.isSuccessful) {
+//                                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+//                                    return
+//                                } else {
+//                                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+//                                    var adImage = response.body()!!
+//                                    val imageBytes = Base64.decode(adImage.image, 0)
+//                                    val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+//                                    viewImage.setImageBitmap(imageBitmap)
+//
+//                                }
+//                            }
+//                            override fun onFailure(call: Call<AdImageResponse>, t: Throwable) {
+//                                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+//                                return
+//                            }
+//                        })
+                        viewImage.setImageResource(R.drawable.photo4)
+
+
+
                         tbLocation.setText(ad.location)
                         tbPrice.setText(ad.price.toInt().toString() + "$")
                         tbSize.setText("Kvadratura: " + ad.size.toInt().toString())
                         tbTitle.setText(ad.title)
+
+
+
                         if(ad.sell_rent == 0)
                         {
                             tbSellRent.setText("Prodaja")

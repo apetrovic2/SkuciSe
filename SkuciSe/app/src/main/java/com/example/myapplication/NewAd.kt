@@ -43,8 +43,8 @@ class NewAd : AppCompatActivity() {
             val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
-        val btnAddNewAd = findViewById(R.id.btnAddNewAd) as Button
-        btnAddNewAd.setOnClickListener() {
+        val btnAddNewAdNext = findViewById(R.id.btnAddNewAdNext) as Button
+        btnAddNewAdNext.setOnClickListener() {
 
             var lblAddNewAdMessage = findViewById(R.id.lblAddNewAdMessage) as TextView
             lblAddNewAdMessage.setText("")
@@ -175,8 +175,17 @@ class NewAd : AppCompatActivity() {
                         } else {
                             Log.i("CONNECTION1 ", "SUCCESSFUL")
                             val ind = response.body()!!
-                            Log.i("NEW AD STATUS", "" + ind)
-                            lblAddNewAdMessage.setText("Uspešno dodat oglas!")
+                            if(ind > 0)
+                            {
+                                lblAddNewAdMessage.setText("Uspešno!")
+                                val intent = Intent(this@NewAd, NewAdPicture::class.java)
+                                intent.putExtra("ad_id", ind)
+                                startActivity(intent)
+                            }
+                            else
+                            {
+                                lblAddNewAdMessage.setText("Neuspešno!")
+                            }
 
                         }
                     }
