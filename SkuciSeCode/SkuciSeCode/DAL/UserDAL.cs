@@ -98,9 +98,16 @@ namespace SkuciSeCode.DAL
                             user.email = email;
                             ind = _context.SaveChanges();
 
-                            UserImage userImage = new UserImage(user.id, image);
-                            _context.UserImages.Add(userImage);
-                            _context.SaveChanges();
+                            var userImages = _context.UserImages.ToList().Where(u => u.user_id == user.id);
+                            UserImage userImg = userImages.FirstOrDefault();
+
+                            if (!userImg.Equals(image) && image != "")
+                            {
+                                UserImage userImage = new UserImage(user.id, image);
+                                _context.UserImages.Add(userImage);
+                                if(ind == 0)
+                                    ind = _context.SaveChanges();
+                            }
                         }
                         else
                         {
@@ -155,7 +162,7 @@ namespace SkuciSeCode.DAL
 
         public UserImage GetUserImage(int id)
         {
-            var userImages = _context.UserImages.ToList().Where(u => u.id == id);
+            var userImages = _context.UserImages.ToList().Where(u => u.user_id == id);
             UserImage userImage = userImages.FirstOrDefault();
             return userImage;
         }

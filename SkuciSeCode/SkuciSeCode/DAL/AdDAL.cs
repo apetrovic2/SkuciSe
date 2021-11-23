@@ -119,8 +119,10 @@ namespace SkuciSeCode.DAL
         {
             var pr = PredicateExtensions.PredicateExtensions.Begin<Ad>();
 
-            pr = pr.And(ad => ad.sell_rent == sell_rent);
-
+            if (sell_rent >= 0)
+            {
+                pr = pr.And(ad => ad.sell_rent == sell_rent);
+            }
             if (flat_house >= 0)
             {
                 pr = pr.And(ad => ad.flat_house == flat_house);

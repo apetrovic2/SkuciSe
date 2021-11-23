@@ -65,7 +65,7 @@ namespace SkuciSeCode.Controllers
 
         [HttpGet]
         [Route("GetUserImage")]
-        public async Task<IActionResult> GetUserImage([FromForm] int id)
+        public async Task<IActionResult> GetUserImage([FromQuery] int id)
         {
             UserImage userImage = _iUserUI.GetUserImage(id);
             return Ok(userImage);
