@@ -36,7 +36,7 @@
         android:layout_height="124dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="72dp"
-        android:src="@drawable/profile"
+        android:src="@drawable/ic_baseline_account_circle_purple_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

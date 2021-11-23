@@ -12,7 +12,7 @@
         android:layout_height="124dp"
         android:layout_marginStart="124dp"
         android:layout_marginTop="76dp"
-        android:src="@drawable/person"
+        android:src="@drawable/ic_baseline_account_circle_purple_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

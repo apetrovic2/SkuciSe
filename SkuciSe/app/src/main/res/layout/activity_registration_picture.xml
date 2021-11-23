@@ -11,56 +11,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginEnd="120dp"
         android:fontFamily="@font/josefinsans_bold"
         android:text="Registracija"
         android:textColor="#353535"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/lblRegistrationMessage"
         android:layout_width="250dp"
         android:layout_height="20dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="80dp"
         android:gravity="center"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnChoosePhoto" />
 
     <Button
         android:id="@+id/btnRegistrationFinal"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginEnd="127dp"
         android:fontFamily="@font/josefinsans_bold"
         android:text="Registruj se"
         android:textColor="#353535"
         app:backgroundTint="#b5efbd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnChoosePhoto" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilePicture"
         android:layout_width="171dp"
         android:layout_height="153dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="120dp"
         android:src="@drawable/ic_baseline_account_circle_purple_24"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnChoosePhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="136dp"
         android:backgroundTint="@color/purple"
         android:text="Dodaj sliku"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 </androidx.constraintlayout.widget.ConstraintLayout>
