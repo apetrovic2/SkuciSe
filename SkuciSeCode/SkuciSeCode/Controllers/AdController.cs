@@ -104,5 +104,13 @@ namespace SkuciSeCode.Controllers
             int ind = _iAdUI.SetAdPicture(ad_id, image);
             return ind;
         }
+
+        [HttpGet]
+        [Route("GetAdImage")]
+        public async Task<IActionResult> GetAdImage([FromQuery] int id)
+        {
+            AdImage adImage = _iAdUI.GetAdImage(id);
+            return Ok(adImage);
+        }
     }
 }

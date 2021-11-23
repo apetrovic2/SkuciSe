@@ -180,5 +180,11 @@ namespace SkuciSeCode.DAL
             int ind = _context.SaveChanges();
             return ind;
         }
+        public AdImage GetAdImage(int id)
+        {
+            var adImages = _context.AdImages.ToList().Where(u => u.ad_id == id);
+            AdImage adImage = adImages.FirstOrDefault();
+            return adImage;
+        }
     }
 }

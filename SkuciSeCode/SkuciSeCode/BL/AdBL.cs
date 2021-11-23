@@ -67,5 +67,10 @@ namespace SkuciSeCode.BL
             int ind = ind1.Result;
             return ind;
         }
+
+        public AdImage GetAdImage(int id)
+        {
+            return _iAdDAL.GetAdImage(id);
+        }
     }
 }

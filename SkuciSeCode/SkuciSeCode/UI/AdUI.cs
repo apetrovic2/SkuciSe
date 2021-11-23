@@ -60,5 +60,10 @@ namespace SkuciSeCode.UI
         {
             return _iAdBL.SetAdPicture(ad_id, image);
         }
+
+        public AdImage GetAdImage(int id)
+        {
+            return _iAdBL.GetAdImage(id);
+        }
     }
 }
