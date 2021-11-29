@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Reservation"
+            android:exported="false" />
+        <activity
+            android:name=".AdInfoVisitor"
+            android:exported="false" />
+        <activity
             android:name=".RegistrationPicture"
             android:exported="false" />
         <activity
