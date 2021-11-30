@@ -6,12 +6,11 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
-public class UsersApiManager
+public class AppointmentApiManager
 {
     private static Retrofit retrofit = null;
-    private static IUsersApi api = null;
-    public static IUsersApi getUserApi()
+    private static IAppointmentApi api = null;
+    public static IAppointmentApi getAppointmentApi()
     {
         if(retrofit == null)
         {
@@ -21,11 +20,11 @@ public class UsersApiManager
                     .writeTimeout(60, TimeUnit.SECONDS)
                     .build();
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:5000/api/registration/")
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .baseUrl("http://10.0.2.2:5000/api/appointment/")
                     .client(okHttp)
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            api = retrofit.create(IUsersApi.class);
+            api = retrofit.create(IAppointmentApi.class);
         }
         return api;
     }

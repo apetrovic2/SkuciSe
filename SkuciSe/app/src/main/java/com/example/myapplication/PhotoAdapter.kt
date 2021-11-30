@@ -49,9 +49,19 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
         holder.image.setOnClickListener(){
             Log.i("AD ID2", "" + data.id)
             //val adInfoClass = AdInfo(data.id)
-            val intent = Intent(context, AdInfo::class.java)
-            intent.putExtra("id", data.id)
-            context.startActivity(intent)
+            if(data.ind == 1)
+            {
+                val intent = Intent(context, AdInfo::class.java)
+                intent.putExtra("id", data.id)
+                context.startActivity(intent)
+            }
+            else
+            {
+                val intent = Intent(context, AdInfoVisitor::class.java)
+                intent.putExtra("id", data.id)
+                context.startActivity(intent)
+            }
+
         }
     }
 

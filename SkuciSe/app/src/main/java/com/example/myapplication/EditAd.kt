@@ -1,7 +1,9 @@
 package com.example.myapplication
 
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.widget.*
 import com.example.myapplication.data.helpers.AppData
@@ -46,6 +48,8 @@ class EditAd : AppCompatActivity() {
         val rbFlat = findViewById(R.id.rbFlat) as RadioButton
         val rbHouse = findViewById(R.id.rbHouse) as RadioButton
 
+        val viewImage = findViewById(R.id.adPicture) as ImageView
+
         var date_start = ""
 
         val api = AdApiManager.getAdApi()
@@ -63,6 +67,7 @@ class EditAd : AppCompatActivity() {
                     val adImage = response.body()!!
 
                     if (adImage != null) {
+
                         var ad = adImage.ad
                         date_start = ad.date_start
                         tbLocation.setText(ad.location)
@@ -71,6 +76,11 @@ class EditAd : AppCompatActivity() {
                         tbTitle.setText(ad.title)
                         tbFloor.setText(ad.floor.toString())
                         tbDescription.setText(ad.description)
+
+                        val imageBytes = Base64.decode(adImage.image, 0)
+                        val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+
+                        viewImage.setImageBitmap(imageBitmap)
 
                         if(ad.heating == 1){cbHeating.isChecked = true}
                         if(ad.ac == 1){cbAc.isChecked = true}

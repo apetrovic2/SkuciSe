@@ -96,12 +96,18 @@ class SellPage : AppCompatActivity() {
                         val ads = response.body()!!
                         //AppData.setSellAds(ads)
                         for (ad in ads) {
+                            var ind = 0
+                            if(ad.ad.user_id == AppData.getToken())
+                            {
+                                ind = 1
+                            }
                             dataList.add(
                                 DataModel(
                                     "${ad.ad.title}",
                                     "${ad.ad.price}$",
                                     ad.image,
-                                    ad.ad.id
+                                    ad.ad.id,
+                                    ind
                                 )
                             )
                         }

@@ -142,12 +142,18 @@ class HomePage : AppCompatActivity() {
                             dataList = mutableListOf<DataModel>()
 
                             for (ad in ads) {
+                                var ind = 0
+                                if(ad.ad.user_id == AppData.getToken())
+                                {
+                                    ind = 1
+                                }
                                 dataList.add(
                                     DataModel(
                                         "${ad.ad.title}",
                                         "${ad.ad.price}$",
                                         ad.image,
-                                        ad.ad.id
+                                        ad.ad.id,
+                                        ind
                                     )
                                 )
 
@@ -201,7 +207,12 @@ class HomePage : AppCompatActivity() {
                         dataList = mutableListOf<DataModel>()
 
                         for(ad in ads) {
-                            dataList.add(DataModel("${ad.ad.title}","${ad.ad.price}$", ad.image, ad.ad.id))
+                            var ind = 0
+                            if(ad.ad.user_id == AppData.getToken())
+                            {
+                                ind = 1
+                            }
+                            dataList.add(DataModel("${ad.ad.title}","${ad.ad.price}$", ad.image, ad.ad.id, ind))
                         }
                         photoAdapter.setDataList(dataList)
 

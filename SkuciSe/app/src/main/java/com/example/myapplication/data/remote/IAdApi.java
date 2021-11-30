@@ -5,6 +5,7 @@ import com.example.myapplication.data.model.AdWithImage;
 import com.example.myapplication.data.repository.AdImageResponse;
 import com.example.myapplication.data.repository.AdResponse;
 import com.example.myapplication.data.repository.AdWithImageResponse;
+import com.example.myapplication.data.repository.AppointmentResponse;
 import com.example.myapplication.data.repository.UserImageResponse;
 
 import java.io.ByteArrayInputStream;
@@ -47,4 +48,5 @@ public interface IAdApi
 
     @GET("GetAdImage")
     Call<AdImageResponse> getAdImage(@Query("id") Integer id);
+
 }
