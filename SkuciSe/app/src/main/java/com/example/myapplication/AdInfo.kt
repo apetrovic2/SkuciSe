@@ -17,6 +17,7 @@ import com.example.myapplication.data.remote.AdApiManager
 import com.example.myapplication.data.remote.UsersApiManager
 import com.example.myapplication.data.repository.AdImageResponse
 import com.example.myapplication.data.repository.AdResponse
+import com.example.myapplication.data.repository.AdWithImageResponse
 import com.example.myapplication.data.repository.UsersResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -59,10 +60,10 @@ class AdInfo : AppCompatActivity() {
 
         val api = AdApiManager.getAdApi()
         val call = api.getAdById(id)
-        call.enqueue(object : Callback<AdResponse> {
+        call.enqueue(object : Callback<AdWithImageResponse> {
             override fun onResponse(
-                call: Call<AdResponse>,
-                response: Response<AdResponse>
+                call: Call<AdWithImageResponse>,
+                response: Response<AdWithImageResponse>
             )
             {
                 if (!response.isSuccessful) {
@@ -73,40 +74,17 @@ class AdInfo : AppCompatActivity() {
                     val ad = response.body()!!
                     if(ad != null)
                     {
-//                        val callImage = api.getAdImage(ad.id)
-//                        callImage.enqueue(object : Callback<AdImageResponse> {
-//                            override fun onResponse(
-//                                call: Call<AdImageResponse>,
-//                                response: Response<AdImageResponse>) {
-//                                if (!response.isSuccessful) {
-//                                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
-//                                    return
-//                                } else {
-//                                    Log.i("CONNECTION1 ", "SUCCESSFUL")
-//                                    var adImage = response.body()!!
-//                                    val imageBytes = Base64.decode(adImage.image, 0)
-//                                    val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-//                                    viewImage.setImageBitmap(imageBitmap)
-//
-//                                }
-//                            }
-//                            override fun onFailure(call: Call<AdImageResponse>, t: Throwable) {
-//                                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-//                                return
-//                            }
-//                        })
-                        viewImage.setImageResource(R.drawable.photo4)
+                        val imageBytes = Base64.decode(ad.image, 0)
+                        val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
 
+                        viewImage.setImageBitmap(imageBitmap)
 
+                        tbLocation.setText(ad.ad.location)
+                        tbPrice.setText(ad.ad.price.toInt().toString() + "$")
+                        tbSize.setText("Kvadratura: " + ad.ad.size.toInt().toString())
+                        tbTitle.setText(ad.ad.title)
 
-                        tbLocation.setText(ad.location)
-                        tbPrice.setText(ad.price.toInt().toString() + "$")
-                        tbSize.setText("Kvadratura: " + ad.size.toInt().toString())
-                        tbTitle.setText(ad.title)
-
-
-
-                        if(ad.sell_rent == 0)
+                        if(ad.ad.sell_rent == 0)
                         {
                             tbSellRent.setText("Prodaja")
                         }
@@ -114,7 +92,7 @@ class AdInfo : AppCompatActivity() {
                         {
                             tbSellRent.setText("Izdavanje")
                         }
-                        if(ad.flat_house == 0)
+                        if(ad.ad.flat_house == 0)
                         {
                             tbFlatHouse.setText("Stan")
                         }
@@ -122,10 +100,10 @@ class AdInfo : AppCompatActivity() {
                         {
                             tbFlatHouse.setText("Kuća")
                         }
-                        tbFloor.setText("Sprat: " + ad.floor.toString())
-                        tbDescription.setText("Opis: " + ad.description)
+                        tbFloor.setText("Sprat: " + ad.ad.floor.toString())
+                        tbDescription.setText("Opis: " + ad.ad.description)
                         var equipmentList = ""
-                        if(ad.ac == 1)
+                        if(ad.ad.ac == 1)
                         {
                             if(equipmentList != "")
                             {
@@ -133,7 +111,7 @@ class AdInfo : AppCompatActivity() {
                             }
                             equipmentList += "klima"
                         }
-                        if(ad.internet == 1)
+                        if(ad.ad.internet == 1)
                         {
                             if(equipmentList != "")
                             {
@@ -141,7 +119,7 @@ class AdInfo : AppCompatActivity() {
                             }
                             equipmentList += "internet"
                         }
-                        if(ad.tv == 1)
+                        if(ad.ad.tv == 1)
                         {
                             if(equipmentList != "")
                             {
@@ -149,7 +127,7 @@ class AdInfo : AppCompatActivity() {
                             }
                             equipmentList += "kablovska"
                         }
-                        if(ad.tv == 2)
+                        if(ad.ad.tv == 2)
                         {
                             if(equipmentList != "")
                             {
@@ -157,7 +135,7 @@ class AdInfo : AppCompatActivity() {
                             }
                             equipmentList += "satelit"
                         }
-                        if(ad.heating == 1)
+                        if(ad.ad.heating == 1)
                         {
                             if(equipmentList != "")
                             {
@@ -165,19 +143,19 @@ class AdInfo : AppCompatActivity() {
                             }
                             equipmentList += "grejanje"
                         }
-                        if(ad.number_of_rooms != 0)
+                        if(ad.ad.number_of_rooms != 0)
                         {
                             if(equipmentList != "")
                             {
                                 equipmentList += ", "
                             }
-                            equipmentList += "broj soba: " + ad.number_of_rooms.toString()
+                            equipmentList += "broj soba: " + ad.ad.number_of_rooms.toString()
                         }
                         tbEquipment.setText("Oprema: " + equipmentList)
 
 
                         var otherList = ""
-                        if(ad.garage == 1)
+                        if(ad.ad.garage == 1)
                         {
                             if(otherList != "")
                             {
@@ -185,7 +163,7 @@ class AdInfo : AppCompatActivity() {
                             }
                             otherList += "garaža"
                         }
-                        if(ad.elevator == 1)
+                        if(ad.ad.elevator == 1)
                         {
                             if(otherList != "")
                             {
@@ -193,7 +171,7 @@ class AdInfo : AppCompatActivity() {
                             }
                             otherList += "lift"
                         }
-                        if(ad.intercom == 1)
+                        if(ad.ad.intercom == 1)
                         {
                             if(otherList != "")
                             {
@@ -201,7 +179,7 @@ class AdInfo : AppCompatActivity() {
                             }
                             otherList += "interfon"
                         }
-                        if(ad.yard == 1)
+                        if(ad.ad.yard == 1)
                         {
                             if(otherList != "")
                             {
@@ -211,12 +189,12 @@ class AdInfo : AppCompatActivity() {
                         }
                         tbOther.setText("Ostalo: " + otherList)
 
-                        Log.i("AD STATUS ", "" + ad.title)
+                        Log.i("AD STATUS ", "" + ad.ad.title)
                     }
 
                 }
             }
-            override fun onFailure(call: Call<AdResponse>, t: Throwable) {
+            override fun onFailure(call: Call<AdWithImageResponse>, t: Throwable) {
                 Log.i("CONNECTION ", "NOT SUCCESSFUL2")
                 return
             }

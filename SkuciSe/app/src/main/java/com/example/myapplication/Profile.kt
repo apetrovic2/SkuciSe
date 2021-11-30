@@ -15,10 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.remote.AdApiManager
 import com.example.myapplication.data.remote.UsersApiManager
-import com.example.myapplication.data.repository.AdImageResponse
-import com.example.myapplication.data.repository.AdResponse
-import com.example.myapplication.data.repository.UserImageResponse
-import com.example.myapplication.data.repository.UsersResponse
+import com.example.myapplication.data.repository.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -140,10 +137,10 @@ class Profile : AppCompatActivity() {
 
         val apiAds = AdApiManager.getAdApi()
         val callAds = apiAds.getAdsByUserId(AppData.getToken())
-        callAds.enqueue(object : Callback<List<AdResponse>> {
+        callAds.enqueue(object : Callback<List<AdWithImageResponse>> {
             override fun onResponse(
-                call: Call<List<AdResponse>>,
-                response: Response<List<AdResponse>>)
+                call: Call<List<AdWithImageResponse>>,
+                response: Response<List<AdWithImageResponse>>)
             {
                 if (!response.isSuccessful) {
                     Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
@@ -163,29 +160,7 @@ class Profile : AppCompatActivity() {
                        // val apiAdImage = AdApiManager.getAdApi()
                         for(ad in ads)
                         {
-//                            var adImage = AdImageResponse()
-//                            val callImage = apiAdImage.getAdImage(ad.id)
-//                            callImage.enqueue(object : Callback<AdImageResponse> {
-//                                override fun onResponse(
-//                                    call: Call<AdImageResponse>,
-//                                    response: Response<AdImageResponse>) {
-//                                    if (!response.isSuccessful) {
-//                                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
-//                                        return
-//                                    } else {
-//                                        Log.i("CONNECTION1 ", "SUCCESSFUL")
-//                                        var adImage = response.body()!!
-//
-//
-//                                    }
-//                                }
-//                                override fun onFailure(call: Call<AdImageResponse>, t: Throwable) {
-//                                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-//                                    return
-//                                }
-//                            })
-
-                        dataList.add(DataModel("${ad.title}","${ad.price}$",R.drawable.photo4, ad.id))
+                        dataList.add(DataModel("${ad.ad.title}","${ad.ad.price}$",ad.image, ad.ad.id))
 
 
                         }
@@ -193,7 +168,7 @@ class Profile : AppCompatActivity() {
                     }
                 }
             }
-            override fun onFailure(call: Call<List<AdResponse>>, t: Throwable) {
+            override fun onFailure(call: Call<List<AdWithImageResponse>>, t: Throwable) {
                 Log.i("CONNECTION ", "NOT SUCCESSFUL2")
                 return
             }

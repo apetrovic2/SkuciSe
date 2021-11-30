@@ -8,6 +8,7 @@ import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.remote.AdApiManager
 import com.example.myapplication.data.remote.UsersApiManager
 import com.example.myapplication.data.repository.AdResponse
+import com.example.myapplication.data.repository.AdWithImageResponse
 import com.example.myapplication.data.repository.UsersResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -49,19 +50,20 @@ class EditAd : AppCompatActivity() {
 
         val api = AdApiManager.getAdApi()
         val call = api.getAdById(id)
-        call.enqueue(object : Callback<AdResponse> {
+        call.enqueue(object : Callback<AdWithImageResponse> {
             override fun onResponse(
-                call: Call<AdResponse>,
-                response: Response<AdResponse>
+                call: Call<AdWithImageResponse>,
+                response: Response<AdWithImageResponse>
             ) {
                 if (!response.isSuccessful) {
                     Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
                     return
                 } else {
                     Log.i("CONNECTION1 ", "SUCCESSFUL")
-                    val ad = response.body()!!
+                    val adImage = response.body()!!
 
-                    if (ad != null) {
+                    if (adImage != null) {
+                        var ad = adImage.ad
                         date_start = ad.date_start
                         tbLocation.setText(ad.location)
                         tbPrice.setText(ad.price.toString())
@@ -89,7 +91,7 @@ class EditAd : AppCompatActivity() {
 
                 }
             }
-                override fun onFailure(call: Call<AdResponse>, t: Throwable) {
+                override fun onFailure(call: Call<AdWithImageResponse>, t: Throwable) {
                     Log.i("CONNECTION ", "NOT SUCCESSFUL2")
                     return
                 }

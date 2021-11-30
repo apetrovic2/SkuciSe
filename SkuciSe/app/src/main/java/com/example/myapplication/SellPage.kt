@@ -13,6 +13,7 @@ import com.example.myapplication.data.model.Ad
 import com.example.myapplication.data.remote.AdApiManager
 import com.example.myapplication.data.repository.AdImageResponse
 import com.example.myapplication.data.repository.AdResponse
+import com.example.myapplication.data.repository.AdWithImageResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -77,60 +78,62 @@ class SellPage : AppCompatActivity() {
 //            startActivity(intent)
             return
         }
-
-        val api = AdApiManager.getAdApi()
-        val call = api.getAllAds(
-            0
-        )
-        call.enqueue(object : Callback<List<AdResponse>> {
-            override fun onResponse(
-                call: Call<List<AdResponse>>,
-                response: Response<List<AdResponse>>
-            ) {
-                if (!response.isSuccessful) {
-                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
-                    return
-                } else {
-                    Log.i("CONNECTION1 ", "SUCCESSFUL")
-                    val ads = response.body()!!
-
-                    val apiAdImage = AdApiManager.getAdApi()
-                    for(ad in ads)
-                    {
-//                        val callImage = apiAdImage.getAdImage(ad.id)
-//                        callImage.enqueue(object : Callback<AdImageResponse> {
-//                            override fun onResponse(
-//                                call: Call<AdImageResponse>,
-//                                response: Response<AdImageResponse>) {
-//                                if (!response.isSuccessful) {
-//                                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
-//                                    return
-//                                } else {
-//                                    Log.i("CONNECTION1 ", "SUCCESSFUL")
-//                                    var adImage = response.body()!!
-//                                    dataList.add(DataModel("${ad.title}","${ad.price}$","${adImage.image}", ad.id))
-//
-//                                }
-//                            }
-//                            override fun onFailure(call: Call<AdImageResponse>, t: Throwable) {
-//                                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-//                                return
-//                            }
-//                        })
-                        dataList.add(DataModel("${ad.title}","${ad.price}$",R.drawable.photo4, ad.id))
+//        if(AppData.getSellAds() == null) {
+            val api = AdApiManager.getAdApi()
+            val call = api.getAllAds(
+                0
+            )
+            call.enqueue(object : Callback<List<AdWithImageResponse>> {
+                override fun onResponse(
+                    call: Call<List<AdWithImageResponse>>,
+                    response: Response<List<AdWithImageResponse>>
+                ) {
+                    if (!response.isSuccessful) {
+                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL ${response.message()}")
+                        return
+                    } else {
+                        Log.i("CONNECTION1 ", "SUCCESSFUL")
+                        val ads = response.body()!!
+                        //AppData.setSellAds(ads)
+                        for (ad in ads) {
+                            dataList.add(
+                                DataModel(
+                                    "${ad.ad.title}",
+                                    "${ad.ad.price}$",
+                                    ad.image,
+                                    ad.ad.id
+                                )
+                            )
+                        }
+                        photoAdapter.setDataList(dataList)
 
                     }
-                    photoAdapter.setDataList(dataList)
-                    Log.i("HOME PAGE", "" + 1)
-
                 }
-            }
 
-            override fun onFailure(call: Call<List<AdResponse>>, t: Throwable) {
-                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-                return
-            }
-        })
+                override fun onFailure(call: Call<List<AdWithImageResponse>>, t: Throwable) {
+                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                    return
+                }
+            })
+//        }
+//        else
+//        {
+//            val ads = AppData.getSellAds()
+//            dataList = mutableListOf<DataModel>()
+//
+//            for (ad in ads) {
+//                dataList.add(
+//                    DataModel(
+//                        "${ad.ad.title}",
+//                        "${ad.ad.price}$",
+//                        ad.image.toString(),
+//                        ad.ad.id
+//                    )
+//                )
+//
+//            }
+//            photoAdapter.setDataList(dataList)
+//        }
 
     }
 

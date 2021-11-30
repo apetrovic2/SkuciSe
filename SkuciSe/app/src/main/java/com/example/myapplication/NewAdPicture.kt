@@ -36,10 +36,11 @@ class NewAdPicture : AppCompatActivity() {
         var inputStream = cr.openInputStream(uri) as InputStream
         var bitmap = BitmapFactory.decodeStream(inputStream) as Bitmap
         var baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 30, baos)
 
         var dataByte = baos.toByteArray()
         data = Base64.encodeToString(dataByte, 0)
+        //data = dataByte
     }
 
     @SuppressLint("WrongThread")
@@ -58,7 +59,7 @@ class NewAdPicture : AppCompatActivity() {
 
         var dataByte = baos.toByteArray()
         data = Base64.encodeToString(dataByte, 0)
-
+        //data = dataByte
 
         val lblAddNewAdMessage = findViewById(R.id.lblAddNewAdMessage) as TextView
         lblAddNewAdMessage.setText("")

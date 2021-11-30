@@ -29,4 +29,5 @@ public class AdImageResponse
     public void setImage(String image) {
         this.image = image;
     }
+
 }
