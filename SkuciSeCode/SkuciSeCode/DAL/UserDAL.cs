@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using SkuciSeCode.Helpers;
+using Microsoft.EntityFrameworkCore;
 
 namespace SkuciSeCode.DAL
 {
@@ -17,15 +18,15 @@ namespace SkuciSeCode.DAL
         {
             _context = context;
         }
-        public List<User> GetAllUsers()
+        public async Task<List<User>> GetAllUsers()
         {
-            var list = _context.Users.ToList();
+            var list = await _context.Users.ToListAsync();
             return list;
         }
 
-        public User GetUserById(int id)
+        public async Task<User> GetUserById(int id)
         {
-            var users = _context.Users.ToList().Where(u => u.id == id);
+            var users = await _context.Users.Where(u => u.id == id).ToListAsync();
             User user = users.FirstOrDefault();
             return user;
         }
@@ -168,9 +169,9 @@ namespace SkuciSeCode.DAL
             return ind;
         }
 
-        public UserImage GetUserImage(int id)
+        public async Task<UserImage> GetUserImage(int id)
         {
-            var userImages = _context.UserImages.ToList().Where(u => u.user_id == id);
+            var userImages = await _context.UserImages.Where(u => u.user_id == id).ToListAsync();
             UserImage userImage = userImages.FirstOrDefault();
             return userImage;
         }

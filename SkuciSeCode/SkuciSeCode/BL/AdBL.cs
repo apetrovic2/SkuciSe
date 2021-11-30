@@ -2,6 +2,7 @@
 using SkuciSeCode.BL.Interfaces;
 using SkuciSeCode.DAL.Interfaces;
 using SkuciSeCode.Entities;
+using SkuciSeCode.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,12 @@ namespace SkuciSeCode.BL
             _iAdDAL = iAdDAL;
         }
 
-        public List<Ad> GetAllAds(int category)
+        public Task<List<AdWithImage>> GetAllAds(int category)
         {
             return _iAdDAL.GetAllAds(category);
         }
 
-        public Ad GetAdById(int id)
+        public Task<AdWithImage> GetAdById(int id)
         {
             return _iAdDAL.GetAdById(id);
         }
@@ -51,26 +52,37 @@ namespace SkuciSeCode.BL
             return _iAdDAL.EditAd(ad);
         }
 
-        public List<Ad> GetAdsByUserId(int user_id)
+        public Task<List<AdWithImage>> GetAdsByUserId(int user_id)
         {
             return _iAdDAL.GetAdsByUserId(user_id);
         }
 
-        public List<Ad> FilterAds(int sell_rent, int flat_house, int from_number_of_rooms, int to_number_of_rooms, float from_size, float to_size, float from_price, float to_price, string location, int internet, int ac, int heating, int tv)
+        public Task<List<AdWithImage>> FilterAds(int sell_rent, int flat_house, int from_number_of_rooms, int to_number_of_rooms, float from_size, float to_size, float from_price, float to_price, string location, int internet, int ac, int heating, int tv)
         {
             return _iAdDAL.FilterAds(sell_rent, flat_house, from_number_of_rooms, to_number_of_rooms, from_size, to_size, from_price, to_price, location, internet, ac, heating, tv);
         }
 
-        public int SetAdPicture(int ad_id, string image)
+        public int SetAdPicture(int ad_id, String image)
         {
             Task<int> ind1 = _iAdDAL.SetAdPicture(ad_id, image);
             int ind = ind1.Result;
             return ind;
         }
 
-        public AdImage GetAdImage(int id)
+        public int MakeAnAppointment(int user_id, int ad_id, string date)
         {
-            return _iAdDAL.GetAdImage(id);
+            Task<int> ind =  _iAdDAL.MakeAnAppointment(user_id, ad_id, date);
+            return ind.Result;
+        }
+
+        public Task<List<AppointmentModel>> GetAppointmentByOwnerId(int id)
+        {
+            return _iAdDAL.GetAppointmentByOwnerId(id);
+        }
+
+        public int ApproveAppointment(int app_id)
+        {
+            return _iAdDAL.ApproveAppointment(app_id);
         }
     }
 }

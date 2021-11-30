@@ -24,7 +24,7 @@ namespace SkuciSeCode.Controllers
         [Route("GetAllUsers")]
         public async Task<IActionResult> Get()
         {
-            var users = _iUserUI.GetAllUsers();
+            var users = await _iUserUI.GetAllUsers();
             var userModels = UserHelper.ConvertUsers(users);
             return Ok(userModels);
         }
@@ -68,7 +68,7 @@ namespace SkuciSeCode.Controllers
         [Route("GetUserById")]
         public async Task<IActionResult> GetUserById([FromForm] int id)
         {
-            User user = _iUserUI.GetUserById(id);
+            User user = await _iUserUI.GetUserById(id);
             return Ok(user);
         }
 
@@ -76,7 +76,7 @@ namespace SkuciSeCode.Controllers
         [Route("GetUserImage")]
         public async Task<IActionResult> GetUserImage([FromQuery] int id)
         {
-            UserImage userImage = _iUserUI.GetUserImage(id);
+            UserImage userImage = await _iUserUI.GetUserImage(id);
             return Ok(userImage);
         }
 

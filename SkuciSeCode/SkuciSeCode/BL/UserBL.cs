@@ -16,12 +16,12 @@ namespace SkuciSeCode.BL.Interfaces
         {
             _iUserDAL = iUserDAL;
         }
-        public List<User> GetAllUsers()
+        public Task<List<User>> GetAllUsers()
         {
             return _iUserDAL.GetAllUsers();
         }
 
-        public User GetUserById(int id)
+        public Task<User> GetUserById(int id)
         {
             return _iUserDAL.GetUserById(id);
         }
@@ -76,7 +76,7 @@ namespace SkuciSeCode.BL.Interfaces
             return _iUserDAL.ChangePassword(id, hash, salt);
         }
 
-        public UserImage GetUserImage(int id)
+        public Task<UserImage> GetUserImage(int id)
         {
             return _iUserDAL.GetUserImage(id);
         }

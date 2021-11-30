@@ -9,14 +9,14 @@ namespace SkuciSeCode.DAL.Interfaces
 {
     public interface IUserDAL
     {
-        List<User> GetAllUsers();
+        Task<List<User>> GetAllUsers();
         Task<int> RegistrationAsync(User user);
         int Login(String username, String password);
         int EditUser(int id, String username, String password, String name, String email, String image);
         int DeleteUser(int id);
-        User GetUserById(int id);
+        Task<User> GetUserById(int id);
         int ChangePassword(int id, String hash, String salt);
-        UserImage GetUserImage(int id);
+        Task<UserImage> GetUserImage(int id);
         Task<int> SetProfilePicture(int user_id, String image);
     }
 }

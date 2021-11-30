@@ -1,6 +1,9 @@
-﻿using PredicateExtensions;
+﻿using Microsoft.EntityFrameworkCore;
+using PredicateExtensions;
 using SkuciSeCode.DAL.Interfaces;
 using SkuciSeCode.Entities;
+using SkuciSeCode.Helpers;
+using SkuciSeCode.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,38 +19,64 @@ namespace SkuciSeCode.DAL
             _context = context;
         }
 
-        public List<Ad> GetAllAds(int category)
+        public async Task<List<AdWithImage>> GetAllAds(int category)
         {
-            var ads = new List<Ad>();
+            var ads = new List<AdModel>();
             if (category < 0)
             {
-                var allAds = _context.Ads.ToList().Where(ad => ad.date_end == null);
-                ads = allAds.ToList();
+                var allAds = await _context.Ads.Include(a => a.images).Where(ad => ad.date_end == null).ToListAsync();
+                ads = allAds;
             }
             else
             {
-                var allAds = _context.Ads.ToList().Where(ad => ad.date_end == null && ad.sell_rent == category);
-                ads = allAds.ToList();
+                var allAds = await _context.Ads.Include(a => a.images).Where(ad => ad.date_end == null && ad.sell_rent == category).ToListAsync();
+                ads = allAds;
             }
 
-            return ads;
+            List<AdWithImage> adWithImages = new List<AdWithImage>();
+            foreach(var ad in ads)
+            {
+                Ad a = new Ad(ad.id, ad.title, ad.flat_house, ad.sell_rent, ad.number_of_rooms, ad.description, ad.size,
+                                ad.date_start, ad.date_end, ad.price, ad.location, ad.floor, ad.internet, ad.ac, ad.intercom,
+                                ad.garage, ad.elevator, ad.balcony, ad.yard, ad.heating, ad.tv, ad.user_id);
+                Ad add = new Ad();
+                AdWithImage adImage = new AdWithImage(a, ad.images.image);
+                adWithImages.Add(adImage);
+            }
+
+            return adWithImages;
         }
 
-        public Ad GetAdById(int id)
+        public async Task<AdWithImage> GetAdById(int id)
         {
-            var ads = _context.Ads.ToList().Where(ad => ad.id == id);
-            Ad ad = ads.FirstOrDefault();
-            return ad;
+            var ads = await _context.Ads.Where(ad => ad.id == id).ToListAsync();
+            AdModel ad = ads.FirstOrDefault();
+
+            var adImages = await _context.AdImages.Where(a => a.ad_id == ad.id).ToListAsync();
+            var adImage = adImages.FirstOrDefault();
+
+            AdWithImage adWithImage = null;
+
+            if (adImage != null)
+            {
+                Ad a = new Ad(ad.id, ad.title, ad.flat_house, ad.sell_rent, ad.number_of_rooms, ad.description, ad.size,
+                                ad.date_start, ad.date_end, ad.price, ad.location, ad.floor, ad.internet, ad.ac, ad.intercom,
+                                ad.garage, ad.elevator, ad.balcony, ad.yard, ad.heating, ad.tv, ad.user_id);
+                adWithImage = new AdWithImage(a, adImage.image);
+            }
+
+            return adWithImage;
         }
 
         public async Task<int> AddNewAd(Ad ad)
         {
             int ind;
-            await _context.Ads.AddAsync(ad);
+            AdModel adModel = AdHelper.ConvertAd(ad);
+            await _context.Ads.AddAsync(adModel);
             int ind1 = _context.SaveChanges();
             if( ind1 > 0 )
             {
-                ind = ad.id;
+                ind = adModel.id;
             }
             else
             {
@@ -60,7 +89,7 @@ namespace SkuciSeCode.DAL
         {
             int ind = -1;
             var ads = _context.Ads.ToList().Where(ad => ad.id == id);
-            Ad ad = ads.FirstOrDefault();
+            AdModel ad = ads.FirstOrDefault();
             if (ad != null)
             {
                 ad.date_end = date_end;
@@ -73,7 +102,7 @@ namespace SkuciSeCode.DAL
         {
             int ind = -1;
             var ads = _context.Ads.ToList().Where(ad => ad.id == id);
-            Ad ad = ads.FirstOrDefault();
+            AdModel ad = ads.FirstOrDefault();
 
             if (ad != null)
             {
@@ -88,7 +117,7 @@ namespace SkuciSeCode.DAL
         {
             int ind = -1;
             var ads = _context.Ads.ToList().Where(a => a.id == ad.id);
-            Ad existingAd = ads.FirstOrDefault();
+            AdModel existingAd = ads.FirstOrDefault();
             if (existingAd != null)
             {
                 existingAd.title = ad.title;
@@ -116,16 +145,33 @@ namespace SkuciSeCode.DAL
             return ind;
         }
 
-        public List<Ad> GetAdsByUserId(int user_id)
+        public async Task<List<AdWithImage>> GetAdsByUserId(int user_id)
         {
-            var allUserAds = _context.Ads.ToList().Where(ad => ad.date_end == null && ad.user_id == user_id);
+            var allUserAds = await _context.Ads.Where(ad => ad.date_end == null && ad.user_id == user_id).ToListAsync();
             var userAds = allUserAds.ToList();
-            return userAds;
+            List<AdWithImage> adsWithImages = new List<AdWithImage>();
+
+            foreach (AdModel ad in userAds)
+            {
+                var adImages = await _context.AdImages.Where(a => a.ad_id == ad.id).ToListAsync();
+                var adImage = adImages.FirstOrDefault();
+
+                if (adImage != null)
+                {
+                    Ad a = new Ad(ad.id, ad.title, ad.flat_house, ad.sell_rent, ad.number_of_rooms, ad.description, ad.size,
+                                ad.date_start, ad.date_end, ad.price, ad.location, ad.floor, ad.internet, ad.ac, ad.intercom,
+                                ad.garage, ad.elevator, ad.balcony, ad.yard, ad.heating, ad.tv, ad.user_id);
+                    AdWithImage adWithImage = new AdWithImage(a, adImage.image);
+                    adsWithImages.Add(adWithImage);
+                }
+            }
+
+            return adsWithImages;
         }
 
-        public List<Ad> FilterAds(int sell_rent, int flat_house, int from_number_of_rooms, int to_number_of_rooms, float from_size, float to_size, float from_price, float to_price, String location, int internet, int ac, int heating, int tv)
+        public async Task<List<AdWithImage>> FilterAds(int sell_rent, int flat_house, int from_number_of_rooms, int to_number_of_rooms, float from_size, float to_size, float from_price, float to_price, String location, int internet, int ac, int heating, int tv)
         {
-            var pr = PredicateExtensions.PredicateExtensions.Begin<Ad>();
+            var pr = PredicateExtensions.PredicateExtensions.Begin<AdModel>();
 
             if (sell_rent >= 0)
             {
@@ -168,23 +214,70 @@ namespace SkuciSeCode.DAL
                 pr = pr.And(ad => ad.tv == tv);
             }
 
-            var ads = _context.Ads.Where(pr);
-            var filteredAds = ads.ToList();
-            return filteredAds;
+            pr = pr.And(ad => ad.date_end == null);
+
+            var ads = await _context.Ads.Where(pr).ToListAsync();
+            var filteredAds = ads;
+
+            List<AdWithImage> adsWithImages = new List<AdWithImage>();
+
+            foreach (AdModel ad in filteredAds)
+            {
+                var adImages = await _context.AdImages.Where(a => a.ad_id == ad.id).ToListAsync();
+                var adImage = adImages.FirstOrDefault();
+
+                if (adImage != null)
+                {
+                    Ad a = new Ad(ad.id, ad.title, ad.flat_house, ad.sell_rent, ad.number_of_rooms, ad.description, ad.size,
+                                ad.date_start, ad.date_end, ad.price, ad.location, ad.floor, ad.internet, ad.ac, ad.intercom,
+                                ad.garage, ad.elevator, ad.balcony, ad.yard, ad.heating, ad.tv, ad.user_id);
+                    AdWithImage adWithImage = new AdWithImage(a, adImage.image);
+                    adsWithImages.Add(adWithImage);
+                }
+            }
+
+            return adsWithImages;
         }
 
-        public async Task<int> SetAdPicture(int ad_id, string image)
+        public async Task<int> SetAdPicture(int ad_id, String image)
         {
+            //var bytes = Convert.FromBase64String(image);
+
             AdImage adImage = new AdImage(ad_id, image);
-            await _context.AdImages.AddAsync(adImage);
+            AdImageModel adImageModel = AdImageHelper.ConvertAdImage(adImage);
+            await _context.AdImages.AddAsync(adImageModel);
             int ind = _context.SaveChanges();
             return ind;
         }
-        public AdImage GetAdImage(int id)
+
+        public async Task<int> MakeAnAppointment(int user_id, int ad_id, string date)
         {
-            var adImages = _context.AdImages.ToList().Where(u => u.ad_id == id);
-            AdImage adImage = adImages.FirstOrDefault();
-            return adImage;
+                                                                    //approved - 0
+            Appointment app = new Appointment(user_id, ad_id, date, 0);
+
+            AppointmentModel appModel = AppointmentHelper.ConvertAppointment(app);
+            await _context.Appointments.AddAsync(appModel);
+            int ind = _context.SaveChanges();
+
+            return ind;
+        }
+
+        public async Task<List<AppointmentModel>> GetAppointmentByOwnerId(int id)
+        {
+            var allApps = await _context.Appointments.Include(a => a.ad).Where(app => app.ad.user_id == id).ToListAsync();
+            return allApps;
+        }
+
+        public int ApproveAppointment(int app_id)
+        {
+            var apps = _context.Appointments.ToList().Where(app => app.id == app_id);
+            var app = apps.FirstOrDefault();
+
+            app.approved = 1;
+
+            int ind = _context.SaveChanges();
+
+            return ind;
         }
     }
 }

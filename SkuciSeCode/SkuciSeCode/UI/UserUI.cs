@@ -15,12 +15,12 @@ namespace SkuciSeCode.UI
         {
             _iUserBL = iUserBL;
         }
-        public List<User> GetAllUsers()
+        public Task<List<User>> GetAllUsers()
         {
             return _iUserBL.GetAllUsers();
         }
 
-        public User GetUserById(int id)
+        public Task<User> GetUserById(int id)
         {
             return _iUserBL.GetUserById(id);
         }
@@ -51,7 +51,7 @@ namespace SkuciSeCode.UI
             return _iUserBL.ChangePassword(id, password);
         }
 
-        public UserImage GetUserImage(int id)
+        public Task<UserImage> GetUserImage(int id)
         {
             return _iUserBL.GetUserImage(id);
         }

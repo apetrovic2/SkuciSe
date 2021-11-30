@@ -9,15 +9,25 @@ namespace SkuciSeCode.Helpers
 {
     public class AdImageHelper
     {
-        public static List<AdImageModel> ConvertUsers(List<AdImage> adImages)
+        public static List<AdWithImageModel> ConvertUsers(List<AdWithImage> adImages)
         {
-            var adImageModels = adImages.ConvertAll(adImage => new AdImageModel
+            var adImageModels = adImages.ConvertAll(adImage => new AdWithImageModel
             {
-                id = adImage.id,
-                image = adImage.image,
-                ad_id = adImage.ad_id,
+                ad = adImage.ad,
+                image = adImage.image
             });
             return adImageModels;
+        }
+
+        public static AdImageModel ConvertAdImage(AdImage adImage)
+        {
+            var adImageModel = new AdImageModel
+            {
+                id = adImage.id,
+                ad_id = adImage.ad_id,
+                image = adImage.image
+            };
+            return adImageModel;
         }
     }
 }

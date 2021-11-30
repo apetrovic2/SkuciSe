@@ -9,8 +9,8 @@ namespace SkuciSeCode.Entities
     {
         public int id { get; set; }
         public int ad_id { get; set; }
+        //public String image { get; set; }
         public String image { get; set; }
-
 
         public AdImage()
         {

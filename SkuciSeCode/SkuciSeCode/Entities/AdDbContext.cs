@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SkuciSeCode.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +9,18 @@ namespace SkuciSeCode.Entities
 {
     public class AdDbContext : DbContext
     {
-        public DbSet<Ad> Ads { get; set; }
-        public DbSet<AdImage> AdImages { get; set; }
+        public DbSet<AdModel> Ads { get; set; }
+        public DbSet<AdImageModel> AdImages { get; set; }
+        public DbSet<AppointmentModel> Appointments { get; set; }
         public AdDbContext(DbContextOptions<AdDbContext> options) : base(options)
         {
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Ad>().ToTable("Ad");
-            modelBuilder.Entity<AdImage>().ToTable("AdImage");
+            modelBuilder.Entity<AdModel>().ToTable("Ad");
+            modelBuilder.Entity<AdImageModel>().ToTable("AdImage");
+            modelBuilder.Entity<AppointmentModel>().ToTable("Appointment");
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,5 +31,6 @@ namespace SkuciSeCode.Models
         public int heating { get; set; }
         public int tv { get; set; }
         public int user_id { get; set; }
+        public AdImageModel images { get; set; }
     }
 }

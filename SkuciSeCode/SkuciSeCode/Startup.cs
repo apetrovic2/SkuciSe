@@ -40,7 +40,7 @@ namespace SkuciSeCode
             services.AddScoped<IAdDAL, AdDAL>();
             services.AddDbContext<UserDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SkuciSeDbConnectionString")));
             services.AddDbContext<AdDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SkuciSeDbConnectionString")));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
