@@ -12,6 +12,8 @@ namespace SkuciSeCode.Entities
         public DbSet<AdModel> Ads { get; set; }
         public DbSet<AdImageModel> AdImages { get; set; }
         public DbSet<AppointmentModel> Appointments { get; set; }
+        public DbSet<UserModel> Users { get; set; }
+        public DbSet<UserImageModel> UserImages { get; set; }
         public AdDbContext(DbContextOptions<AdDbContext> options) : base(options)
         {
 
@@ -20,7 +22,9 @@ namespace SkuciSeCode.Entities
         {
             modelBuilder.Entity<AdModel>().ToTable("Ad");
             modelBuilder.Entity<AdImageModel>().ToTable("AdImage");
+            modelBuilder.Entity<UserImageModel>().ToTable("UserImage");
             modelBuilder.Entity<AppointmentModel>().ToTable("Appointment");
+            modelBuilder.Entity<UserModel>().ToTable("User");
         }
     }
 }

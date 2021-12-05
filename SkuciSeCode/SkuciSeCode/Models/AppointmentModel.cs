@@ -16,5 +16,8 @@ namespace SkuciSeCode.Models
 
         [ForeignKey("ad_id")]
         public AdModel ad { get; set; }
+
+        [ForeignKey("user_id")]
+        public UserModel user { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace SkuciSeCode.Models
         public String salt { get; set; }
         public String name { get; set; }
         public String email { get; set; }
+        public UserImageModel image { get; set; }
 
     }
 }

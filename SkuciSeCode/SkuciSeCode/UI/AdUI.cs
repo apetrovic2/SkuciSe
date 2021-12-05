@@ -67,14 +67,19 @@ namespace SkuciSeCode.UI
             return _iAdBL.MakeAnAppointment(user_id, ad_id, date);
         }
 
-        public Task<List<AppointmentModel>> GetAppointmentByOwnerId(int id)
+        public Task<List<AppointmentInfo>> GetAppointmentByOwnerId(int id)
         {
             return _iAdBL.GetAppointmentByOwnerId(id);
         }
 
-        public int ApproveAppointment(int app_id)
+        public int ApproveAppointment(int app_id, int approve_status)
         {
-            return _iAdBL.ApproveAppointment(app_id);
+            return _iAdBL.ApproveAppointment(app_id, approve_status);
+        }
+
+        public Task<List<AppointmentInfo>> GetAppointmentResponse(int id)
+        {
+            return _iAdBL.GetAppointmentResponse(id);
         }
     }
 }

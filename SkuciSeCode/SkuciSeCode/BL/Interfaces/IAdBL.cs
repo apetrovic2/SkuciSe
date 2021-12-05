@@ -19,7 +19,8 @@ namespace SkuciSeCode.BL.Interfaces
         Task<List<AdWithImage>> FilterAds(int sell_rent, int flat_house, int from_number_of_rooms, int to_number_of_rooms, float from_size, float to_size, float from_price, float to_price, String location, int internet, int ac, int heating, int tv);
         int SetAdPicture(int ad_id, String image);
         int MakeAnAppointment(int user_id, int ad_id, String date);
-        Task<List<AppointmentModel>> GetAppointmentByOwnerId(int id);
-        int ApproveAppointment(int app_id);
+        Task<List<AppointmentInfo>> GetAppointmentByOwnerId(int id);
+        Task<List<AppointmentInfo>> GetAppointmentResponse(int id);
+        int ApproveAppointment(int app_id, int approve_status);
     }
 }

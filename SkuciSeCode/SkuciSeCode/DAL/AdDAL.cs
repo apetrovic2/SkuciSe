@@ -39,7 +39,7 @@ namespace SkuciSeCode.DAL
                 Ad a = new Ad(ad.id, ad.title, ad.flat_house, ad.sell_rent, ad.number_of_rooms, ad.description, ad.size,
                                 ad.date_start, ad.date_end, ad.price, ad.location, ad.floor, ad.internet, ad.ac, ad.intercom,
                                 ad.garage, ad.elevator, ad.balcony, ad.yard, ad.heating, ad.tv, ad.user_id);
-                Ad add = new Ad();
+                //Ad add = new Ad();
                 AdWithImage adImage = new AdWithImage(a, ad.images.image);
                 adWithImages.Add(adImage);
             }
@@ -262,22 +262,49 @@ namespace SkuciSeCode.DAL
             return ind;
         }
 
-        public async Task<List<AppointmentModel>> GetAppointmentByOwnerId(int id)
+        public async Task<List<AppointmentInfo>> GetAppointmentByOwnerId(int id)
         {
-            var allApps = await _context.Appointments.Include(a => a.ad).Where(app => app.ad.user_id == id).ToListAsync();
-            return allApps;
+            var allApps = await _context.Appointments.Include(a => a.ad).Include(u => u.user).Include(i => i.user.image).Where(app => app.ad.user_id == id).ToListAsync();
+
+
+            List<AppointmentInfo> appInfos = new List<AppointmentInfo>();
+            foreach (var app in allApps)
+            {
+                AppointmentInfo appInfo = new AppointmentInfo(app.user, app.approved, app.date, app.ad_id, app.ad.title);
+
+                appInfos.Add(appInfo);
+            }
+
+            return appInfos;
         }
 
-        public int ApproveAppointment(int app_id)
+        public int ApproveAppointment(int app_id, int approve_status)
         {
             var apps = _context.Appointments.ToList().Where(app => app.id == app_id);
             var app = apps.FirstOrDefault();
 
-            app.approved = 1;
+            if(approve_status == 1 || approve_status == -1)
+                app.approved = approve_status;
 
             int ind = _context.SaveChanges();
 
             return ind;
+        }
+
+        public async Task<List<AppointmentInfo>> GetAppointmentResponse(int id)
+        {
+            var allApps = await _context.Appointments.Include(a => a.ad).Include(u => u.user).Include(i => i.ad.images).Where(app => app.user_id == id).ToListAsync();
+
+
+            List<AppointmentInfo> appInfos = new List<AppointmentInfo>();
+            foreach (var app in allApps)
+            {
+                AppointmentInfo appInfo = new AppointmentInfo(app.user, app.approved, app.date, app.ad_id, app.ad.title, app.ad.images.image);
+
+                appInfos.Add(appInfo);
+            }
+
+            return appInfos;
         }
     }
 }

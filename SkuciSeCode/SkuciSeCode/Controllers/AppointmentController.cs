@@ -38,10 +38,20 @@ namespace SkuciSeCode.Controllers
 
         [HttpPut]
         [Route("ApproveAppointment")]
-        public int ApproveAppointment([FromForm] int app_id)
+        public int ApproveAppointment([FromForm] int app_id, [FromForm] int approve_status)
         {
-            int ind =  _iAdUI.ApproveAppointment(app_id);
+            int ind =  _iAdUI.ApproveAppointment(app_id, approve_status);
             return ind;
         }
+
+        [HttpGet]
+        [Route("GetAppointmentResponse")]
+        public async Task<IActionResult> GetAppointmentResponse([FromQuery] int id)
+        {
+            var app = await _iAdUI.GetAppointmentResponse(id);
+            return Ok(app);
+
+        }
+
     }
 }

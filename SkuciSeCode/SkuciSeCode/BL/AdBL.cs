@@ -75,14 +75,19 @@ namespace SkuciSeCode.BL
             return ind.Result;
         }
 
-        public Task<List<AppointmentModel>> GetAppointmentByOwnerId(int id)
+        public Task<List<AppointmentInfo>> GetAppointmentByOwnerId(int id)
         {
             return _iAdDAL.GetAppointmentByOwnerId(id);
         }
 
-        public int ApproveAppointment(int app_id)
+        public int ApproveAppointment(int app_id, int approve_status)
         {
-            return _iAdDAL.ApproveAppointment(app_id);
+            return _iAdDAL.ApproveAppointment(app_id, approve_status);
+        }
+
+        public Task<List<AppointmentInfo>> GetAppointmentResponse(int id)
+        {
+            return _iAdDAL.GetAppointmentResponse(id);
         }
     }
 }
