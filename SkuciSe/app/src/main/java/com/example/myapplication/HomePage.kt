@@ -69,6 +69,11 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
+        val buttonNotifications = findViewById<ImageButton>(R.id.imageBtnNotifications)
+        buttonNotifications.setOnClickListener {
+            val intent = Intent(this, Notifications::class.java)
+            startActivity(intent)
+        }
 
         val buttonRent = findViewById<Button>(R.id.btnRent)
         buttonRent.setOnClickListener {

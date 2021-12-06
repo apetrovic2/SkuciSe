@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="Profil" />
 
+    <item
+        android:id="@+id/navigation_notifications1"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Obaveštenje" />
+
 </menu>

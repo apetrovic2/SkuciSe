@@ -43,6 +43,12 @@ class NewAd : AppCompatActivity() {
             val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
+        val buttonNotifications = findViewById<ImageButton>(R.id.imageBtnNotifications)
+        buttonNotifications.setOnClickListener {
+            val intent = Intent(this, Notifications::class.java)
+            startActivity(intent)
+        }
+
         val btnAddNewAdNext = findViewById(R.id.btnAddNewAdNext) as Button
         btnAddNewAdNext.setOnClickListener() {
 

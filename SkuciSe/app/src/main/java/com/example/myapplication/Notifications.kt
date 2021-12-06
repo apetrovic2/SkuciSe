@@ -1,7 +1,10 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,6 +18,22 @@ class Notifications : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notifications)
 
+        val buttonHome = findViewById<ImageButton>(R.id.imageBtnHome)
+        buttonHome.setOnClickListener {
+            val intent = Intent(this, HomePage::class.java)
+            startActivity(intent)
+        }
+        val buttonNewAd = findViewById<ImageButton>(R.id.imageBtnNewAd)
+        buttonNewAd.setOnClickListener {
+            val intent = Intent(this, NewAd::class.java)
+            startActivity(intent)
+        }
+        val buttonProfile = findViewById<ImageButton>(R.id.imageBtnProfile)
+        buttonProfile.setOnClickListener {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(applicationContext,1)
@@ -26,6 +45,10 @@ class Notifications : AppCompatActivity() {
 
         notificationAdapter.setDataList(dataList)
 
+        val actionbar = supportActionBar
+        actionbar!!.title = ""
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
     }
     override fun onBackPressed() {
