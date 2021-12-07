@@ -80,6 +80,20 @@
                 android:textStyle="normal">
 
             </TextView>
+
+            <Button
+                android:id="@+id/btnDetails"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/date"
+                android:fontFamily="@font/josefinsans_bold"
+                android:text="DETALJNIJE"
+                android:textSize="10sp"
+                android:textColor="#353535"
+                app:backgroundTint="#E1AEE9"
+                android:layout_marginStart="47dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/linearLayout" />
         </RelativeLayout>
 
 

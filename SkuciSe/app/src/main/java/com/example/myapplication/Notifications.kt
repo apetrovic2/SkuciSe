@@ -74,7 +74,7 @@ class Notifications : AppCompatActivity() {
                     val apps = response.body()!!
                     //dataList = mutableListOf<DataModelNotifications>()
                     for(app in apps) {
-                     dataList.add(DataModelNotifications("${app.user.username}","${app.date}","${app.title}",app.user.image.image))
+                     dataList.add(DataModelNotifications("${app.user.username}","${app.date}","${app.title}",app.user.image.image, app.user.name, app.user.email, app.id))
                     }
                     notificationAdapter.setDataList(dataList)
 
@@ -114,7 +114,7 @@ class Notifications : AppCompatActivity() {
                         {
                             approved = "Zahtev odobren"
                         }
-                        dataList.add(DataModelNotifications("${app.title}","${app.date}","${approved}",app.owner_image))
+                        dataList.add(DataModelNotifications("${app.title}","${app.date}","${approved}",app.owner_image, app.user.name, app.user.email, app.id))
                     }
                     notificationAdapter.setDataList(dataList)
 

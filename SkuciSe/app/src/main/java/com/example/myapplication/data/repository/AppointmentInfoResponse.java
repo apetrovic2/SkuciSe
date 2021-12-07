@@ -2,6 +2,7 @@ package com.example.myapplication.data.repository;
 
 public class AppointmentInfoResponse
 {
+    public Integer id;
     public UsersResponse user;
     public int approved;
     public String date;
@@ -55,5 +56,13 @@ public class AppointmentInfoResponse
 
     public void setOwner_image(String owner_image) {
         this.owner_image = owner_image;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
