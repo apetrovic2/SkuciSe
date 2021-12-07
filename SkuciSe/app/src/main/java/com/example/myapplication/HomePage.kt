@@ -161,7 +161,6 @@ class HomePage : AppCompatActivity() {
                                         ind
                                     )
                                 )
-
                             }
                             photoAdapter.setDataList(dataList)
 

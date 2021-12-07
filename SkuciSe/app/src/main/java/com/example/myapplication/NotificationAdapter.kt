@@ -51,7 +51,11 @@ class NotificationAdapter(var context: Context) : RecyclerView.Adapter<Notificat
         holder.title.text = data.title
         holder.username.text = data.username
         holder.date.text = data.date
-        holder.image.setImageResource(data.image)
+
+        val imageBytes = Base64.decode(data.image, 0)
+        val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+
+        holder.image.setImageBitmap(imageBitmap)
     }
 
 }

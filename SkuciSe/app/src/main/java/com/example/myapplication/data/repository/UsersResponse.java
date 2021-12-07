@@ -7,6 +7,7 @@ public class UsersResponse
     private String username;
     private String password;
     private String email;
+    private UserImageResponse image;
 
     public void setId(Integer id) {
         this.id = id;
@@ -48,4 +49,11 @@ public class UsersResponse
         return email;
     }
 
+    public UserImageResponse getImage() {
+        return image;
+    }
+
+    public void setImage(UserImageResponse image) {
+        this.image = image;
+    }
 }

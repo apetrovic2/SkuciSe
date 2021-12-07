@@ -7,6 +7,8 @@ public class AppointmentResponse
     private int ad_id;
     private int approved;
     private String date;
+    private AdResponse ad;
+    private UsersResponse user;
 
     public int getId() {
         return id;
@@ -46,5 +48,21 @@ public class AppointmentResponse
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public AdResponse getAd() {
+        return ad;
+    }
+
+    public void setAd(AdResponse ad) {
+        this.ad = ad;
+    }
+
+    public UsersResponse getUser() {
+        return user;
+    }
+
+    public void setUser(UsersResponse user) {
+        this.user = user;
     }
 }

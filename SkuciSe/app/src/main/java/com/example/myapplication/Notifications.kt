@@ -1,18 +1,36 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.data.helpers.AppData
+import com.example.myapplication.data.remote.AppointmentApiManager
+import com.example.myapplication.data.remote.UsersApiManager
+import com.example.myapplication.data.repository.AppointmentInfoResponse
+import com.example.myapplication.data.repository.UserImageResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Notifications : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var notificationAdapter: NotificationAdapter
     private var dataList = mutableListOf<DataModelNotifications>()
+
+    override fun onStart() {
+        super.onStart()
+        if(dataList.size > 0)
+            dataList = mutableListOf<DataModelNotifications>()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +59,76 @@ class Notifications : AppCompatActivity() {
         recyclerView.adapter = notificationAdapter
 
 
-        dataList.add(DataModelNotifications("Username","Date","Title",R.drawable.ic_baseline_account_circle_purple_24))
+        val appApi = AppointmentApiManager.getAppointmentApi()
+        val call = appApi.GetAppointmentByOwnerId(AppData.getToken())
+        call.enqueue(object : Callback<List<AppointmentInfoResponse>> {
+            override fun onResponse(
+                call: Call<List<AppointmentInfoResponse>>,
+                response: Response<List<AppointmentInfoResponse>>
+            ) {
+                if (!response.isSuccessful) {
+                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                    return
+                } else {
+                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+                    val apps = response.body()!!
+                    //dataList = mutableListOf<DataModelNotifications>()
+                    for(app in apps) {
+                     dataList.add(DataModelNotifications("${app.user.username}","${app.date}","${app.title}",app.user.image.image))
+                    }
+                    notificationAdapter.setDataList(dataList)
 
-        notificationAdapter.setDataList(dataList)
+                }
+            }
+            override fun onFailure(call: Call<List<AppointmentInfoResponse>>, t: Throwable) {
+                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                return
+            }
+        })
+
+        val appApi1 = AppointmentApiManager.getAppointmentApi()
+        val call1 = appApi1.GetAppointmentResponse(AppData.getToken())
+        call1.enqueue(object : Callback<List<AppointmentInfoResponse>> {
+            override fun onResponse(
+                call: Call<List<AppointmentInfoResponse>>,
+                response: Response<List<AppointmentInfoResponse>>
+            ) {
+                if (!response.isSuccessful) {
+                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                    return
+                } else {
+                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+                    val apps = response.body()!!
+                    //dataList = mutableListOf<DataModelNotifications>()
+                    for(app in apps) {
+                        var approved = ""
+                        if(app.approved == 0)
+                        {
+                            approved = "Zahtev na čekanju"
+                        }
+                        if(app.approved == -1)
+                        {
+                            approved = "Zahtev odbijen"
+                        }
+                        if(app.approved == 1)
+                        {
+                            approved = "Zahtev odobren"
+                        }
+                        dataList.add(DataModelNotifications("${app.title}","${app.date}","${approved}",app.owner_image))
+                    }
+                    notificationAdapter.setDataList(dataList)
+
+                }
+            }
+            override fun onFailure(call: Call<List<AppointmentInfoResponse>>, t: Throwable) {
+                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                return
+            }
+        })
+
+        //dataList.add(DataModelNotifications("Username","Date","Title",R.drawable.ic_baseline_account_circle_purple_24))
+
+        //notificationAdapter.setDataList(dataList)
 
         val actionbar = supportActionBar
         actionbar!!.title = ""
