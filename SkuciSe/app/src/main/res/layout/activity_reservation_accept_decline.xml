@@ -6,4 +6,94 @@
     android:layout_height="match_parent"
     tools:context=".ReservationAcceptDecline">
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="120dp"
+        android:fontFamily="@font/josefinsans_bold"
+        android:text="Naslov oglasa"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tbUsername"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="120dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UserPicture" />
+
+    <TextView
+        android:id="@+id/tbName"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="120dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Ime i prezime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbUsername" />
+
+    <TextView
+        android:id="@+id/tbEmail"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="120dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="E-mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbName" />
+
+    <TextView
+        android:id="@+id/tbDateTime"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="120dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Datum i vreme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbEmail" />
+
+    <ImageView
+        android:id="@+id/UserPicture"
+        android:layout_width="82dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="164dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:srcCompat="@drawable/ic_baseline_account_circle_purple_24" />
+
+    <ImageView
+        android:id="@+id/declinePicture"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbDateTime"
+        app:srcCompat="@drawable/ic_baseline_close_24" />
+
+    <ImageView
+        android:id="@+id/acceptPicture"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbDateTime"
+        app:srcCompat="@drawable/ic_baseline_check_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
