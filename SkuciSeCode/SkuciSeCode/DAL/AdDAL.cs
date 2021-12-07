@@ -270,7 +270,7 @@ namespace SkuciSeCode.DAL
             List<AppointmentInfo> appInfos = new List<AppointmentInfo>();
             foreach (var app in allApps)
             {
-                AppointmentInfo appInfo = new AppointmentInfo(app.user, app.approved, app.date, app.ad_id, app.ad.title);
+                AppointmentInfo appInfo = new AppointmentInfo(app.id, app.user, app.approved, app.date, app.ad_id, app.ad.title);
 
                 appInfos.Add(appInfo);
             }
@@ -299,7 +299,7 @@ namespace SkuciSeCode.DAL
             List<AppointmentInfo> appInfos = new List<AppointmentInfo>();
             foreach (var app in allApps)
             {
-                AppointmentInfo appInfo = new AppointmentInfo(app.user, app.approved, app.date, app.ad_id, app.ad.title, app.ad.images.image);
+                AppointmentInfo appInfo = new AppointmentInfo(app.id, app.user, app.approved, app.date, app.ad_id, app.ad.title, app.ad.images.image);
 
                 appInfos.Add(appInfo);
             }
