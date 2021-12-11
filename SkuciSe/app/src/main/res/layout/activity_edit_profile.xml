@@ -10,8 +10,8 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="232dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="128dp"
         android:fontFamily="@font/josefinsans_bold"
         android:text="Izmeni profil"
         android:textSize="25dp"
@@ -22,78 +22,77 @@
         android:id="@+id/btnEditFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="160dp"
         android:text="Izmeni"
         android:textColor="@color/white"
         app:backgroundTint="#ae76c1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbEditPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/lblEditUser" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilePicture"
         android:layout_width="141dp"
         android:layout_height="124dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="132dp"
         android:src="@drawable/ic_baseline_account_circle_purple_24"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/tbEditName"
         android:layout_width="282dp"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
         android:hint="Ime i prezime"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbEditUsername" />
 
     <EditText
         android:id="@+id/tbEditPassword"
         android:layout_width="282dp"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
         android:hint="Lozinka"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbEditEmail" />
 
     <EditText
         android:id="@+id/tbEditUsername"
         android:layout_width="282dp"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
         android:hint="Korisničko ime"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 
     <EditText
         android:id="@+id/tbEditEmail"
         android:layout_width="282dp"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbEditName" />
 
     <ImageButton
@@ -112,21 +111,21 @@
         android:id="@+id/lblEditUser"
         android:layout_width="250dp"
         android:layout_height="20dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="12dp"
         android:gravity="center"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/btnEditFinal"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbEditPassword" />
 
     <ImageButton
         android:id="@+id/imgBtnPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="416dp"
+        android:layout_marginTop="444dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.358"
         app:layout_constraintStart_toEndOf="@+id/tbEditPassword"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_edit_24" />

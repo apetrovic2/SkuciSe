@@ -263,9 +263,10 @@
         android:layout_height="28dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="52dp"
-        android:value="20.0"
-        android:valueFrom="0.0"
-        android:valueTo="500.0"
+        android:value="50"
+        android:valueFrom="50"
+        android:valueTo="500"
+        android:stepSize="5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbLocation" />
 
@@ -278,6 +279,7 @@
         android:value="50"
         android:valueFrom="0"
         android:valueTo="200"
+        android:stepSize="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sliderPrice" />
 
@@ -287,10 +289,11 @@
         android:layout_height="28dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
-        android:value="2"
+        android:value="1"
         android:progress="1"
-        android:valueFrom="0"
+        android:valueFrom="1"
         android:valueTo="10"
+        android:stepSize="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sliderSize" />
 </androidx.constraintlayout.widget.ConstraintLayout>
