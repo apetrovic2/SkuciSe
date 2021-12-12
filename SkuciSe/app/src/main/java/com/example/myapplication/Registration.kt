@@ -49,58 +49,73 @@ class Registration : AppCompatActivity() {
             val api = UsersApiManager.getUserApi()
 
             if (usernameText != "" && passwordText != "" && nametext != "" && emailText != "") {
-                if(Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
+                if(usernameText.length > 3) {
+                    if (Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
 
-                    val call = api.Registration(
-                        "" + usernameText,
-                        "" + passwordText,
-                        "" + nametext,
-                        "" + emailText
-                    )
-                    call.enqueue(object : Callback<Int> {
-                        override fun onResponse(
-                            call: Call<Int>,
-                            response: Response<Int>
-                        ) {
-                            if (!response.isSuccessful) {
-                                Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
-                                return
-                            } else {
+                        val call = api.Registration(
+                            "" + usernameText,
+                            "" + passwordText,
+                            "" + nametext,
+                            "" + emailText
+                        )
+                        call.enqueue(object : Callback<Int> {
+                            override fun onResponse(
+                                call: Call<Int>,
+                                response: Response<Int>
+                            ) {
+                                if (!response.isSuccessful) {
+                                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                                    return
+                                } else {
 
-                                Log.i("CONNECTION1 ", "SUCCESSFUL")
-                                val ind = response.body()!!
+                                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+                                    val ind = response.body()!!
 
-                                if (ind > 0) {
-                                    lblRegistrationMes.setText("Uspešno!")
-                                    val intent = Intent(this@Registration, RegistrationPicture::class.java)
-                                    intent.putExtra("user_id", ind)
-                                    startActivity(intent)
-                                } else if (ind == 0) {
-                                    lblRegistrationMes.setText("Greška, pokušajte opet!")
-                                } else if(ind == -2){
-                                    lblRegistrationMes.setText("Korisničko ime je zauzeto!")
+                                    when {
+                                        ind > 0 -> {
+                                            lblRegistrationMes.setText("Uspešno!")
+                                            val intent = Intent(this@Registration, RegistrationPicture::class.java)
+                                            intent.putExtra("user_id", ind)
+//                                            intent.putExtra("username", usernameText)
+//                                            intent.putExtra("password", passwordText)
+//                                            intent.putExtra("name", nametext)
+//                                            intent.putExtra("email", emailText)
+
+                                            startActivity(intent)
+                                        }
+                                        ind == 0 -> {
+                                            lblRegistrationMes.setText("Greška, pokušajte opet!")
+                                        }
+                                        ind == -1 -> {
+                                            lblRegistrationMes.setText("Korisničko ime je zauzeto!")
+                                        }
+                                        ind == -3 -> {
+                                            lblRegistrationMes.setText("E-mail je zauzet!")
+                                        }
+                                    }
+
+                                    Log.i("REGISTRATION STATUS ", "" + ind!!)
                                 }
-                                else if(ind == -3)
-                                {
-                                    lblRegistrationMes.setText("E-mail ime je zauzet!")
-                                }
 
-                                Log.i("REGISTRATION STATUS ", "" + ind!!)
                             }
 
-                        }
-
-                        override fun onFailure(call: Call<Int>, t: Throwable) {
-                            Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-                            lblRegistrationMes.setText("Greška sa konekcijom!")
-                            return
-                        }
-                    })
+                            override fun onFailure(call: Call<Int>, t: Throwable) {
+                                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                                lblRegistrationMes.setText("Greška sa konekcijom!")
+                                return
+                            }
+                        })
+                    }
+                    else
+                    {
+                        lblRegistrationMes.setText("Neispravan e-mail!")
+                    }
                 }
                 else
                 {
-                    lblRegistrationMes.setText("Neispravan e-mail!")
+                    lblRegistrationMes.setText("Username mora imati više od 3 karaktera!")
                 }
+
             }
             else
             {

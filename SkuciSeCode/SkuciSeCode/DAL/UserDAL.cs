@@ -110,7 +110,12 @@ namespace SkuciSeCode.DAL
                             var userImages = _context.UserImages.ToList().Where(u => u.user_id == user.id);
                             UserImage userImg = userImages.FirstOrDefault();
 
-                            if (!userImg.Equals(image) && image != "")
+                            if(userImg == null)
+                            {
+                                var indImage = this.SetProfilePicture(id, image);
+                            }
+
+                            else if (!userImg.Equals(image) && image != "")
                             {
                                 UserImage userImage = new UserImage(user.id, image);
                                 _context.UserImages.Add(userImage);

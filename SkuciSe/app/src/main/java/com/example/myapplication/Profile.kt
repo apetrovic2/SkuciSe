@@ -122,8 +122,9 @@ class Profile : AppCompatActivity() {
                     return
                 } else {
                     Log.i("CONNECTION1 ", "SUCCESSFUL")
-                    val userImage = response.body()!!
-                    if (userImage != null) {
+                    //var userImage = response.body()!!
+                    if (response.body() != null) {
+                        val userImage = response.body()!!
                         var image = findViewById(R.id.profilePicture) as ImageView
 
                         val imageBytes = Base64.decode(userImage.image, 0)

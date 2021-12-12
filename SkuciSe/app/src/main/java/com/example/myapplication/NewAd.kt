@@ -49,11 +49,13 @@ class NewAd : AppCompatActivity() {
             startActivity(intent)
         }
 
+        var lblAddNewAdMessage = findViewById(R.id.lblAddNewAdMessage) as TextView
+        lblAddNewAdMessage.setText("")
+
         val btnAddNewAdNext = findViewById(R.id.btnAddNewAdNext) as Button
         btnAddNewAdNext.setOnClickListener() {
 
-            var lblAddNewAdMessage = findViewById(R.id.lblAddNewAdMessage) as TextView
-            lblAddNewAdMessage.setText("")
+            lblAddNewAdMessage.setText("Molimo sačekajte!")
 
             val rgHouseFlat = findViewById(R.id.rgHouseFlat) as RadioGroup
             var selectedHouseFlat = rgHouseFlat.checkedRadioButtonId

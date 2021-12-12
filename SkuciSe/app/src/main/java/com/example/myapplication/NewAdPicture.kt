@@ -68,6 +68,8 @@ class NewAdPicture : AppCompatActivity() {
 
         val btnAdNewAddFinal = findViewById(R.id.btnAdNewAddFinal) as Button
         btnAdNewAddFinal.setOnClickListener() {
+
+            lblAddNewAdMessage.setText("Molimo sačekajte!")
             val apiAdImage = AdApiManager.getAdApi()
             val callImage = apiAdImage.setAdPicture(id, data)
             callImage.enqueue(object : Callback<Int> {

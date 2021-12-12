@@ -43,9 +43,15 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
         var data = dataList[position]
         holder.title.text = data.title
         holder.desc.text = data.desc
-        val imageBytes = Base64.decode(data.image, 0)
-        val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-        holder.image.setImageBitmap(imageBitmap)
+        if(data.image != null) {
+            val imageBytes = Base64.decode(data.image, 0)
+            val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+            holder.image.setImageBitmap(imageBitmap)
+        }
+        else
+        {
+            holder.image.setImageResource(R.drawable.ic_baseline_crop_original_24)
+        }
         holder.image.setOnClickListener(){
             Log.i("AD ID2", "" + data.id)
             //val adInfoClass = AdInfo(data.id)

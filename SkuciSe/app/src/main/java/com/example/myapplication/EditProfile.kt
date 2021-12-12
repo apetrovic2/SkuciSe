@@ -40,46 +40,20 @@ class EditProfile : AppCompatActivity() {
     }
     var data = ""
 
-    val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri ->
-        val viewImage = findViewById<ImageView>(R.id.profilePicture)
-        viewImage.setImageURI(uri)
+    val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        if(uri != null) {
+            val viewImage = findViewById<ImageView>(R.id.profilePicture)
+            viewImage.setImageURI(uri)
 
-        var cr = baseContext.contentResolver as ContentResolver
-        var inputStream = cr.openInputStream(uri) as InputStream
-        var bitmap = BitmapFactory.decodeStream(inputStream) as Bitmap
-        var baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+            var cr = baseContext.contentResolver as ContentResolver
+            var inputStream = cr.openInputStream(uri) as InputStream
+            var bitmap = BitmapFactory.decodeStream(inputStream) as Bitmap
+            var baos = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
 
-        var dataByte = baos.toByteArray()
-        data = Base64.encodeToString(dataByte, 0)
-
-        val apiUserImage = UsersApiManager.getUserApi()
-        val callImage = apiUserImage.getUserImage(AppData.getToken())
-        callImage.enqueue(object : Callback<UserImageResponse> {
-            override fun onResponse(
-                call: Call<UserImageResponse>,
-                response: Response<UserImageResponse>) {
-                if (!response.isSuccessful) {
-                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
-                    return
-                } else {
-                    Log.i("CONNECTION1 ", "SUCCESSFUL")
-                    val userImage = response.body()!!
-                    if (userImage != null) {
-                        var image = findViewById(R.id.profilePicture) as ImageView
-
-                        val imageBytes = Base64.decode(userImage.image, 0)
-                        val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-
-                        image.setImageBitmap(imageBitmap)
-                    }
-                }
-            }
-            override fun onFailure(call: Call<UserImageResponse>, t: Throwable) {
-                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
-                return
-            }
-        })
+            var dataByte = baos.toByteArray()
+            data = Base64.encodeToString(dataByte, 0)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -132,8 +106,39 @@ class EditProfile : AppCompatActivity() {
             }
         })
 
+        val apiUserImage = UsersApiManager.getUserApi()
+        val callImage = apiUserImage.getUserImage(AppData.getToken())
+        callImage.enqueue(object : Callback<UserImageResponse> {
+            override fun onResponse(
+                call: Call<UserImageResponse>,
+                response: Response<UserImageResponse>) {
+                if (!response.isSuccessful) {
+                    Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                    return
+                } else {
+                    Log.i("CONNECTION1 ", "SUCCESSFUL")
+                    //var userImage = response.body()!!
+                    if (response.body() != null) {
+                        val userImage = response.body()!!
+                        var image = findViewById(R.id.profilePicture) as ImageView
+
+                        val imageBytes = Base64.decode(userImage.image, 0)
+                        val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+
+                        image.setImageBitmap(imageBitmap)
+                    }
+                }
+            }
+            override fun onFailure(call: Call<UserImageResponse>, t: Throwable) {
+                Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                return
+            }
+        })
+
         val btnEditFinal = findViewById(R.id.btnEditFinal) as Button
         btnEditFinal.setOnClickListener(){
+
+            lblEditUser.setText("Molimo sačekajte!")
 
             var usernameText = tbEditUsername.text.toString()
             var passwordText = tbEditPassword.text.toString()
@@ -162,14 +167,14 @@ class EditProfile : AppCompatActivity() {
                             Log.i("CONNECTION1 ", "SUCCESSFUL")
                             val status = response.body()!!
                             Log.i("EDIT STATUS ", "" + status)
-                            if(status > 0) {
+                            if(status > 0 || (status == 0 && data != "")) {
                                 //finish()
                                 //overridePendingTransition(0, 0)
                                 //startActivity(intent)
                                 //overridePendingTransition(0, 0)
                                 lblEditUser.setText("Uspešna izmena!")
                             }
-                            if(status == 0)
+                            if(status == 0 && data == "")
                             {
                                 lblEditUser.setText("Nijedan podatak nije izmenjen!")
                             }

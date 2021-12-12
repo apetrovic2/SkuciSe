@@ -32,18 +32,20 @@ class RegistrationPicture : AppCompatActivity() {
     ///////////////////////////////////
     var data = ""
 
-    val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri ->
-        val viewImage = findViewById<ImageView>(R.id.profilePicture)
-        viewImage.setImageURI(uri)
+    val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        if(uri != null) {
+            val viewImage = findViewById<ImageView>(R.id.profilePicture)
+            viewImage.setImageURI(uri)
 
-        var cr = baseContext.contentResolver as ContentResolver
-        var inputStream = cr.openInputStream(uri) as InputStream
-        var bitmap = BitmapFactory.decodeStream(inputStream) as Bitmap
-        var baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+            var cr = baseContext.contentResolver as ContentResolver
+            var inputStream = cr.openInputStream(uri) as InputStream
+            var bitmap = BitmapFactory.decodeStream(inputStream) as Bitmap
+            var baos = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
 
-        var dataByte = baos.toByteArray()
-        data = Base64.encodeToString(dataByte, 0)
+            var dataByte = baos.toByteArray()
+            data = Base64.encodeToString(dataByte, 0)
+        }
     }
     ////////////////////////////////////
     @SuppressLint("WrongThread")
