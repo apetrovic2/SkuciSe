@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -49,4 +50,11 @@ public interface IAdApi
     @GET("GetAdImage")
     Call<AdImageResponse> getAdImage(@Query("id") Integer id);
 
+    @PUT("CloseAd")
+    @FormUrlEncoded
+    Call<Integer> closeAd(@Field("id") Integer id, @Field("date_end") String date_end);
+
+    @POST("DeleteAd")
+    @FormUrlEncoded
+    Call<Integer> deleteAd(@Field("id") Integer id);
 }

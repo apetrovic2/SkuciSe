@@ -9,19 +9,20 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.data.helpers.AppData
 import com.example.myapplication.data.model.Ad
 import com.example.myapplication.data.remote.AdApiManager
 import com.example.myapplication.data.remote.UsersApiManager
-import com.example.myapplication.data.repository.AdImageResponse
-import com.example.myapplication.data.repository.AdResponse
-import com.example.myapplication.data.repository.AdWithImageResponse
-import com.example.myapplication.data.repository.UsersResponse
+import com.example.myapplication.data.repository.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AdInfo : AppCompatActivity() {
 
@@ -58,6 +59,72 @@ class AdInfo : AppCompatActivity() {
             startActivity(intent)
         }
 
+        var btnCloseAd = findViewById<Button>(R.id.btnCloseAd)
+        var btnDeleteAd = findViewById<Button>(R.id.btnDeleteAd)
+
+        btnCloseAd.setOnClickListener(){
+            val dateFormat = SimpleDateFormat("dd-MM-yyyy")
+            val currentDate = dateFormat.format(Date())
+
+            val api = AdApiManager.getAdApi()
+            val call = api.closeAd(id, currentDate)
+            call.enqueue(object : Callback<Int> {
+                override fun onResponse(
+                    call: Call<Int>,
+                    response: Response<Int>) {
+                    if (!response.isSuccessful) {
+                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                        return
+                    } else {
+                        Log.i("CONNECTION1 ", "SUCCESSFUL")
+                        //var userImage = response.body()!!
+                        if (response.body() != null) {
+                            val ind = response.body()!!
+                            if(ind > 0)
+                            {
+                                btnCloseAd.isClickable = false
+                                btnCloseAd.alpha = .5f
+                            }
+                        }
+                    }
+                }
+                override fun onFailure(call: Call<Int>, t: Throwable) {
+                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                    return
+                }
+            })
+        }
+
+        btnDeleteAd.setOnClickListener(){
+            val api = AdApiManager.getAdApi()
+            val call = api.deleteAd(id)
+            call.enqueue(object : Callback<Int> {
+                override fun onResponse(
+                    call: Call<Int>,
+                    response: Response<Int>) {
+                    if (!response.isSuccessful) {
+                        Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                        return
+                    } else {
+                        Log.i("CONNECTION1 ", "SUCCESSFUL")
+                        //var userImage = response.body()!!
+                        if (response.body() != null) {
+                            val ind = response.body()!!
+                            if(ind > 0)
+                            {
+                                val intent = Intent(this@AdInfo, Profile::class.java)
+                                startActivity(intent)
+                            }
+                        }
+                    }
+                }
+                override fun onFailure(call: Call<Int>, t: Throwable) {
+                    Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                    return
+                }
+            })
+        }
+
         val api = AdApiManager.getAdApi()
         val call = api.getAdById(id)
         call.enqueue(object : Callback<AdWithImageResponse> {
@@ -79,10 +146,19 @@ class AdInfo : AppCompatActivity() {
 
                         viewImage.setImageBitmap(imageBitmap)
 
-                        tbLocation.setText(ad.ad.location)
-                        tbPrice.setText(ad.ad.price.toInt().toString() + "$")
+                        tbLocation.setText("Lokacija: ${ad.ad.location}")
+                        tbPrice.setText("Cena: ${ad.ad.price.toInt().toString()}$")
                         tbSize.setText("Kvadratura: " + ad.ad.size.toInt().toString())
                         tbTitle.setText(ad.ad.title)
+
+                        if(ad.ad.date_end != null)
+                        {
+                            btnCloseAd.isClickable = false
+                            btnCloseAd.alpha = .5f
+                            buttonEditAd.isClickable = false
+                            buttonEditAd.alpha = .5f
+                            btnCloseAd.setText("Oglas je zatvoren")
+                        }
 
                         if(ad.ad.sell_rent == 0)
                         {

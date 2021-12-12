@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.data.helpers.AppData
@@ -52,6 +53,8 @@ class Notifications : AppCompatActivity() {
             startActivity(intent)
         }
 
+        var lblNotifications = findViewById<TextView>(R.id.lblNotifications)
+        lblNotifications.setText("Molimo sačekajte!")
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(applicationContext,1)
@@ -74,7 +77,15 @@ class Notifications : AppCompatActivity() {
                     val apps = response.body()!!
                     //dataList = mutableListOf<DataModelNotifications>()
                     for(app in apps) {
-                     dataList.add(DataModelNotifications("${app.user.username}","${app.date}","${app.title}",app.user.image.image, app.user.name, app.user.email, app.id))
+                     dataList.add(DataModelNotifications("${app.user.username}","${app.date}","${app.title}",app.user.image.image, app.user.name, app.user.email, app.approved, app.id))
+                    }
+                    if(dataList.size > 0)
+                    {
+                        lblNotifications.setText("")
+                    }
+                    else
+                    {
+                        lblNotifications.setText("Nemate nijedno obaveštenje!")
                     }
                     notificationAdapter.setDataList(dataList)
 
@@ -114,7 +125,15 @@ class Notifications : AppCompatActivity() {
                         {
                             approved = "Zahtev odobren"
                         }
-                        dataList.add(DataModelNotifications("${app.title}","${app.date}","${approved}",app.owner_image, app.user.name, app.user.email, app.id))
+                        dataList.add(DataModelNotifications("${app.title}","${app.date}","${approved}",app.owner_image, app.user.name, app.user.email, app.approved, app.id))
+                    }
+                    if(dataList.size > 0)
+                    {
+                        lblNotifications.setText("")
+                    }
+                    else
+                    {
+                        lblNotifications.setText("Nemate nijedno obaveštenje!")
                     }
                     notificationAdapter.setDataList(dataList)
 

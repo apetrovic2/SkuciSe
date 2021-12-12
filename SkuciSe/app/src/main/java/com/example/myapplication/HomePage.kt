@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ProgressBar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -163,7 +165,8 @@ class HomePage : AppCompatActivity() {
                                 )
                             }
                             photoAdapter.setDataList(dataList)
-
+                            var loading = findViewById(R.id.loading) as ProgressBar
+                            loading.visibility = View.GONE
                         }
                     }
 
@@ -219,6 +222,8 @@ class HomePage : AppCompatActivity() {
                             dataList.add(DataModel("${ad.ad.title}","${ad.ad.price}$", ad.image, ad.ad.id, ind))
                         }
                         photoAdapter.setDataList(dataList)
+                        var loading = findViewById(R.id.loading) as ProgressBar
+                        loading.visibility = View.GONE
 
                     }
                 }

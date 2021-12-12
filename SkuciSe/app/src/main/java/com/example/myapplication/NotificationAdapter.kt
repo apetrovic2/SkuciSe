@@ -62,6 +62,7 @@ class NotificationAdapter(var context: Context) : RecyclerView.Adapter<Notificat
             intent.putExtra("name", data.name)
             intent.putExtra("email", data.email)
             intent.putExtra("date", data.date)
+            intent.putExtra("approved", data.approved)
             context.startActivity(intent)
         }
         val imageBytes = Base64.decode(data.image, 0)

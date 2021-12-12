@@ -85,7 +85,7 @@ class Profile : AppCompatActivity() {
         var lblUsername = findViewById(R.id.lblUsername) as TextView
         var lblName = findViewById(R.id.lblName) as TextView
         var lblUserNoAdsMessage = findViewById(R.id.lblUserNoAdsMessage) as TextView
-        lblUserNoAdsMessage.setText("")
+        lblUserNoAdsMessage.setText("Molimo sačekajte!")
 
         val apiUser = UsersApiManager.getUserApi()
         val call = apiUser.getUserById(AppData.getToken())

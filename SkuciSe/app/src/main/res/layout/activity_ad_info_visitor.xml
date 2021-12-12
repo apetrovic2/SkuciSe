@@ -46,8 +46,8 @@
     <TextView
         android:id="@+id/tbOther"
         android:layout_width="370dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:gravity="left|center_vertical"
@@ -110,8 +110,8 @@
     <TextView
         android:id="@+id/tbEquipment"
         android:layout_width="371dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:gravity="left|center_vertical"
@@ -135,8 +135,8 @@
     <TextView
         android:id="@+id/tbDescription"
         android:layout_width="371dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:gravity="left|center_vertical"
         android:text="Opis:"

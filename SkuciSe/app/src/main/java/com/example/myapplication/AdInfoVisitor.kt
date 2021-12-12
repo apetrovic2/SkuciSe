@@ -70,8 +70,8 @@ class AdInfoVisitor : AppCompatActivity() {
 
                         viewImage.setImageBitmap(imageBitmap)
 
-                        tbLocation.setText(ad.ad.location)
-                        tbPrice.setText(ad.ad.price.toInt().toString() + "$")
+                        tbLocation.setText("Lokacija: ${ad.ad.location}")
+                        tbPrice.setText("Cena: ${ad.ad.price.toInt().toString()}$")
                         tbSize.setText("Kvadratura: " + ad.ad.size.toInt().toString())
                         tbTitle.setText(ad.ad.title)
 

@@ -147,7 +147,7 @@ namespace SkuciSeCode.DAL
 
         public async Task<List<AdWithImage>> GetAdsByUserId(int user_id)
         {
-            var allUserAds = await _context.Ads.Where(ad => ad.date_end == null && ad.user_id == user_id).ToListAsync();
+            var allUserAds = await _context.Ads.Where(ad => ad.user_id == user_id).ToListAsync();
             var userAds = allUserAds.ToList();
             List<AdWithImage> adsWithImages = new List<AdWithImage>();
 

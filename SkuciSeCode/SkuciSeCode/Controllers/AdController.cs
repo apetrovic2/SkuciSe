@@ -68,7 +68,7 @@ namespace SkuciSeCode.Controllers
             return ind;
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("DeleteAd")]
         public int DeleteAd([FromForm] int id)
         {

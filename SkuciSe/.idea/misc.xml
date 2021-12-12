@@ -108,7 +108,9 @@
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.290625" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.290625" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/drawable/ic_baseline_crop_original_24.xml" value="0.290625" />
+        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/drawable/ic_baseline_filter_list_24.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_ad_info.xml" value="0.264" />
+        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_ad_info_visitor.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_edit_ad.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_edit_profile.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_filter.xml" value="0.264" />
@@ -126,6 +128,7 @@
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_rent_page.xml" value="0.24592391304347827" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_reservation.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_reservation_accept_decline.xml" value="0.264" />
+        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_sell_page.xml" value="0.171875" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/fragment_dashboard.xml" value="0.2608695652173913" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/fragment_notifications.xml" value="0.2608695652173913" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/login.xml" value="0.264" />

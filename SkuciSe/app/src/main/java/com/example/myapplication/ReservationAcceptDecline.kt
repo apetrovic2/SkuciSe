@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -23,6 +24,7 @@ class ReservationAcceptDecline : AppCompatActivity() {
         setContentView(R.layout.activity_reservation_accept_decline)
 
         var id = intent.getIntExtra("id", 0)
+        var approved = intent.getIntExtra("approved", 0)
         var title = intent.getStringExtra("title")
         var image = intent.getStringExtra("image")
         var username = intent.getStringExtra("username")
@@ -53,6 +55,15 @@ class ReservationAcceptDecline : AppCompatActivity() {
         imageView.setImageBitmap(imageBitmap)
 
         var btnAccept = findViewById(R.id.acceptPicture) as ImageView
+        var btnDecline = findViewById(R.id.declinePicture) as ImageView
+
+        if(approved != 0)
+        {
+            btnAccept.visibility = View.GONE
+            btnDecline.visibility = View.GONE
+            lblmessage.setText("zahtev je već obrađen!")
+        }
+
         btnAccept.setOnClickListener(){
             val appApi1 = AppointmentApiManager.getAppointmentApi()
             val call1 = appApi1.ApproveAppointment(id, 1)
@@ -84,7 +95,7 @@ class ReservationAcceptDecline : AppCompatActivity() {
                 }
             })
         }
-        var btnDecline = findViewById(R.id.declinePicture) as ImageView
+
         btnDecline.setOnClickListener(){
             val appApi1 = AppointmentApiManager.getAppointmentApi()
             val call1 = appApi1.ApproveAppointment(id, -1)
