@@ -62,12 +62,11 @@
         android:id="@+id/cbHeating"
         android:layout_width="96dp"
         android:layout_height="36dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="248dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
         android:text="Grejanje"
-        app:layout_constraintEnd_toEndOf="@+id/sliderRooms"
-        app:layout_constraintTop_toBottomOf="@+id/sliderRooms" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
     <CheckBox
         android:id="@+id/cbSatelliteTv"
         android:layout_width="96dp"
@@ -173,8 +172,8 @@
         android:id="@+id/rgHouseFlat"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="48dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/btnRent"
         app:layout_constraintTop_toBottomOf="@+id/searchView">
