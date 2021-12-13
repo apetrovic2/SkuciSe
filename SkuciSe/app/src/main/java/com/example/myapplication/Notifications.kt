@@ -31,36 +31,10 @@ class Notifications : AppCompatActivity() {
         super.onStart()
         if(dataList.size > 0)
             dataList = mutableListOf<DataModelNotifications>()
-    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notifications)
-
-        val buttonHome = findViewById<ImageButton>(R.id.imageBtnHome)
-        buttonHome.setOnClickListener {
-            val intent = Intent(this, HomePage::class.java)
-            startActivity(intent)
-        }
-        val buttonNewAd = findViewById<ImageButton>(R.id.imageBtnNewAd)
-        buttonNewAd.setOnClickListener {
-            val intent = Intent(this, NewAd::class.java)
-            startActivity(intent)
-        }
-        val buttonProfile = findViewById<ImageButton>(R.id.imageBtnProfile)
-        buttonProfile.setOnClickListener {
-            val intent = Intent(this, Profile::class.java)
-            startActivity(intent)
-        }
 
         var lblNotifications = findViewById<TextView>(R.id.lblNotifications)
         lblNotifications.setText("Molimo sačekajte!")
-
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = GridLayoutManager(applicationContext,1)
-        notificationAdapter = NotificationAdapter(this)
-        recyclerView.adapter = notificationAdapter
-
 
         val appApi = AppointmentApiManager.getAppointmentApi()
         val call = appApi.GetAppointmentByOwnerId(AppData.getToken())
@@ -77,7 +51,7 @@ class Notifications : AppCompatActivity() {
                     val apps = response.body()!!
                     //dataList = mutableListOf<DataModelNotifications>()
                     for(app in apps) {
-                     dataList.add(DataModelNotifications("${app.user.username}","${app.date}","${app.title}",app.user.image.image, app.user.name, app.user.email, app.approved, app.id))
+                        dataList.add(DataModelNotifications("@${app.user.username}","${app.date}","${app.title}",app.user.image.image, app.user.name, app.user.email, app.approved, 1, app.id))
                     }
                     if(dataList.size > 0)
                     {
@@ -125,7 +99,7 @@ class Notifications : AppCompatActivity() {
                         {
                             approved = "Zahtev odobren"
                         }
-                        dataList.add(DataModelNotifications("${app.title}","${app.date}","${approved}",app.owner_image, app.user.name, app.user.email, app.approved, app.id))
+                        dataList.add(DataModelNotifications("@${app.title}","${app.date}","${approved}",app.owner_image, app.user.name, app.user.email, app.approved, 0, app.id))
                     }
                     if(dataList.size > 0)
                     {
@@ -144,6 +118,37 @@ class Notifications : AppCompatActivity() {
                 return
             }
         })
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_notifications)
+
+        val buttonHome = findViewById<ImageButton>(R.id.imageBtnHome)
+        buttonHome.setOnClickListener {
+            val intent = Intent(this, HomePage::class.java)
+            startActivity(intent)
+        }
+        val buttonNewAd = findViewById<ImageButton>(R.id.imageBtnNewAd)
+        buttonNewAd.setOnClickListener {
+            val intent = Intent(this, NewAd::class.java)
+            startActivity(intent)
+        }
+        val buttonProfile = findViewById<ImageButton>(R.id.imageBtnProfile)
+        buttonProfile.setOnClickListener {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+
+        var lblNotifications = findViewById<TextView>(R.id.lblNotifications)
+        lblNotifications.setText("Molimo sačekajte!")
+
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = GridLayoutManager(applicationContext,1)
+        notificationAdapter = NotificationAdapter(this)
+        recyclerView.adapter = notificationAdapter
+
 
         //dataList.add(DataModelNotifications("Username","Date","Title",R.drawable.ic_baseline_account_circle_purple_24))
 

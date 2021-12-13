@@ -113,14 +113,23 @@ namespace SkuciSeCode.DAL
                             if(userImg == null)
                             {
                                 var indImage = this.SetProfilePicture(id, image);
+                                if(ind == 0)
+                                {
+                                    ind = indImage.Result;
+                                }
                             }
 
                             else if (!userImg.Equals(image) && image != "")
                             {
-                                UserImage userImage = new UserImage(user.id, image);
-                                _context.UserImages.Add(userImage);
+                                //UserImage userImage = new UserImage(user.id, image);
+                                //_context.UserImages.Add(userImage);
+                                //if(ind == 0)
+                                //    ind = _context.SaveChanges();
+                                userImg.image = image;
                                 if(ind == 0)
+                                {
                                     ind = _context.SaveChanges();
+                                }
                             }
                         }
                         else

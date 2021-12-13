@@ -44,10 +44,10 @@ class ReservationAcceptDecline : AppCompatActivity() {
         lblmessage.setText("")
 
         tbTitle.setText(title);
-        tbUsername.setText(username)
+        tbUsername.setText("@${username}")
         tbName.setText(name)
         tbEmail.setText(email)
-        tbDate.setText(date)
+        tbDate.setText(date?.take(10) + "  " + date?.takeLast(5) + "h")
 
         val imageBytes = Base64.decode(image, 0)
         val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
@@ -61,7 +61,10 @@ class ReservationAcceptDecline : AppCompatActivity() {
         {
             btnAccept.visibility = View.GONE
             btnDecline.visibility = View.GONE
-            lblmessage.setText("zahtev je već obrađen!")
+            if(approved == 1)
+                lblmessage.setText("Zahtev je odobren!")
+            if(approved == -1)
+                lblmessage.setText("Zahtev je odbijen!")
         }
 
         btnAccept.setOnClickListener(){
@@ -81,6 +84,10 @@ class ReservationAcceptDecline : AppCompatActivity() {
                         if(ind > 0)
                         {
                             lblmessage.setText("Uspešno")
+                            btnDecline.isClickable = false
+                            btnDecline.alpha = 0.5f
+                            btnAccept.isClickable = false
+                            btnAccept.alpha = 0.5f
                         }
                         if(ind == 0)
                         {
@@ -97,6 +104,10 @@ class ReservationAcceptDecline : AppCompatActivity() {
         }
 
         btnDecline.setOnClickListener(){
+            btnDecline.isClickable = false
+            btnDecline.alpha = 0.5f
+            btnAccept.isClickable = false
+            btnAccept.alpha = 0.5f
             val appApi1 = AppointmentApiManager.getAppointmentApi()
             val call1 = appApi1.ApproveAppointment(id, -1)
             call1.enqueue(object : Callback<Int> {
@@ -113,6 +124,7 @@ class ReservationAcceptDecline : AppCompatActivity() {
                         if(ind > 0)
                         {
                             lblmessage.setText("Uspešno")
+
                         }
                         if(ind == 0)
                         {

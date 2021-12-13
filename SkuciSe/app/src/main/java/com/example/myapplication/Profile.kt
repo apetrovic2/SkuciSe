@@ -61,7 +61,7 @@ class Profile : AppCompatActivity() {
         }
 
         recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = GridLayoutManager(applicationContext,1)
+        recyclerView.layoutManager = GridLayoutManager(applicationContext,2)
         photoAdapter = PhotoAdapter(this)
         recyclerView.adapter = photoAdapter
 

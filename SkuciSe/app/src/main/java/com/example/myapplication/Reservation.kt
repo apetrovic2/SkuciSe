@@ -52,7 +52,11 @@ class Reservation : AppCompatActivity() {
         }
 
         var btnReservation = findViewById(R.id.btnReservation) as Button
+        btnReservation.isClickable = true
+        btnReservation.alpha = 1f
         btnReservation.setOnClickListener(){
+            btnReservation.isClickable = false
+            btnReservation.alpha = 0.5f
             var tbMinute = findViewById(R.id.tbMinute) as EditText
             var tbHour = findViewById(R.id.tbHour) as EditText
 
@@ -96,9 +100,13 @@ class Reservation : AppCompatActivity() {
                     ) {
                         if (!response.isSuccessful) {
                             Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                            btnReservation.isClickable = true
+                            btnReservation.alpha = 1f
                             return
                         } else {
                             Log.i("CONNECTION1 ", "SUCCESSFUL")
+                            btnReservation.isClickable = true
+                            btnReservation.alpha = 1f
                             val ind = response.body()!!
                             if(ind > 0)
                             {
@@ -112,6 +120,8 @@ class Reservation : AppCompatActivity() {
                     }
                     override fun onFailure(call: Call<Int>, t: Throwable) {
                         Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                        btnReservation.isClickable = true
+                        btnReservation.alpha = 1f
                         return
                     }
                 })

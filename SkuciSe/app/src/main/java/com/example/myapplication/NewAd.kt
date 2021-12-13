@@ -53,7 +53,12 @@ class NewAd : AppCompatActivity() {
         lblAddNewAdMessage.setText("")
 
         val btnAddNewAdNext = findViewById(R.id.btnAddNewAdNext) as Button
+        btnAddNewAdNext.isClickable = true
+        btnAddNewAdNext.alpha = 1f
         btnAddNewAdNext.setOnClickListener() {
+
+            btnAddNewAdNext.isClickable = false
+            btnAddNewAdNext.alpha = 0.5f
 
             lblAddNewAdMessage.setText("Molimo sačekajte!")
 

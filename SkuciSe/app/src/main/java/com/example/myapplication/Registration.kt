@@ -32,7 +32,11 @@ class Registration : AppCompatActivity() {
 
 
         val btnRegistrationNext = findViewById<Button>(R.id.btnRegistrationNext)
+        btnRegistrationNext.isClickable = true
+        btnRegistrationNext.alpha = 1f
         btnRegistrationNext.setOnClickListener {
+            btnRegistrationNext.isClickable = false
+            btnRegistrationNext.alpha = 0.5f
 
             lblRegistrationMes.setText("Molimo sačekajte!")
 
@@ -65,11 +69,15 @@ class Registration : AppCompatActivity() {
                             ) {
                                 if (!response.isSuccessful) {
                                     Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                                    btnRegistrationNext.isClickable = true
+                                    btnRegistrationNext.alpha = 1f
                                     return
                                 } else {
 
                                     Log.i("CONNECTION1 ", "SUCCESSFUL")
                                     val ind = response.body()!!
+                                    btnRegistrationNext.isClickable = true
+                                    btnRegistrationNext.alpha = 1f
 
                                     when {
                                         ind > 0 -> {
@@ -101,6 +109,8 @@ class Registration : AppCompatActivity() {
 
                             override fun onFailure(call: Call<Int>, t: Throwable) {
                                 Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                                btnRegistrationNext.isClickable = true
+                                btnRegistrationNext.alpha = 1f
                                 lblRegistrationMes.setText("Greška sa konekcijom!")
                                 return
                             }

@@ -10,9 +10,9 @@
         android:id="@+id/profilePicture"
         android:layout_width="141dp"
         android:layout_height="124dp"
-        android:layout_marginStart="124dp"
         android:layout_marginTop="76dp"
         android:src="@drawable/ic_baseline_account_circle_purple_24"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,7 +20,6 @@
         android:id="@+id/lblName"
         android:layout_width="282dp"
         android:layout_height="40dp"
-        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:fontFamily="@font/josefinsans_semibold"
@@ -28,6 +27,7 @@
         android:text="Ime Prezime"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
 
@@ -35,7 +35,6 @@
         android:id="@+id/lblUsername"
         android:layout_width="282dp"
         android:layout_height="30dp"
-        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:fontFamily="@font/josefinregular"
@@ -43,6 +42,7 @@
         android:text="\@Korisničko_ime"
         android:textAlignment="center"
         android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 
@@ -158,15 +158,21 @@
         android:textColor="@color/dark_green"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="341dp"
-        android:layout_height="325dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="387dp"
+        android:layout_height="317dp"
+        android:nestedScrollingEnabled="false"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblName"
-        app:layout_constraintVertical_bias="0.641" />
+        android:orientation="horizontal"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints"
+        tools:itemCount="1"
+        tools:listitem="@layout/photo_layout"/>
 
     <Button
         android:id="@+id/btnLogout"
@@ -184,11 +190,11 @@
         android:layout_width="250dp"
         android:layout_height="20dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="80dp"
         android:gravity="center"
         android:text=""
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

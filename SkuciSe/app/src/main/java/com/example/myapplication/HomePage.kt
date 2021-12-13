@@ -212,7 +212,6 @@ class HomePage : AppCompatActivity() {
                         Log.i("CONNECTION1 ", "SUCCESSFUL")
                         val ads = response.body()!!
                         dataList = mutableListOf<DataModel>()
-
                         for(ad in ads) {
                             var ind = 0
                             if(ad.ad.user_id == AppData.getToken())

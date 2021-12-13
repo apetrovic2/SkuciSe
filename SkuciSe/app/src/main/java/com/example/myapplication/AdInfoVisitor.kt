@@ -34,7 +34,7 @@ class AdInfoVisitor : AppCompatActivity() {
         var tbDescription = findViewById(R.id.tbDescription) as TextView
         var tbOther = findViewById(R.id.tbOther) as TextView
         var tbTitle = findViewById(R.id.tbTitle) as TextView
-        var tbSellRent = findViewById(R.id.tbSellRent) as TextView
+        //var tbSellRent = findViewById(R.id.tbSellRent) as TextView
         var tbFlatHouse = findViewById(R.id.tbFlatHouse) as TextView
         var tbEquipment = findViewById(R.id.tbEquipment) as TextView
         var tbFloor = findViewById(R.id.tbFloor) as TextView
@@ -77,22 +77,30 @@ class AdInfoVisitor : AppCompatActivity() {
 
 
 
-                        if(ad.ad.sell_rent == 0)
-                        {
-                            tbSellRent.setText("Prodaja")
-                        }
-                        else
-                        {
-                            tbSellRent.setText("Izdavanje")
-                        }
+                        var adType = ""
+
                         if(ad.ad.flat_house == 0)
                         {
-                            tbFlatHouse.setText("Stan")
+                            //tbFlatHouse.setText("Stan")
+                            adType += "Stan za "
                         }
                         else
                         {
-                            tbFlatHouse.setText("Kuća")
+                            //tbFlatHouse.setText("Kuća")
+                            adType += "Kuća za "
                         }
+                        if(ad.ad.sell_rent == 0)
+                        {
+                            //tbSellRent.setText("Prodaja")
+                            adType += "prodaju"
+                        }
+                        else
+                        {
+                            //tbSellRent.setText("Izdavanje")
+                            adType += "izdavanje"
+                        }
+                        tbFlatHouse.setText(adType)
+
                         tbFloor.setText("Sprat: " + ad.ad.floor.toString())
                         tbDescription.setText("Opis: " + ad.ad.description)
                         var equipmentList = ""

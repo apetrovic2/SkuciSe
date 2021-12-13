@@ -12,17 +12,17 @@
     tools:context=".AdInfo">
 
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="2dp"
+        android:layout_height="19dp"
         android:layout_marginEnd="352dp"
-        android:text="Opis"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/tbDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbSize"
         app:layout_constraintVertical_bias="0.56" />
-
+-->
     <TextView
         android:id="@+id/tbTitle"
         android:layout_width="wrap_content"
@@ -57,19 +57,20 @@
         android:ems="10"
         android:gravity="center"
         android:text="Lokacija"
+        android:fontFamily="@font/josefinsans_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbFlatHouse" />
 
     <TextView
         android:id="@+id/tbOther"
-        android:layout_width="371dp"
-        android:layout_height="wrap_content"
+        android:layout_width="369dp"
+        android:layout_height="18dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="12dp"
         android:ems="10"
         android:gravity="left|center_vertical"
         android:text="Ostalo:"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbEquipment" />
 
     <TextView
@@ -80,6 +81,7 @@
         android:ems="10"
         android:gravity="center"
         android:text="Sprat"
+        android:fontFamily="@font/josefinsans_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.725"
         app:layout_constraintStart_toEndOf="@+id/tbSize"
@@ -94,6 +96,7 @@
         android:ems="10"
         android:gravity="center"
         android:text="Kvadratura"
+        android:fontFamily="@font/josefinsans_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbLocation" />
 
@@ -105,57 +108,58 @@
         android:ems="10"
         android:gravity="center"
         android:text="Cena"
+        android:fontFamily="@font/josefinsans_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.723"
         app:layout_constraintStart_toEndOf="@+id/tbLocation"
-        app:layout_constraintTop_toBottomOf="@+id/tbSellRent" />
+        app:layout_constraintTop_toBottomOf="@+id/tbFlatHouse" />
 
     <TextView
         android:id="@+id/tbEquipment"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="12dp"
         android:ems="10"
         android:gravity="left|center_vertical"
         android:text="Oprema:"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbDescription" />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/tbSellRent"
-        android:layout_width="166dp"
+        android:layout_width="70dp"
         android:layout_height="37dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="center"
-        android:text="Izdavanje/Prodaja"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.745"
         app:layout_constraintStart_toEndOf="@+id/tbFlatHouse"
         app:layout_constraintTop_toBottomOf="@+id/adPicture" />
-
+-->
     <TextView
         android:id="@+id/tbDescription"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="left|center_vertical"
         android:text="Opis:"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbFloor" />
 
     <TextView
         android:id="@+id/tbFlatHouse"
         android:layout_width="166dp"
         android:layout_height="37dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="center"
         android:text="Stan/Kuca"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adPicture" />
 
@@ -163,8 +167,8 @@
         android:id="@+id/adPicture"
         android:layout_width="206dp"
         android:layout_height="164dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbTitle"
         app:srcCompat="@drawable/photo1" />
@@ -199,12 +203,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tbOther"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="Lokacija"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/tbLocation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbFlatHouse"
@@ -212,10 +216,10 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="2dp"
+        android:layout_height="8dp"
         android:layout_marginStart="152dp"
-        android:text="Cena"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/tbPrice"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/tbSellRent"
@@ -226,7 +230,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="Kvadratura"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/tbSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbLocation" />
@@ -236,7 +240,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
-        android:text="Sprat"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/tbFloor"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/tbPrice" />
@@ -246,7 +250,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="332dp"
-        android:text="Oprema"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/tbEquipment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbDescription"
@@ -257,12 +261,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="340dp"
-        android:text="Ostalo"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/tbOther"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbEquipment"
         app:layout_constraintVertical_bias="0.461" />
-
+-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

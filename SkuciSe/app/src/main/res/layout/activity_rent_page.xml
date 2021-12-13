@@ -30,29 +30,30 @@
         app:srcCompat="@drawable/ic_baseline_filter_list_24"
         tools:ignore="MissingConstraints" />
 
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="238dp"
         android:layout_height="41dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="32dp"
         android:background="#f9eafb"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="405dp"
-        android:layout_height="509dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="386dp"
+        android:layout_height="494dp"
+        android:layout_marginTop="55dp"
         android:nestedScrollingEnabled="false"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRent"
+        app:layout_constraintVertical_bias="0.421"
         tools:ignore="MissingConstraints"
         tools:itemCount="1"
         tools:listitem="@layout/photo_layout" />
@@ -137,15 +138,15 @@
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toEndOf="@+id/textView7" />
+
     <Button
         android:id="@+id/btnRent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#5b2f6a"
         android:text="Izdavanje"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
@@ -153,11 +154,10 @@
         android:id="@+id/btnSell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
         android:backgroundTint="#ae76c1"
         android:text="Prodaja"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 

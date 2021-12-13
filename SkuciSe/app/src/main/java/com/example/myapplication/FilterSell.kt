@@ -25,7 +25,7 @@ class FilterSell : AppCompatActivity() {
         val cbBalcony = findViewById(R.id.cbBalcony) as CheckBox
         val cbYard = findViewById(R.id.cbYard) as CheckBox
 
-        val buttonFilter = findViewById<ImageButton>(R.id.btnFilter)
+        val buttonFilter = findViewById<Button>(R.id.btnFilter)
         buttonFilter.setOnClickListener {
 
             var selectedHouseFlat = rgHouseFlat.checkedRadioButtonId

@@ -52,18 +52,25 @@ class NotificationAdapter(var context: Context) : RecyclerView.Adapter<Notificat
         var data = dataList[position]
         holder.title.text = data.title
         holder.username.text = data.username
-        holder.date.text = data.date
-        holder.details.setOnClickListener(){
-            val intent = Intent(context, ReservationAcceptDecline::class.java)
-            intent.putExtra("id", data.id)
-            intent.putExtra("title", data.title)
-            intent.putExtra("image", data.image)
-            intent.putExtra("username", data.username)
-            intent.putExtra("name", data.name)
-            intent.putExtra("email", data.email)
-            intent.putExtra("date", data.date)
-            intent.putExtra("approved", data.approved)
-            context.startActivity(intent)
+        holder.date.text = data.date?.take(10) + "  " + data.date?.takeLast(5) + "h"
+        if(data.ind == 0)
+        {
+            holder.details.visibility = View.GONE
+            holder.details.isClickable = false
+        }
+        else {
+            holder.details.setOnClickListener() {
+                val intent = Intent(context, ReservationAcceptDecline::class.java)
+                intent.putExtra("id", data.id)
+                intent.putExtra("title", data.title)
+                intent.putExtra("image", data.image)
+                intent.putExtra("username", data.username)
+                intent.putExtra("name", data.name)
+                intent.putExtra("email", data.email)
+                intent.putExtra("date", data.date)
+                intent.putExtra("approved", data.approved)
+                context.startActivity(intent)
+            }
         }
         val imageBytes = Base64.decode(data.image, 0)
         val imageBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)

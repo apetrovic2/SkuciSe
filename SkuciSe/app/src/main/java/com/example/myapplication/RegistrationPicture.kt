@@ -67,7 +67,11 @@ class RegistrationPicture : AppCompatActivity() {
         lblRegistrationMes.setText("")
 
         val btnRegistrationFinal = findViewById(R.id.btnRegistrationFinal) as Button
+        btnRegistrationFinal.isClickable = true
+        btnRegistrationFinal.alpha = 1f
         btnRegistrationFinal.setOnClickListener() {
+            btnRegistrationFinal.isClickable = false
+            btnRegistrationFinal.alpha = 0.5f
             val apiUserImage = UsersApiManager.getUserApi()
             val callImage = apiUserImage.setProfilePicture(id, data)
             callImage.enqueue(object : Callback<Int> {
@@ -77,12 +81,16 @@ class RegistrationPicture : AppCompatActivity() {
                 ) {
                     if (!response.isSuccessful) {
                         Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
+                        btnRegistrationFinal.isClickable = true
+                        btnRegistrationFinal.alpha = 1f
                         return
                     } else {
                         Log.i("CONNECTION1 ", "SUCCESSFUL")
                         val ind = response.body()!!
                         if (ind > 0) {
                             lblRegistrationMes.setText("Uspešna registracija!")
+                            btnRegistrationFinal.isClickable = true
+                            btnRegistrationFinal.alpha = 1f
                             val intent = Intent(this@RegistrationPicture, Login::class.java)
                             intent.putExtra("reg_message", "Uspešna registracija. Prijavite se!")
                             startActivity(intent)
@@ -95,6 +103,8 @@ class RegistrationPicture : AppCompatActivity() {
                 }
                 override fun onFailure(call: Call<Int>, t: Throwable) {
                     Log.i("CONNECTION ", "NOT SUCCESSFUL2")
+                    btnRegistrationFinal.isClickable = true
+                    btnRegistrationFinal.alpha = 1f
                     return
                 }
             })

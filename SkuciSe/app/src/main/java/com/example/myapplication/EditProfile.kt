@@ -136,7 +136,12 @@ class EditProfile : AppCompatActivity() {
         })
 
         val btnEditFinal = findViewById(R.id.btnEditFinal) as Button
+        btnEditFinal.isClickable = true
+        btnEditFinal.alpha = 1f
         btnEditFinal.setOnClickListener(){
+
+            btnEditFinal.isClickable = false
+            btnEditFinal.alpha = 0.5f
 
             lblEditUser.setText("Molimo sačekajte!")
 
@@ -162,6 +167,8 @@ class EditProfile : AppCompatActivity() {
                         if (!response.isSuccessful) {
                             Log.i("CONNECTION1 ", "NOT SUCCESSFUL")
                             lblEditUser.setText("Neuspešna izmena!")
+                            btnEditFinal.isClickable = true
+                            btnEditFinal.alpha = 1f
                             return
                         } else {
                             Log.i("CONNECTION1 ", "SUCCESSFUL")
@@ -173,6 +180,8 @@ class EditProfile : AppCompatActivity() {
                                 //startActivity(intent)
                                 //overridePendingTransition(0, 0)
                                 lblEditUser.setText("Uspešna izmena!")
+                                btnEditFinal.isClickable = true
+                                btnEditFinal.alpha = 1f
                             }
                             if(status == 0 && data == "")
                             {
@@ -196,6 +205,8 @@ class EditProfile : AppCompatActivity() {
                     override fun onFailure(call: Call<Int>, t: Throwable) {
                         Log.i("CONNECTION ", "NOT SUCCESSFUL2")
                         lblEditUser.setText("Greška sa konekcijom!")
+                        btnEditFinal.isClickable = true
+                        btnEditFinal.alpha = 1f
                         return
                     }
                 })

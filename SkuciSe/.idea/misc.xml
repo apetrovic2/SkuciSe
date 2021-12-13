@@ -120,7 +120,7 @@
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_edit_ad.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_edit_profile.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_filter.xml" value="0.264" />
-        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_filter_sell.xml" value="0.14895833333333333" />
+        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_filter_sell.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_home_page2.xml" value="0.2586050724637681" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_login.xml" value="0.21145833333333333" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_main.xml" value="0.264" />
@@ -128,13 +128,13 @@
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_new_ad_picture.xml" value="0.23777173913043478" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_notifications.xml" value="0.2563405797101449" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_password.xml" value="0.264" />
-        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_profile.xml" value="0.4" />
+        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_registration.xml" value="0.26902173913043476" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_registration_picture.xml" value="0.23777173913043478" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_rent_page.xml" value="0.24592391304347827" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_reservation.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_reservation_accept_decline.xml" value="0.264" />
-        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_sell_page.xml" value="0.171875" />
+        <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/activity_sell_page.xml" value="0.264" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/fragment_dashboard.xml" value="0.2608695652173913" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/fragment_notifications.xml" value="0.2608695652173913" />
         <entry key="..\:/Users/PetarBojovic/SkuciSe/app/src/main/res/layout/login.xml" value="0.264" />

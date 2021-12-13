@@ -42,7 +42,6 @@
         android:text="Oprema"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sliderRooms" />
 
@@ -194,7 +193,7 @@
     </RadioGroup>
 
     <ImageButton
-        android:id="@+id/btnFilter"
+        android:id="@+id/iconFilter"
         android:layout_width="44dp"
         android:layout_height="41dp"
         android:layout_marginStart="12dp"
@@ -220,7 +219,7 @@
         android:id="@+id/txtViewSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:text="Kvadratura"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -230,7 +229,7 @@
         android:id="@+id/txtViewPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="Cena"
         android:textSize="18dp"
@@ -252,7 +251,7 @@
         android:id="@+id/txtViewRooms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:text="Broj soba"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -307,16 +306,15 @@
         app:layout_constraintTop_toBottomOf="@+id/sliderSize" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnFilter"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/purple"
-        android:text="Ponisti filtere"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/cbGarage"
-        app:layout_constraintTop_toBottomOf="@+id/cbElevator"
-        app:layout_constraintVertical_bias="0.0" />
+        android:text="Filtriranje"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbElevator" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

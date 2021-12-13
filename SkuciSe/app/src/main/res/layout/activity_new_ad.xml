@@ -98,6 +98,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:maxLength="25"
         android:hint="Naslov oglasa"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"

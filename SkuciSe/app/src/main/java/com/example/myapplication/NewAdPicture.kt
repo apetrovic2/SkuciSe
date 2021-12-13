@@ -67,7 +67,12 @@ class NewAdPicture : AppCompatActivity() {
         lblAddNewAdMessage.setText("")
 
         val btnAdNewAddFinal = findViewById(R.id.btnAdNewAddFinal) as Button
+        btnAdNewAddFinal.isClickable = true
+        btnAdNewAddFinal.alpha = 1f
         btnAdNewAddFinal.setOnClickListener() {
+
+            btnAdNewAddFinal.isClickable = false
+            btnAdNewAddFinal.alpha = 0.5f
 
             lblAddNewAdMessage.setText("Molimo sačekajte!")
             val apiAdImage = AdApiManager.getAdApi()
@@ -85,6 +90,8 @@ class NewAdPicture : AppCompatActivity() {
                         val ind = response.body()!!
                         if (ind > 0) {
                             lblAddNewAdMessage.setText("Uspešno dodat oglas!")
+                            val intent = Intent(this@NewAdPicture, Profile::class.java)
+                            startActivity(intent)
                         } else {
                             lblAddNewAdMessage.setText("Neuspešno!")
                         }
