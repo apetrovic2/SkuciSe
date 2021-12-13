@@ -36,7 +36,7 @@ class Login : AppCompatActivity() {
 
 //        val buttonLogin = findViewById<Button>(R.id.btnLoginFinal)
 //        buttonLogin.setOnClickListener {
-//            val intent = Intent(this, Filter::class.java)
+//            val intent = Intent(this, AdInfo::class.java)
 //            startActivity(intent)
 //        }
 

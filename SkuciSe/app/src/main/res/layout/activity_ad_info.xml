@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".AdInfo">
 
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="352dp"
+        android:text="Opis"
+        app:layout_constraintBottom_toTopOf="@+id/tbDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbSize"
+        app:layout_constraintVertical_bias="0.56" />
 
     <TextView
         android:id="@+id/tbTitle"
@@ -37,6 +53,7 @@
         android:layout_width="166dp"
         android:layout_height="37dp"
         android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:gravity="center"
         android:text="Lokacija"
@@ -47,7 +64,7 @@
         android:id="@+id/tbOther"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:gravity="left|center_vertical"
@@ -59,12 +76,12 @@
         android:id="@+id/tbFloor"
         android:layout_width="166dp"
         android:layout_height="37dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:gravity="center"
-        android:text="Sprat:"
+        android:text="Sprat"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintHorizontal_bias="0.725"
         app:layout_constraintStart_toEndOf="@+id/tbSize"
         app:layout_constraintTop_toBottomOf="@+id/tbPrice" />
 
@@ -73,10 +90,10 @@
         android:layout_width="166dp"
         android:layout_height="37dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:gravity="center"
-        android:text="Kvadratura:"
+        android:text="Kvadratura"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbLocation" />
 
@@ -84,11 +101,12 @@
         android:id="@+id/tbPrice"
         android:layout_width="166dp"
         android:layout_height="37dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:gravity="center"
         android:text="Cena"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
+        app:layout_constraintHorizontal_bias="0.723"
         app:layout_constraintStart_toEndOf="@+id/tbLocation"
         app:layout_constraintTop_toBottomOf="@+id/tbSellRent" />
 
@@ -96,7 +114,7 @@
         android:id="@+id/tbEquipment"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:gravity="left|center_vertical"
@@ -121,13 +139,12 @@
         android:id="@+id/tbDescription"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="left|center_vertical"
         android:text="Opis:"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.675"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbFloor" />
 
     <TextView
@@ -146,9 +163,9 @@
         android:id="@+id/adPicture"
         android:layout_width="206dp"
         android:layout_height="164dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbTitle"
         app:srcCompat="@drawable/photo1" />
 
@@ -182,5 +199,70 @@
         app:layout_constraintTop_toBottomOf="@+id/tbOther"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="Lokacija"
+        app:layout_constraintBottom_toTopOf="@+id/tbLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbFlatHouse"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:text="Cena"
+        app:layout_constraintBottom_toTopOf="@+id/tbPrice"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/tbSellRent"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="Kvadratura"
+        app:layout_constraintBottom_toTopOf="@+id/tbSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbLocation" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:text="Sprat"
+        app:layout_constraintBottom_toTopOf="@+id/tbFloor"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/tbPrice" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="332dp"
+        android:text="Oprema"
+        app:layout_constraintBottom_toTopOf="@+id/tbEquipment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbDescription"
+        app:layout_constraintVertical_bias="0.48" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="340dp"
+        android:text="Ostalo"
+        app:layout_constraintBottom_toTopOf="@+id/tbOther"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbEquipment"
+        app:layout_constraintVertical_bias="0.461" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
