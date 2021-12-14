@@ -17,21 +17,23 @@
         android:id="@+id/btnRent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="72dp"
         android:backgroundTint="#5b2f6a"
         android:text="Izdavanje"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="40dp"
         android:backgroundTint="#ae76c1"
         android:text="Prodaja"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -171,11 +173,11 @@
         android:id="@+id/rgHouseFlat"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="128dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/btnRent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radioButton"
@@ -196,10 +198,10 @@
         android:id="@+id/iconFilter"
         android:layout_width="44dp"
         android:layout_height="41dp"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
         android:background="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_filter_list_24"
         tools:ignore="MissingConstraints" />
@@ -256,16 +258,6 @@
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sliderSize" />
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="238dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
-        android:background="#f9eafb"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.material.slider.Slider
         android:id="@+id/sliderPrice"

@@ -41,6 +41,11 @@ class RentPage : AppCompatActivity() {
             val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
+        val buttonHome = findViewById<ImageButton>(R.id.imageBtnHome)
+        buttonHome.setOnClickListener {
+            val intent = Intent(this, HomePage::class.java)
+            startActivity(intent)
+        }
         val buttonRent = findViewById<Button>(R.id.btnRent)
         buttonRent.setOnClickListener {
             val intent = Intent(this, HomePage::class.java)
@@ -49,6 +54,11 @@ class RentPage : AppCompatActivity() {
         val buttonSell = findViewById<Button>(R.id.btnSell)
         buttonSell.setOnClickListener {
             val intent = Intent(this, SellPage::class.java)
+            startActivity(intent)
+        }
+        val buttonNotifications = findViewById<ImageButton>(R.id.imageBtnNotifications)
+        buttonNotifications.setOnClickListener {
+            val intent = Intent(this, Notifications::class.java)
             startActivity(intent)
         }
         recyclerView = findViewById(R.id.recyclerView)
