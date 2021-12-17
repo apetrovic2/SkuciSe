@@ -171,7 +171,7 @@ class Profile : AppCompatActivity() {
                             {
                                 ind = 1
                             }
-                            dataList.add(DataModel("${ad.ad.title}","${ad.ad.price}$",ad.image, ad.ad.id, ind))
+                            dataList.add(DataModel("${ad.ad.title}","${ad.ad.price.toInt()}$",ad.image, ad.ad.id, ind))
 
 
                         }

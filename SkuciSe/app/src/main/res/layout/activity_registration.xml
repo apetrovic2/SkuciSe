@@ -53,7 +53,7 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="128dp"
         android:fontFamily="@font/josefinsans_bold"
-        android:text="Dalje"
+        android:text="DALJE"
         android:textColor="#353535"
         app:backgroundTint="#b5efbd"
         app:layout_constraintEnd_toEndOf="parent"

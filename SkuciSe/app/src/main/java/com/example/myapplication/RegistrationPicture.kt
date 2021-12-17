@@ -66,6 +66,7 @@ class RegistrationPicture : AppCompatActivity() {
         val lblRegistrationMes = findViewById(R.id.lblRegistrationMessage) as TextView
         lblRegistrationMes.setText("")
 
+
         val btnRegistrationFinal = findViewById(R.id.btnRegistrationFinal) as Button
         btnRegistrationFinal.isClickable = true
         btnRegistrationFinal.alpha = 1f

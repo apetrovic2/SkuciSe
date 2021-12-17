@@ -11,12 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="120dp"
         android:fontFamily="@font/josefinsans_bold"
         android:text="Registracija"
         android:textColor="#353535"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -24,23 +24,23 @@
         android:layout_width="250dp"
         android:layout_height="20dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="80dp"
         android:gravity="center"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnChoosePhoto" />
 
     <Button
         android:id="@+id/btnRegistrationFinal"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="127dp"
         android:fontFamily="@font/josefinsans_bold"
-        android:text="Registruj se"
+        android:text="REGISTRUJ SE"
         android:textColor="#353535"
         app:backgroundTint="#b5efbd"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnChoosePhoto" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -48,9 +48,9 @@
         android:layout_width="171dp"
         android:layout_height="153dp"
         android:layout_marginTop="184dp"
-        android:layout_marginEnd="120dp"
         android:src="@drawable/ic_baseline_account_circle_purple_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -58,9 +58,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="136dp"
         android:backgroundTint="@color/purple"
-        android:text="Dodaj sliku"
+        android:text="Izaberi sliku"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

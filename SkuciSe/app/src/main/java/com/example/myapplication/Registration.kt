@@ -84,7 +84,6 @@ class Registration : AppCompatActivity() {
                                             lblRegistrationMes.setText("Uspešno!")
                                             val intent = Intent(this@Registration, RegistrationPicture::class.java)
                                             intent.putExtra("user_id", ind)
-//                                            intent.putExtra("username", usernameText)
 //                                            intent.putExtra("password", passwordText)
 //                                            intent.putExtra("name", nametext)
 //                                            intent.putExtra("email", emailText)

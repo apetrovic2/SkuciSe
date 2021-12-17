@@ -116,7 +116,7 @@ class SellPage : AppCompatActivity() {
                             dataList.add(
                                 DataModel(
                                     "${ad.ad.title}",
-                                    "${ad.ad.price}$",
+                                    "${ad.ad.price.toInt()}$",
                                     ad.image,
                                     ad.ad.id,
                                     ind

@@ -44,7 +44,7 @@ class ReservationAcceptDecline : AppCompatActivity() {
         lblmessage.setText("")
 
         tbTitle.setText(title);
-        tbUsername.setText("@${username}")
+        tbUsername.setText("${username}")
         tbName.setText(name)
         tbEmail.setText(email)
         tbDate.setText(date?.take(10) + "  " + date?.takeLast(5) + "h")
